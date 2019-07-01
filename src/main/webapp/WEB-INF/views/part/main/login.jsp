@@ -40,9 +40,6 @@
 					</div>
 				</div>
 
-				<div>
-					<p id="textRight">형식에 맞게 입력해주세요.</p>
-				</div>
 
 				<div class="form-group">
 					<label for="password" class="col-sm-2 control-label">Password</label>
