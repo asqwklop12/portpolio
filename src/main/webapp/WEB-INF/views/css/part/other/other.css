@@ -1,0 +1,13 @@
+@charset "UTF-8";
+  .textRight {
+    margin-left: 17%;
+    margin-bottom: 10px;
+    color: #FF1200FF;
+    font-style: italic;
+  }
+  .imgSize {
+    cursor: pointer;
+    border: 3px solid #F5F224F3;
+    margin-left: 40%;
+    margin-bottom: 50px;
+  }
