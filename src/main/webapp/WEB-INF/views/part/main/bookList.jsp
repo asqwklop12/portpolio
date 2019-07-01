@@ -15,234 +15,234 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="panel panel-success container-fluid">
+<div class="panel panel-success container-fluid"   align="center">
         <div class="panel-heading">
             <h3 class="panel-title">반디엔루디스</h3>
         </div>
-        <div class="panel-body"  align="center">
+        <div class="panel-body" >
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="panel panel-info container-fluid">
+    <div class="panel panel-info container-fluid"   align="center">
         <div class="panel-heading">
             <h3 class="panel-title">교보문고</h3>
         </div>
-        <div class="panel-body"  align="center">
+        <div class="panel-body" >
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="panel panel-warning container-fluid">
+    <div class="panel panel-warning container-fluid"   align="center">
         <div class="panel-heading">
             <h3 class="panel-title">영풍문고</h3>
         </div>
-        <div class="panel-body"  align="center">
+        <div class="panel-body" >
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                       <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="panel panel-success container-fluid">
+    <div class="panel panel-success container-fluid"   align="center">
         <div class="panel-heading">
             <h3 class="panel-title">알라딘</h3>
         </div>
-        <div class="panel-body"  align="center">
+        <div class="panel-body" >
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src=".../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="panel panel-info container-fluid">
+    <div class="panel panel-info container-fluid"   align="center">
         <div class="panel-heading">
             <h3 class="panel-title">yes24</h3>
         </div>
-        <div class="panel-body"  align="center">
+        <div class="panel-body">
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="panel panel-warning container-fluid">
+    <div class="panel panel-warning container-fluid" align="center">
         <div class="panel-heading">
             <h3 class="panel-title">유저 선택</h3>
         </div>        
-        <div class="panel-body"   align="center">
-            <div class="row">
+        <div class="panel-body"   >
+            <div class="row" >
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="./img/kakao.png" alt="...">
+                        <img src="../img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
