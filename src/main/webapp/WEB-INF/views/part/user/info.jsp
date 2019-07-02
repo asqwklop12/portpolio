@@ -29,12 +29,12 @@
             <p>님 반갑습니다.</p>
         </div>
 
-        <div class="nav_button">
-            <button type="button" class="btn btn-primary btn-lg">정보 수정</button>
+        <div class="nav_button"><a href="login/edit">
+            <button type="button" class="btn btn-primary btn-lg">정보 수정</button></a>
         </div>
 
-        <div class="nav_button">
-            <button type="button" class="btn btn-primary btn-lg">로그 아웃</button>
+        <div class="nav_button"><a href="login/logout">
+            <button type="button" class="btn btn-primary btn-lg">로그 아웃</button></a>
         </div>
     </div>
 </nav>

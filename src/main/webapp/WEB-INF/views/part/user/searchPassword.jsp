@@ -21,9 +21,11 @@
 <body>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
+			<a href="home">
 			<button type="button" class="close" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
+			</a>
 			<h3 class="panel-title">비밀번호 찾기</h3>
 		</div>
 		<div class="panel-body">

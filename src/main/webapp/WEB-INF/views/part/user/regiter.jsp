@@ -20,9 +20,9 @@
 </head>
 <body>
   <div class="panel panel-primary">
-    <div class="panel-heading">
+    <div class="panel-heading"><a href="home">
       <button type="button" class="close" aria-label="Close">
-        <span aria-hidden="true">&times;</span></button>
+        <span aria-hidden="true">&times;</span></button></a>
       <h3 class="panel-title">회원 가입</h3>
     </div>
     <div class="panel-body">

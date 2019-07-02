@@ -16,6 +16,7 @@ public class MainController {
 	@Autowired
 	private UserDaoImpl userDao;
 	
+	// 루트값설정
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView model) {
 		List<UserVo> users = userDao.userList();
@@ -24,21 +25,25 @@ public class MainController {
 		return model;
 	}
 	
+	// home으로
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String redirect() {
 		return "redirect:/";
 	}
 	
+	// 검색결과 이동
 	@RequestMapping(value = "/search",method = RequestMethod.GET)
 	public ModelAndView search() {
 		return new ModelAndView("MainForSearch");
 	}
 	
+	// 검색목록 이동
 	@RequestMapping(value = "/list",method = RequestMethod.GET)
 	public ModelAndView list() {
 		return new ModelAndView("MainForBookList");
 	}
 	
+	// 게시판 이동
 	@RequestMapping(value = "/board",method = RequestMethod.GET)
 	public ModelAndView board() {
 		return new ModelAndView("MainForList");
@@ -49,6 +54,18 @@ public class MainController {
 	@RequestMapping(value = "/login",method = RequestMethod.GET)
 	public ModelAndView login() {
 		return new ModelAndView("LayoutForMain2");
+	}
+	
+	// 정보 수정
+	@RequestMapping(value = "/login/edit",method = RequestMethod.GET)
+	public ModelAndView editUser() {
+		return new ModelAndView("/part/user/userEdit");
+	}
+		
+	// 로그아웃
+	@RequestMapping(value = "/login/logout",method = RequestMethod.GET)
+	public ModelAndView logout() {
+		return new ModelAndView("redirect:/");
 	}
 	
 	// 회원가입했을 시

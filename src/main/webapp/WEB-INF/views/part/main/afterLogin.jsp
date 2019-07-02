@@ -24,12 +24,12 @@
             <p><b>닉네임</b>님 만나서 반갑습니다.</p>
         </div>
 
-        <div class="form-group">
-            <button type="button" class="btn btn-default">정보 수정</button>
+        <div class="form-group"><a href="login/edit">
+            <button type="button" class="btn btn-default">정보 수정</button></a>
         </div>
 
-        <div class="form-group">
-            <button type="button" class="btn btn-default">로그아웃</button>
+        <div class="form-group"><a href="login/logout">
+            <button type="button" class="btn btn-default">로그아웃</button></a>
         </div>
       </div>
     </div>
