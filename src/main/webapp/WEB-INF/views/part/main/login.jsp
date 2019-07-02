@@ -54,8 +54,8 @@
 						<span class="checkbox"> <label> <input
 								type="checkbox"> 자동 로그인
 						</label>
-						</span> <span class="col-sm-offset-2 col-sm-7"> <span
-							class="seacrhPasswor">비밀번호를 잃어버리셨나요?</span>
+						</span> <span class="col-sm-offset-2 col-sm-7"> <a
+							class="seacrhPasswor" href="lost">비밀번호를 잃어버리셨나요?</a>
 						</span>
 					</div>
 				</div>
@@ -65,9 +65,8 @@
 				<div class="form-group"></div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default disabled">Sign
-							in</button>
-						<button type="button" class="btn btn-default">회원가입</button>
+						<a href="login">로그인</a>
+						<a href="regit">회원가입</a>
 					</div>
 				</div>
 			</form>

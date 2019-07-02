@@ -44,4 +44,22 @@ public class MainController {
 		return new ModelAndView("MainForList");
 	}
 	
+	
+	// 로그인 했을 시
+	@RequestMapping(value = "/login",method = RequestMethod.GET)
+	public ModelAndView login() {
+		return new ModelAndView("LayoutForMain2");
+	}
+	
+	// 회원가입했을 시
+	@RequestMapping(value = "/regit",method = RequestMethod.GET)
+	public ModelAndView regit() {
+		return new ModelAndView("/part/user/regiter");
+	}
+	
+	// 비밀번호 찾을시
+	@RequestMapping(value = "/lost",method = RequestMethod.GET)
+	public ModelAndView lost() {
+		return new ModelAndView("/part/user/searchPassword");
+	}
 }
