@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-  <div class="panel panel-primary">
+  <div class="panel panel-primary" align="center">
     <div class="panel-heading">
       <h3 class="panel-title">회원 정보</h3>
     </div>
