@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>검색 결과</title>
+<title>게시판</title>
 	   <style type="text/css">
       		<%@ include file="./css/part/feild.css" %>
        </style>
