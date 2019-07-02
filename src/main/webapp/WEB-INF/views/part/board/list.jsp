@@ -23,6 +23,7 @@
             <h3 class="panel-title">게시판</h3>
         </div>
         <div class="panel-body">
+
             <div class="container">
                 <table class="table table-striped table-hover">
                     <thead>
@@ -48,7 +49,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <th />
+                <br />
                 <a class="btn btn-default pull-right">글쓰기</a>
 
                 <div class="text-center">

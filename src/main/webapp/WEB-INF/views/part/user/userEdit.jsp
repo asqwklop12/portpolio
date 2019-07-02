@@ -23,9 +23,10 @@
 <body>
 	<div class="panel panel-primary">
 		<div class="panel-heading">
+			<a href="edit/close">
 			<button type="button" class="close" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
-			</button>
+			</button></a>
 			<h3 class="panel-title">회원 정보 변경</h3>
 		</div>
 		<div class="panel-body">

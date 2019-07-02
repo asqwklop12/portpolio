@@ -61,12 +61,18 @@ public class MainController {
 	public ModelAndView editUser() {
 		return new ModelAndView("/part/user/userEdit");
 	}
-		
+	
+	// 정보 수정
+	@RequestMapping(value = "/login/edit/close",method = RequestMethod.GET)
+	public ModelAndView editclose() {
+		return new ModelAndView("redirect:/login");
+	}
 	// 로그아웃
 	@RequestMapping(value = "/login/logout",method = RequestMethod.GET)
-	public ModelAndView logout() {
+	public ModelAndView close() {
 		return new ModelAndView("redirect:/");
 	}
+	
 	
 	// 회원가입했을 시
 	@RequestMapping(value = "/regit",method = RequestMethod.GET)

@@ -24,14 +24,15 @@
 </head>
 <body>
 
+	
       <div class="media">
-
+      
         <div class="media-left media-top">
-
           <img class="media-object" src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
-
         </div>
+        
         <div class="media-body">
+        
           <div class="form-group">
             <label for="title">제목: </label>
             <span id="title">-</span>
@@ -61,7 +62,9 @@
             <label for="like">좋아요: </label>
             <span id="like">-</span>
           </div>
+          
         </div>
+        
       </div>
 
       <div class="border">
