@@ -32,7 +32,7 @@
 
         <div class="media">
           <div class="media-left media-middle">
-            <img src="./img/kakao.png" alt="" class="img-circle imgSize" />
+            <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle imgSize" />
           </div>
           <div class="media-body">
             <div class="panel panel-default">

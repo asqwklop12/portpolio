@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+   <style type="text/css">
+      	<%@ include file="../../css/part/main/afterLogin.css" %>
+    </style>
 </head>
 <body>
   <div class="panel panel-primary">
@@ -14,7 +17,7 @@
     <div class="panel-body ">
 
       <div class="form-group ">
-        <img src="./img/kakao.png" alt="" class="img-circle imgSize"/>
+        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle imgSize"/>
       </div>
 
         <div class="form-group">

@@ -4,41 +4,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>메인</title>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-  <!-- 부가적인 테마 -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-  <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    <link>
-     <style type="text/css">
-      <%@ include file="./css/part/main/notice+login.css" %>
-     </style>
+<title>검색 결과</title>
+	   <style type="text/css">
+      		<%@ include file="./css/part/feild.css" %>
+       </style>
 </head>
 <body>
-<header>
-<%@include file="./part/main/header.jsp" %>
-</header>
-<nav>
-<%@include file="./part/main/wellcome.jsp" %>
-	  <div class="center container-fluid">
-    <div class="center_notice">
-    <%@include file="./part/main/notice.jsp" %>
-    </div>
+	<%@include file="./part/user/info.jsp" %>
+	<main>
+	<header>
+	
+	</header>
+	<%@include file="./part/main/header.jsp" %>
+	<section>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		<%@include file="./part/book/result.jsp" %>
+		</section>
+</main>
 
-    <div class="center_Login">
-    <%@include file="./part/main/login.jsp" %>
-    </div>
-  </div>
-</nav>
-<section>
-     <%@include file="./part/main/bookList.jsp" %>
-</section>
-<footer>
-       <%@include file="./part/footer/info.jsp" %>
-</footer>
 </body>
 </html>

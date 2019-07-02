@@ -14,7 +14,11 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+   
+   <style type="text/css">
+      	<%@ include file="../../css/part/book/result.css" %>
+    </style>
+    
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -28,7 +32,7 @@
 
         <div class="media-left media-top">
 
-          <img class="media-object" src="./img/kakao.png" alt="...">
+          <img class="media-object" src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
 
         </div>
         <div class="media-body">

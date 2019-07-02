@@ -24,7 +24,7 @@
 <input type="checkbox" id="menu_state" checked>
 <nav>
 	<div class="nav" align="center">
-        <div class="nav_img"><img src="./img/kakao.png" alt="..." class="img-circle icon"></div>
+        <div class="nav_img"><img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="..." class="img-circle icon"></div>
         <div class="nav_name">
             <p>님 반갑습니다.</p>
         </div>
