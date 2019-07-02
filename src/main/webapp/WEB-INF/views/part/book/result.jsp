@@ -23,11 +23,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h3 class="panel-title">검색 결과</h3>
-    </div>
-    <div class="panel-body result_click">
+
       <div class="media">
 
         <div class="media-left media-top">
@@ -71,14 +67,5 @@
       <div class="border">
       </div>
 
-
-      <div class="text-center">
-
-        <ul class="pagination">
-          <li class="active"><a href="#">1</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
