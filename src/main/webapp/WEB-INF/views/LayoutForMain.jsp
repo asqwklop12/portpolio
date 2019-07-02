@@ -18,7 +18,7 @@
 </head>
 <body>
 <header>
-<%@include file="./part/main/header.jsp" %>
+	<%@include file="./part/main/headerForHome.jsp" %>
 </header>
 <nav>
 <%@include file="./part/main/wellcome.jsp" %>

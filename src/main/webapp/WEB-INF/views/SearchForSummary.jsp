@@ -15,7 +15,7 @@
 	<header>
 	
 	</header>
-	<%@include file="./part/main/header.jsp" %>
+	<%@include file="./part/main/headerForSearch.jsp" %>
 	<section>
 		<%@include file="./part/book/info/summary.jsp" %>
 	</section>
