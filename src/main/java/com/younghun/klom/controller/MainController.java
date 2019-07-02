@@ -20,10 +20,14 @@ public class MainController {
 	public ModelAndView home(ModelAndView model) {
 		List<UserVo> users = userDao.userList();
 		model.addObject("users",users);
-		model.setViewName("home");
+		model.setViewName("LayoutForMain");
 		return model;
 	}
 	
+	@RequestMapping(value = "/home",method = RequestMethod.GET)
+	public String redirect() {
+		return "redirect:/";
+	}
 	
 	@RequestMapping(value = "/search",method = RequestMethod.GET)
 	public ModelAndView search() {
@@ -40,8 +44,4 @@ public class MainController {
 		return new ModelAndView("MainForList");
 	}
 	
-	@RequestMapping(value = "/home",method = RequestMethod.GET)
-	public String redirect() {
-		return "redirect:/";
-	}
 }
