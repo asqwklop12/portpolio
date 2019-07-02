@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="./css/index.css">
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+     <style type="text/css">
+      	<%@ include file="../../css/part/other.css" %>
+    </style>
+    
 </head>
 <body>
   <div class="panel panel-primary">
@@ -24,8 +28,8 @@
     <div class="panel-body">
       <form class="form-horizontal">
 
-        <div class="form-group ">
-          <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle imgSize"/>
+        <div class="form-group " align="center">
+          <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle"/>
         </div>
 
         <div class="form-group">

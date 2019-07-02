@@ -29,7 +29,7 @@
 
         <div class="media">
           <div class="media-left media-top" align="center">
-            <img src="./img/kakao.png" alt="" class="img-circle imgSize" />
+            <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle imgSize" />
             <br />
             <br />
             <b id="id">asqwklop12</b>
