@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.younghun.klom.dao.UserDaoImpl;
-import com.younghun.klom.dto.UserVo;
 
 @Controller
 public class MainController {
