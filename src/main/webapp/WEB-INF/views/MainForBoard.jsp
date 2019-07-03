@@ -11,14 +11,15 @@
 </head>
 <body>
 	<%@include file="./part/user/info.jsp" %>
-	<main>
+ <main>
 	<header>
 	
 	</header>
 	<%@include file="./part/main/headerForBoard.jsp" %>
 	<section>
-		<%@include file="./part/board/list.jsp" %></section>
-</main>
+		<%@include file="./part/board/list.jsp" %>
+	</section>
+  </main>
 
 </body>
 </html>

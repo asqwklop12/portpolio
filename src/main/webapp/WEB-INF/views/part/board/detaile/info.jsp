@@ -10,20 +10,16 @@
 
   <!-- 부가적인 테마 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   
 
 </head>
 <body>
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <b>번호</b> <b>제목</b>
-    </div>
 
-
-    <div class="panel-body">
+  
+  <div class="panel-body">
 
       <div class="form-group">
 
@@ -36,12 +32,6 @@
           </div>
           <div class="media-body">
             <div class="panel panel-default">
-              <ul class="nav nav-tabs">
-                <li role="presentation" class="active"><a href="#">원문</a></li>
-                <li role="presentation"><a href="#">수정</a></li>
-                <li><a href="delete">삭제</a></li>
-              </ul>
-
               <div class="panel-body">
                  글작성 부분
               </div>
@@ -50,6 +40,6 @@
         </div>
       </div>
     </div>
-  </div>
+    
 </body>
 </html>

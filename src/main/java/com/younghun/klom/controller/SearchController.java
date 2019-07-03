@@ -39,7 +39,7 @@ public class SearchController {
 	// 정보페이지로 이동 
 	@RequestMapping(value = "/search/info",method = RequestMethod.GET)
 	public ModelAndView bookInfo() {
-		return new ModelAndView("BookForSummary");
+		return new ModelAndView("BookForInfo");
 	}
 	
 	
