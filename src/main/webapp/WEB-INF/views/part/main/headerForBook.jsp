@@ -9,13 +9,10 @@
 
   <!-- 부가적인 테마 -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="./css/index.css">
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/part/main/header.css">
 
-   <style type="text/css">
-      	<%@ include file="../../css/part/main/header.css" %>
-    </style>
 </head>
 <body>
   <div class="margin3 navbar navbar-inverse">

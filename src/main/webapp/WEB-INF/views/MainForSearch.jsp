@@ -14,9 +14,8 @@
 <head>
 <meta charset="UTF-8">
 <title>검색 결과</title>
-	   <style type="text/css">
-      		<%@ include file="./css/part/feild.css" %>
-       </style>
+ <link rel="stylesheet" href="/resources/css/part/feild.css">
+
 </head>
 <body>
 	<%@include file="./part/user/info.jsp" %>

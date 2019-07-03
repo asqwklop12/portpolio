@@ -13,9 +13,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<style type="text/css">
-<%@ include file ="./css/part/feild.css" %>
-</style>
+     <link rel="stylesheet" href="/resources/css/part/feild.css">
+
 
 </head>
 <body>

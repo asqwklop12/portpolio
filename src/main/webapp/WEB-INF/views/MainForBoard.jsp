@@ -13,9 +13,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>검색 결과</title>
-	   <style type="text/css">
-      		<%@ include file="./css/part/feild.css" %>
-       </style>
+ <link rel="stylesheet" href="/resources/css/part/feild.css">
+
 </head>
 <body>
 	<%@include file="./part/user/info.jsp" %>

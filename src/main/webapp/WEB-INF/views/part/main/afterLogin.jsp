@@ -5,9 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-   <style type="text/css">
-      	<%@ include file="../../css/part/main/afterLogin.css" %>
-    </style>
+   <link rel="stylesheet" href="/resources/css/part/main/afterLogin.css">
+
 </head>
 <body>
   <div class="panel panel-primary" align="center">

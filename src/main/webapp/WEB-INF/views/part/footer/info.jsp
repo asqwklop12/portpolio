@@ -13,9 +13,8 @@
 
     <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-       <style type="text/css">
-      	<%@ include file="../../css/part/main/footer.css" %>
-    </style>
+           <link rel="stylesheet" href="/resources/css/part/main/footer.css">
+
 </head>
 <body>
     <div class="footer">
