@@ -50,7 +50,6 @@ public class BoardController {
 		return new ModelAndView("BoardForWrite");
 	}
 		
-	
 	// 게시글 삭제
 	@RequestMapping(value = "/board/delete",method = RequestMethod.GET)
 	public ModelAndView delete() {
