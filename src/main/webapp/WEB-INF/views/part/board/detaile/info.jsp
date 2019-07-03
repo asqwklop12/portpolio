@@ -39,7 +39,7 @@
               <ul class="nav nav-tabs">
                 <li role="presentation" class="active"><a href="#">원문</a></li>
                 <li role="presentation"><a href="#">수정</a></li>
-                <li><a href="#">삭제</a></li>
+                <li><a href="delete">삭제</a></li>
               </ul>
 
               <div class="panel-body">

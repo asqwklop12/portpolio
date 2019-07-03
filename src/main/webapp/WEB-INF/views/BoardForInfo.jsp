@@ -17,7 +17,10 @@
 	</header>
 	<%@include file="./part/main/headerForBoard.jsp" %>
 	<section>
-		<%@include file="./part/board/detaile/info.jsp" %></section>
+	
+		<%@include file="./part/board/detaile/info.jsp" %>
+
+   </section>
 </main>
 
 </body>

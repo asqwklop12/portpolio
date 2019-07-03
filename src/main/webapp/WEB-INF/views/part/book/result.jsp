@@ -31,7 +31,7 @@
           <img class="media-object" src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
         </div>
         
-        <div class="media-body">
+        <div class="media-body" onclick="enterInfo()">
         
           <div class="form-group">
             <label for="title">제목: </label>
@@ -69,6 +69,10 @@
 
       <div class="border">
       </div>
-
+<script type="text/javascript">
+	function enterInfo() {
+		location.href = "search/info";
+	}
+</script>
 </body>
 </html>

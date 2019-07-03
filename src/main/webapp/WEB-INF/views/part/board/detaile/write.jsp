@@ -31,7 +31,7 @@
                         <div class="panel panel-default">
                             <ul class="nav nav-tabs">
                                 <li role="presentation" class="active"><a href="#">작성</a></li>
-                                <li><a href="#">완료</a></li>
+                                <li><a href="confirm">완료</a></li>
                             </ul>
 
                             <div class="panel-body">
