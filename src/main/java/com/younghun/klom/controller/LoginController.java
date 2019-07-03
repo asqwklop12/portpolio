@@ -12,13 +12,13 @@ public class LoginController {
 		
 		// 정보 수정 
 		@RequestMapping(value = "/login/edit",method = RequestMethod.GET)
-		public ModelAndView editUser() {
+		public ModelAndView edit() {
 			return new ModelAndView("/part/user/userEdit");
 		}
 		
 		// 로그아웃
 		@RequestMapping(value = "/login/logout",method = RequestMethod.GET)
-		public ModelAndView close() {
+		public ModelAndView logout() {
 			return new ModelAndView("redirect:/");
 		}
 		

@@ -12,7 +12,7 @@ public class UserEditController {
 	
 	// home으로 이동(로그인된 상태)(수정 가능성 있음) 
 	@RequestMapping(value = "/login/edit/close",method = RequestMethod.GET)
-	public ModelAndView editclose() {
+	public ModelAndView close() {
 		return new ModelAndView("redirect:/login");
 	}
 }

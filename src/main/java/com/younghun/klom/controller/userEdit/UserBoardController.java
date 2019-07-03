@@ -12,13 +12,13 @@ public class UserBoardController {
 	
 	// 정보 수정
 	@RequestMapping(value = "/board/login/edit",method = RequestMethod.GET)
-	public ModelAndView editUser() {
+	public ModelAndView edit() {
 		return new ModelAndView("redirect:/login/edit");
 	}
 	
 	// 로그아웃
 	@RequestMapping(value = "/board/login/logout",method = RequestMethod.GET)
-	public ModelAndView close() {
+	public ModelAndView logout() {
 		return new ModelAndView("redirect:/");
 	}
 }

@@ -18,7 +18,7 @@ public class UserSearchController {
 	
 	// 로그아웃
 	@RequestMapping(value = "/search/login/logout",method = RequestMethod.GET)
-	public ModelAndView close() {
+	public ModelAndView logout() {
 		return new ModelAndView("redirect:/");
 	}
 }

@@ -12,7 +12,7 @@ public class BoardController {
 	
 	// 검색화면 이동
 	@RequestMapping(value = "/board/search",method = RequestMethod.GET)
-	public ModelAndView search2() {
+	public ModelAndView search() {
 		return new ModelAndView("redirect:/search");
 	}
 	
@@ -41,7 +41,7 @@ public class BoardController {
 	
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 	@RequestMapping(value = "/board/into",method = RequestMethod.GET)
-	public ModelAndView board_into() {
+	public ModelAndView into() {
 		return new ModelAndView("BoardForInfo");
 	}
 	
