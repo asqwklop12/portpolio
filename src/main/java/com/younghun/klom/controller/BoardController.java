@@ -5,24 +5,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+//step2
+
 @Controller
 public class BoardController {
 	
-	// 검색목록 이동 (board -> board)
+	// 검색목록 이동
 	@RequestMapping(value = "/board/search",method = RequestMethod.GET)
 	public ModelAndView search2() {
 		return new ModelAndView("redirect:/search");
 	}
 	
 	
-	// home으로(board->home)
+	// home으로이동
 	@RequestMapping(value = "/board/home",method = RequestMethod.GET)
 	public String redirect() {
 		return "redirect:/login";
 	}
 	
 	
-	// 검색목록 이동 (board -> list)
+	// 검색목록 이동
 	@RequestMapping(value = "/board/list",method = RequestMethod.GET)
 	public ModelAndView list() {
 		return new ModelAndView("redirect:/list");
@@ -31,7 +33,7 @@ public class BoardController {
 	
 	// 게시판으로
 	@RequestMapping(value = "/board/board",method = RequestMethod.GET)
-	public ModelAndView board2() {
+	public ModelAndView board() {
 		return new ModelAndView("redirect:/board");
 	}
 	
@@ -49,7 +51,7 @@ public class BoardController {
 	public ModelAndView write() {
 		return new ModelAndView("BoardForWrite");
 	}
-		
+	
 	// 게시글 삭제
 	@RequestMapping(value = "/board/delete",method = RequestMethod.GET)
 	public ModelAndView delete() {

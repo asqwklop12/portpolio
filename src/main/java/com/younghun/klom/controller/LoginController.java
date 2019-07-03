@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+//step2
+
 @Controller
 public class LoginController {
 		
@@ -20,7 +22,5 @@ public class LoginController {
 			return new ModelAndView("redirect:/");
 		}
 		
-		
-
 		
 }
