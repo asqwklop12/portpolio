@@ -15,18 +15,7 @@
 <title>검색결과</title>
 </head>
 <body>
-  <div class="panel panel-primary">
-    <div class="panel-heading">
-      <b>특정책명</b>
-    </div>
-
-    <ul class="nav nav-tabs">
-      <li role="presentation"><a href="#">중요정보</a></li>
-      <li role="presentation" class="active"><a href="#">상세정보</a></li>
-
-    </ul>
-
-    <div class="panel-body">
+  <div class="panel-body">
 
       <div class="form-group">
 
@@ -57,6 +46,5 @@
         </div>
       </div>
     </div>
-  </div>
 </body>
 </html>

@@ -1,25 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>검색 결과</title>
-	   <style type="text/css">
-      		<%@ include file="./css/part/feild.css" %>
-       </style>
+<style type="text/css">
+<%@ include file ="./css/part/feild.css" %>
+</style>
 </head>
 <body>
-	<%@include file="./part/user/info.jsp" %>
-	<main>
-	<header>
-	
-	</header>
-	<%@include file="./part/main/headerForSearch.jsp" %>
+	<%@include file="./part/user/info.jsp"%>
+	<main> 
+	<header> </header> 
+	<%@include file="./part/main/headerForSearch.jsp"%>
 	<section>
-		<%@include file="./part/book/info/summary.jsp" %>
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<b>특정책명</b>
+			</div>
+
+			<div role="tabpanel">
+				<ul class="nav nav-tabs">
+					<li role="presentation" class="active"><a href="#summary"
+						aria-controls="summary" role="tab" data-toggle="tab">중요정보</a></li>
+					<li role="presentation"><a href="#detaile"
+						aria-controls="detaile" role="tab" data-toggle="tab">상세정보</a></li>
+				</ul>
+				<div class="tab-content">
+					
+					<div role="tabpanel" class="tab-pane active" id="summary">
+						<%@include file="./part/book/info/summary.jsp"%>
+					</div>
+					
+					<div role="tabpanel" class="tab-pane" id="detaile">
+						<%@include file="./part/book/info/detaile.jsp"%>
+					</div>
+				</div>
+			</div>
+			<!-- tappannel -->
+		</div>
+
 	</section>
-</main>
+	</main>
 
 </body>
 </html>
