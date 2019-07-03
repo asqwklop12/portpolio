@@ -31,13 +31,13 @@ public class MainController {
 		return "redirect:/";
 	}
 	
-	// 검색목록 이동
+	// 검색목록 이동 (로그인이 안되있으면 접근 불가)
 	@RequestMapping(value = "/list",method = RequestMethod.GET)
 	public ModelAndView list() {
 		return new ModelAndView("MainForBookList");
 	}
 	
-	// 게시판으로 이동
+	// 게시판으로 이동 (로그인이 안되 있으면 접근 불가)
 	@RequestMapping(value = "/board",method = RequestMethod.GET)
 	public ModelAndView board() {
 		return new ModelAndView("MainForBoard");

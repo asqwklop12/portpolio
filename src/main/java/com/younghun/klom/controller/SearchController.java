@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class SearchController {
 	
 	
-	// 상세페이지로 이동 (search -> search)
+	// 검색화면으로 이동
 	@RequestMapping(value = "/search/search",method = RequestMethod.GET)
 	public ModelAndView seacrh() {
 		return new ModelAndView("redirect:/search");
@@ -29,14 +29,14 @@ public class SearchController {
 		return new ModelAndView("redirect:/list");
 	}
 	
-	// 상세페이지로 이동 (search -> board)
+	// 게시판으로 이동
 	@RequestMapping(value = "/search/board",method = RequestMethod.GET)
 	public ModelAndView board() {
 		return new ModelAndView("redirect:/board");
 	}
 	
 	
-	// 상세페이지로 이동 (search)
+	// 정보페이지로 이동 
 	@RequestMapping(value = "/search/info",method = RequestMethod.GET)
 	public ModelAndView bookInfo() {
 		return new ModelAndView("BookForSummary");
