@@ -5,9 +5,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+//step3
+
 @Controller
-public class SearchController {
-	// 상세페이지로 이동
+public class UserSearchController {
+	
+	// 정보수정
 	@RequestMapping(value = "/search/login/edit",method = RequestMethod.GET)
 	public ModelAndView edit() {
 		return new ModelAndView("redirect:/login/edit");
