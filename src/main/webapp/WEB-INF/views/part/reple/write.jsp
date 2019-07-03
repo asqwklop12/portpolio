@@ -26,7 +26,7 @@
       <div class="media">
         <div class="media-right media-middle" >
           <a href="#">
-            <img class="media-object" src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+            <img class="media-object"  src="/resources/img/kakao.png" alt="...">
           </a>
         </div>
         <div class="media-body">

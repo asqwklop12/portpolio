@@ -17,7 +17,7 @@
     <div class="panel-body ">
 
       <div class="form-group ">
-        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle imgSize"/>
+        <img  src="/resources/img/kakao.png" alt="" class="img-circle imgSize"/>
       </div>
 
         <div class="form-group">

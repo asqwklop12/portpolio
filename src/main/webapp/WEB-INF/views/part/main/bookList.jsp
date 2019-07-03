@@ -23,30 +23,30 @@
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
@@ -61,31 +61,32 @@
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                    
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
@@ -100,31 +101,31 @@
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                       <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                       <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
@@ -139,31 +140,31 @@
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
@@ -178,31 +179,31 @@
             <div class="row">
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>
@@ -217,31 +218,31 @@
             <div class="row" >
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
 
                 <div class="col-xs-6 col-md-2">
                     <a href="#" class="thumbnail">
-                        <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+                        <img  src="/resources/img/kakao.png" alt="...">
                     </a>
                 </div>
             </div>

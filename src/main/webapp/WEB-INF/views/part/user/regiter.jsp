@@ -29,7 +29,7 @@
       <form class="form-horizontal">
 
         <div class="form-group " align="center">
-          <img src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="" class="img-circle"/>
+          <img  src="/resources/img/kakao.png" alt="" class="img-circle"/>
         </div>
 
         <div class="form-group">
@@ -46,7 +46,7 @@
         <div class="form-group">
           <label for="name" class="col-sm-2 control-label">NickName</label>
           <div class="col-sm-8">
-            <input type="name" class="form-control" id="name" placeholder="name">
+            <input type="text" class="form-control" id="name" placeholder="name">
           </div>
         </div>
 

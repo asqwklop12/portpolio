@@ -21,7 +21,7 @@
    <div class="media container">
        <div class="media-left">
 
-           <img class="media-object" src="D:/younghun/Project/src/main/webapp/WEB-INF/views/img/kakao.png" alt="...">
+           <img class="media-object"  src="/resources/img/kakao.png" alt="...">
 
        </div>
        <div class="media-body">
