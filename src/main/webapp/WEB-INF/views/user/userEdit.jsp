@@ -61,7 +61,13 @@
 					<p>패스워드가 일치하지 않습니다.</p>
 				</div>
 
-
+				<div class="form-group">
+					<label for="introduce" class="col-sm-2 control-label">introduce</label>
+					<div class="col-sm-8">
+						<textarea class="form-control" rows="7" placeholder="안녕하세요."></textarea>
+					</div>
+				</div>
+				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button type="submit" class="btn btn-default disabled">수정

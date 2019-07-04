@@ -75,7 +75,7 @@
 				<div class="form-group">
 					<label for="introduce" class="col-sm-2 control-label">introduce</label>
 					<div class="col-sm-8">
-						<textarea class="form-control" rows="7"></textarea>
+						<textarea class="form-control" rows="7" placeholder="안녕하세요."></textarea>
 					</div>
 				</div>
 
