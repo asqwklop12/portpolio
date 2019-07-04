@@ -11,16 +11,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-</head>
+  <link rel="stylesheet" href="/resources/css/part/main/search.css">
+</head> 
 <body>
 
 <div class="row">
       <div class="col-lg-6">
         <div class="input-group">
-          <input type="text" class="form-control"  placeholder="Search for...">
+          <input type="text" class="form-control"  id="search" placeholder="Search for...">
           <span class="input-group-btn">
-            <a href="search"><button class="btn btn-default" type="button" >Go!</button></a>
+            <a href="search"><button class="btn btn-default glyphicon glyphicon-search" id="icon" type="button" ></button></a>
           </span>
         </div><!-- /input-group -->
       </div><!-- /.col-lg-6 -->
