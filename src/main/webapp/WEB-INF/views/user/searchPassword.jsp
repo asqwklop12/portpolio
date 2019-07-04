@@ -15,6 +15,7 @@
   <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
        <link rel="stylesheet" href="/resources/css/part/other.css">
+      <script type="text/javascript" src="/resources/js/user/password.js"></script> 
 </head>
 <body>
 	<div class="panel panel-primary">
@@ -27,7 +28,7 @@
 			<h3 class="panel-title">비밀번호 찾기</h3>
 		</div>
 		<div class="panel-body">
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="get" action="#" >
 
 				<div class="form-group">
 					<label for="email" class="col-sm-2 control-label">Email</label>
@@ -46,7 +47,7 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default disabled">완료</button>
+						<button type="submit" class="btn btn-default" id="confirm">완료</button>
 					</div>
 				</div>
 

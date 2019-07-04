@@ -26,8 +26,13 @@ public class MainController {
 	}
 	
 	// home으로 (Home)
-	@RequestMapping(value = "/home",method = RequestMethod.GET)
+	@RequestMapping(value = "/home",method = RequestMethod.GET )
 	public String redirect() {
+		return "redirect:/";
+	}
+	
+	@RequestMapping(value = "/home",method = RequestMethod.POST )
+	public String regitData() {
 		return "redirect:/";
 	}
 	
@@ -46,7 +51,7 @@ public class MainController {
 	// 비밀번호 찾을시
 	@RequestMapping(value = "/lost",method = RequestMethod.GET)
 	public ModelAndView lost() {
-		return new ModelAndView("/part/user/searchPassword");
+		return new ModelAndView("/user/searchPassword");
 	}
 	
 	// 로그인 했을 시 (삭제 예정)
@@ -58,7 +63,7 @@ public class MainController {
 	// 회원가입했을 시
 	@RequestMapping(value = "/regit",method = RequestMethod.GET)
 	public ModelAndView regit() {
-		return new ModelAndView("/part/user/regiter");
+		return new ModelAndView("/user/regiter");
 	}
 	
 }

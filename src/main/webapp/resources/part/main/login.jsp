@@ -14,12 +14,13 @@
 <!-- 부가적인 테마 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
        <link rel="stylesheet" href="/resources/css/part/main/Login.css">
-
+<script type="text/javascript" src="/resources/js/main/Login.js"></script>
 </head>
 <body>
 	<div class="panel panel-primary">
@@ -32,18 +33,16 @@
 			<form class="form-horizontal">
 				<br /> <br />
 				<div class="form-group">
-					<label for="email" class="col-sm-2 control-label">Email</label>
-					<div class="col-sm-9">
-						<input type="email" class="form-control" id="email"
+					<div class="col-sm-12">
+						<input type="email" class="form-control" id="email" data-toggle="tooltip" data-placement="left"  title="Email"
 							placeholder="Email">
 					</div>
 				</div>
 
 
 				<div class="form-group">
-					<label for="password" class="col-sm-2 control-label">Password</label>
-					<div class="col-sm-9">
-						<input type="password" class="form-control" id="password"
+					<div class="col-sm-12">
+						<input type="password" class="form-control" id="password" data-toggle="tooltip" data-placement="left"  title="Password"
 							placeholder="password">
 					</div>
 				</div>
@@ -64,7 +63,7 @@
 				<div class="form-group"></div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<a href="login">로그인</a>
+						<a href="#" id="confirm">로그인</a>
 						<a href="regit">회원가입</a>
 					</div>
 				</div>

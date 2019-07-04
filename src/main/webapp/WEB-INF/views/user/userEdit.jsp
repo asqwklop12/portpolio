@@ -25,7 +25,7 @@
 			<h3 class="panel-title">회원 정보 변경</h3>
 		</div>
 		<div class="panel-body">
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="get" action="edit/close">
 
 				<div class="form-group " align="center">
 					<img  src="/resources/img/kakao.png" alt="" class="img-circle imgSize" />
@@ -42,7 +42,7 @@
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label">NickName</label>
 					<div class="col-sm-8">
-						<input type="name" class="form-control" id="name"
+						<input type="text" class="form-control" id="name"
 							placeholder="name">
 					</div>
 				</div>
@@ -70,7 +70,7 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default disabled">수정
+						<button type="submit" class="btn btn-default">수정
 							완료</button>
 						<br /> <br />
 						<button type="submit" class="btn btn-default pull-right">회원탈퇴

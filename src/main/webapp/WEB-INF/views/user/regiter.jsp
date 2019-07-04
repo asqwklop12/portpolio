@@ -18,7 +18,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="/resources/css/part/other.css">
-
+<script type="text/javascript" src="/resources/js/user/regiser.js"></script>
 
 </head>
 <body>
@@ -31,8 +31,9 @@
 			</a>
 			<h3 class="panel-title">회원 가입</h3>
 		</div>
+		
 		<div class="panel-body">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="#" method="get" >
 
 				<div class="form-group " align="center">
 					<img src="/resources/img/kakao.png" alt="" class="img-circle" />
@@ -64,7 +65,7 @@
 					<span class="col-sm-4"> <input type="Password"
 						class="form-control" id="Password" placeholder="Password">
 					</span> <span class="col-sm-4"> <input type="Password"
-						class="form-control" id="corfirm" placeholder="Confirm">
+						class="form-control" id="rePassword" placeholder="Confirm">
 					</span>
 				</div>
 
@@ -81,8 +82,9 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default disabled">Sign
-							up</button>
+						<button type="submit" class="btn btn-default" id="confirm" >Sign
+							up
+						</button>
 					</div>
 				</div>
 
