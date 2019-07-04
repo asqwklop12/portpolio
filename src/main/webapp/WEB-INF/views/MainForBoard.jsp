@@ -17,14 +17,14 @@
 
 </head>
 <body>
-	<%@include file="./part/user/info.jsp" %>
+	<%@include file="/resources/part/user/info.jsp" %>
  <main>
 	<header>
 	
 	</header>
-	<%@include file="./part/main/headerForBoard.jsp" %>
+	<%@include file="/resources/part/main/headerForBoard.jsp" %>
 	<section>
-		<%@include file="./part/board/list.jsp" %>
+		<%@include file="/resources/part/board/list.jsp" %>
 	</section>
   </main>
 

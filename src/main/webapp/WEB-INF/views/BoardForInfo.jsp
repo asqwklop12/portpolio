@@ -18,10 +18,10 @@
 
 </head>
 <body>
-	<%@include file="./part/user/info.jsp"%>
+	<%@include file="/resources/part/user/info.jsp"%>
 	<main> 
 	<header> </header> 
-	<%@include file="./part/main/headerForBoard.jsp"%>
+	<%@include file="/resources/part/main/headerForBoard.jsp"%>
 	<section>
 		<div role="tabpanel">
 			<div class="panel panel-primary">
@@ -37,10 +37,10 @@
 
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="original">
-						<%@include file="./part/board/detaile/info.jsp"%>
+						<%@include file="/resources/part/board/detaile/info.jsp"%>
 					</div>
 					<div role="tabpanel" class="tab-pane" id="edit">
-					<%@include file="./part/board/detaile/edit.jsp"%>
+					<%@include file="/resources/part/board/detaile/edit.jsp"%>
 					</div>
 				</div>
 			</div>

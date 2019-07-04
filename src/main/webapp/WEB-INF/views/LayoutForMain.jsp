@@ -19,25 +19,25 @@
 </head>
 <body>
 <header>
-	<%@include file="./part/main/headerForHome.jsp" %>
+	<%@include file="/resources/part/main/headerForHome.jsp" %>
 </header>
 <nav>
-<%@include file="./part/main/wellcome.jsp" %>
+<%@include file="/resources/part/main/wellcome.jsp" %>
 	  <div class="center container-fluid">
     <div class="center_notice">
-    <%@include file="./part/main/notice.jsp" %>
+    <%@include file="/resources/part/main/notice.jsp" %>
     </div>
 
     <div class="center_Login">
-    <%@include file="./part/main/login.jsp" %>
+    <%@include file="/resources/part/main/login.jsp" %>
     </div>
   </div>
 </nav>
 <section>
-     <%@include file="./part/main/bookList.jsp" %>
+     <%@include file="/resources/part/main/bookList.jsp" %>
 </section>
 <footer>
-       <%@include file="./part/footer/info.jsp" %>
+       <%@include file="/resources/part/footer/info.jsp" %>
 </footer>
 </body>
 </html>

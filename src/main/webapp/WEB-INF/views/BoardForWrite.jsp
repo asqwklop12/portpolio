@@ -16,14 +16,14 @@
  <link rel="stylesheet" href="/resources/css/part/feild.css">
 </head>
 <body>
-	<%@include file="./part/user/info.jsp" %>
+	<%@include file="/resources/part/user/info.jsp" %>
 	<main>
 	<header>
 	
 	</header>
-	<%@include file="./part/main/headerForBoard.jsp" %>
+	<%@include file="/resources/part/main/headerForBoard.jsp" %>
 	<section>
-		<%@include file="./part/board/detaile/write.jsp" %></section>
+		<%@include file="/resources/part/board/detaile/write.jsp" %></section>
 </main>
 
 </body>

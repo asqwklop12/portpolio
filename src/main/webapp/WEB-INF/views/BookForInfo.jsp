@@ -16,10 +16,10 @@
  <link rel="stylesheet" href="/resources/css/part/feild.css">
 </head>
 <body>
-	<%@include file="./part/user/info.jsp"%>
+	<%@include file="/resources/part/user/info.jsp"%>
 	<main> 
 	<header> </header> 
-	<%@include file="./part/main/headerForSearch.jsp"%>
+	<%@include file="/resources/part/main/headerForSearch.jsp"%>
 	<section>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -36,11 +36,11 @@
 				<div class="tab-content">
 					
 					<div role="tabpanel" class="tab-pane active" id="summary">
-						<%@include file="./part/book/info/summary.jsp"%>
+						<%@include file="/resources/part/book/info/summary.jsp"%>
 					</div>
 					
 					<div role="tabpanel" class="tab-pane" id="detaile">
-						<%@include file="./part/book/info/detaile.jsp"%>
+						<%@include file="/resources/part/book/info/detaile.jsp"%>
 					</div>
 				</div>
 			</div>

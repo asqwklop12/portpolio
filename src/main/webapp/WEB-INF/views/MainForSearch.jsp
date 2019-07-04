@@ -18,12 +18,12 @@
 
 </head>
 <body>
-	<%@include file="./part/user/info.jsp" %>
+	<%@include file="/resources/part/user/info.jsp" %>
 	<main>
 	<header>
 	
 	</header>
-	<%@include file="./part/main/headerForSearch.jsp" %>
+	<%@include file="/resources/part/main/headerForSearch.jsp" %>
 	<section>
 	
 	<div class="panel panel-primary">
@@ -32,7 +32,7 @@
     	</div>
     
     <div class="panel-body result_click">
-		<%@include file="./part/book/result.jsp" %>
+		<%@include file="/resources/part/book/result.jsp" %>
 
       <div class="text-center">
 
