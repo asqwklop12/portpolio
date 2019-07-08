@@ -8,7 +8,7 @@
 
  <insert id="regit">
  	Insert into userInfo 
- 	values(#(image), #(email), #(name), #(password), #(introduce), now)
+ 	values(#{image}, #{email}, #{name}, #{password}, #{introduce}, now)
  </insert>
 </mapper>
 
