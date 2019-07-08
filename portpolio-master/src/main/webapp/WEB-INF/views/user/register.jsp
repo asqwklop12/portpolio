@@ -30,7 +30,7 @@
 		</div>
 		
 		<div class="panel-body">
-			<form class="form-horizontal" action="#" method="post" >
+			<form class="form-horizontal" action="home" method="post" >
 
 				<div class="form-group " align="center">
 					<img src="/resources/img/kakao.png" alt="" class="img-circle" />
@@ -78,11 +78,10 @@
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default" id="confirm" >Sign up
+						<button type="submit" class="btn btn-default"  id="confirm" >Sign up
 						</button>
 					</div>
 				</div>
-
 			</form>
 		</div>
 	</div>
