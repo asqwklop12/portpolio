@@ -14,10 +14,16 @@ public class UserDaoImpl implements UserDao{
 	
 	private static final String NAMESPACE ="UserMapper.";
 	
+
+
+
+
 	@Override
-	public void regit(UserVo userVo) {
-		sqlSession.insert(NAMESPACE +".regit", userVo);
+	public void register(UserVo userVo) {
+	
+		sqlSession.insert(NAMESPACE + "Register",userVo);
 		
 	}
+	
 
 }

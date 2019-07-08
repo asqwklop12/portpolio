@@ -2,9 +2,11 @@ package com.younghun.klom.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.younghun.klom.model.dao.UserDao;
@@ -41,11 +43,12 @@ public class MainController {
 	
 	//회원가입 완료
 	@RequestMapping(value = "/home",method = RequestMethod.POST )
-	public String regitData(@RequestParam UserVo userVo) {
-		userDao.regit(userVo);
+	public String regitData(UserVo userVo) {
+		userDao.register(userVo);
 		return "redirect:/";
 	}
 	
+
 	// 검색목록 이동 (로그인이 안되있으면 접근 불가)
 	@RequestMapping(value = "/list",method = RequestMethod.GET)
 	public ModelAndView list() {
@@ -71,9 +74,12 @@ public class MainController {
 	}
 	
 	// 회원가입했을 시
-	@RequestMapping(value = "/regit",method = RequestMethod.GET)
-	public ModelAndView regit() {
-		return new ModelAndView("/user/regiter");
+	@RequestMapping(value = "/register",method = RequestMethod.GET)
+	public ModelAndView regit(ModelAndView modelAndView) {
+		UserVo userVo = new UserVo();
+		modelAndView.addObject("userVo",userVo);
+		modelAndView.setViewName("/user/register");
+		return modelAndView;
 	}
 	
 }

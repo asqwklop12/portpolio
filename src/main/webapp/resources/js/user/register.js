@@ -58,7 +58,8 @@ window.onload = function() {
 			return;
 		}
 		
-		location.href = "home";
+		return "home";
+		
 	}
 }
 

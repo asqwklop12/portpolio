@@ -30,7 +30,7 @@
 		</div>
 		
 		<div class="panel-body">
-			<form class="form-horizontal" action="#" method="get" >
+			<form class="form-horizontal" action="#" method="post" >
 
 				<div class="form-group " align="center">
 					<img src="/resources/img/kakao.png" alt="" class="img-circle" />
@@ -39,7 +39,7 @@
 				<div class="form-group">
 					<label for="email" class="col-sm-2 control-label">Email</label>
 					<div class="col-sm-8">
-						<input type="email" class="form-control" id="email"
+						<input type="email" class="form-control" id="email" name="email"
 							placeholder="Email">
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 				<div class="form-group">
 					<label for="name" class="col-sm-2 control-label">NickName</label>
 					<div class="col-sm-8">
-						<input type="text" class="form-control" id="name"
+						<input type="text" class="form-control" id="name" name="name"
 							placeholder="name">
 					</div>
 				</div>
@@ -57,11 +57,11 @@
 				<div class="form-group">
 					<label for="Password" class="col-sm-2 control-label">Password</label>
 					<span class="col-sm-4"> 
-						<input type="Password" class="form-control" id="Password" placeholder="Password">
+						<input type="Password" class="form-control" id="Password" placeholder="Password" name="password">
 					</span> 
 					
 					<span class="col-sm-4"> 
-					   <input type="Password" class="form-control" id="rePassword" placeholder="Confirm">
+					   <input type="Password" class="form-control" id="rePassword" placeholder="Confirm" name="confirm">
 					</span>
 				</div>
 
