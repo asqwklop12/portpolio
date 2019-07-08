@@ -22,6 +22,7 @@
 	<%@include file="/resources/part/main/headerForHome.jsp" %>
 </header>
 <nav>
+
 <%@include file="/resources/part/main/wellcome.jsp" %>
 	  <div class="center container-fluid">
     <div class="center_notice">

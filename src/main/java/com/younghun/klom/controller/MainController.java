@@ -1,9 +1,15 @@
 package com.younghun.klom.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.younghun.klom.model.dao.UserDao;
+import com.younghun.klom.model.dao.UserDaoImpl;
+import com.younghun.klom.model.vo.UserVo;
 
 
 //step1
@@ -11,6 +17,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
+	@Autowired
+	private UserDaoImpl userDao;
 	
 	// 루트값설정 (Home)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -31,8 +39,10 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	//회원가입 완료
 	@RequestMapping(value = "/home",method = RequestMethod.POST )
-	public String regitData() {
+	public String regitData(@RequestParam UserVo userVo) {
+		userDao.regit(userVo);
 		return "redirect:/";
 	}
 	
