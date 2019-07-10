@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.younghun.klom.user.dao.UserDaoImpl;
+import com.younghun.klom.user.service.UserService;
 import com.younghun.klom.user.vo.UserVo;
 
 
@@ -18,7 +19,7 @@ import com.younghun.klom.user.vo.UserVo;
 public class MainController {
 
 	@Autowired
-	private UserDaoImpl userDao;
+	private UserService userService;
 	
 	// 루트값설정 (Home)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -42,7 +43,7 @@ public class MainController {
 	//회원가입 완료
 	@RequestMapping(value = "/home",method = RequestMethod.POST )
 	public String regitData(UserVo userVo) {
-		userDao.register(userVo);
+		userService.register(userVo);
 		return "redirect:/";
 	}
 	
@@ -64,13 +65,7 @@ public class MainController {
 	public ModelAndView lost() {
 		return new ModelAndView("/user/searchPassword");
 	}
-	
-	// 로그인 했을 시 (삭제 예정)
-	@RequestMapping(value = "/login",method = RequestMethod.GET)
-	public ModelAndView login() {
-		return new ModelAndView("LayoutForMain2");
-	}
-	
+	 	
 	// 회원가입했을 시
 	@RequestMapping(value = "/register",method = RequestMethod.GET)
 	public ModelAndView regit(ModelAndView modelAndView) {

@@ -10,14 +10,26 @@
  	Insert into 
  					userInfo 
  	values
- 	         (#{image}, 
- 	          #{email},
- 	          #{name}, 
- 	          #{password},
- 	          #{introduce},
- 	          now())
+ 	      (      #{image} 
+ 	          ,  #{email}
+ 	          ,  #{name} 
+ 	          ,  #{password}
+ 	          ,  #{introduce}
+ 	          ,  now()
+ 	       )
  	          
  </insert>
+  
+ <select id="login" resultMap="LoginResult">
+   
+    SELECT   UserEmail
+               , UserPassword
+                                      FROM UserInfo
+                                      
+    WHERE UserEmail = #{email}                             
+         
+ </select>
+ 
 </mapper>
 
 

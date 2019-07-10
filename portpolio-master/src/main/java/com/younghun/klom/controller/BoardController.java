@@ -8,31 +8,32 @@ import org.springframework.web.servlet.ModelAndView;
 //step2
 
 @Controller
+@RequestMapping("/board")
 public class BoardController {
 	
 	// 검색화면 이동
-	@RequestMapping(value = "/board/search",method = RequestMethod.GET)
+	@RequestMapping(value = "/search",method = RequestMethod.GET)
 	public ModelAndView search() {
 		return new ModelAndView("redirect:/search");
 	}
 	
 	
 	// home으로이동
-	@RequestMapping(value = "/board/home",method = RequestMethod.GET)
+	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String redirect() {
 		return "redirect:/login";
 	}
 	
 	
 	// 검색목록 이동
-	@RequestMapping(value = "/board/list",method = RequestMethod.GET)
+	@RequestMapping(value = "/list",method = RequestMethod.GET)
 	public ModelAndView list() {
 		return new ModelAndView("redirect:/list");
 	}
 	
 	
 	// 게시판으로 (연속클릭 버그 수정)
-	@RequestMapping(value = "/board/board",method = RequestMethod.GET)
+	@RequestMapping(value = "/board",method = RequestMethod.GET)
 	public ModelAndView board() {
 		return new ModelAndView("redirect:/board");
 	}
@@ -47,13 +48,13 @@ public class BoardController {
 	
 
 	// 작성페이지로 이동
-	@RequestMapping(value = "/board/write",method = RequestMethod.GET)
+	@RequestMapping(value = "/write",method = RequestMethod.GET)
 	public ModelAndView write() {
 		return new ModelAndView("BoardForWrite");
 	}
 	
 	// 게시글 삭제 (본인 글이 아니면 삭제 금지)
-	@RequestMapping(value = "/board/delete",method = RequestMethod.GET)
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
 	public ModelAndView delete() {
 		return new ModelAndView("redirect:/board");
 	}

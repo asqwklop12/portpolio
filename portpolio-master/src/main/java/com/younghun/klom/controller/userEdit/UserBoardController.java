@@ -8,16 +8,17 @@ import org.springframework.web.servlet.ModelAndView;
 //step3
 
 @Controller
+@RequestMapping("/board/login")
 public class UserBoardController {
 	
 	// 정보 수정
-	@RequestMapping(value = "/board/login/edit",method = RequestMethod.GET)
+	@RequestMapping(value = "/edit",method = RequestMethod.GET)
 	public ModelAndView edit() {
 		return new ModelAndView("redirect:/login/edit");
 	}
 	
 	// 로그아웃
-	@RequestMapping(value = "/board/login/logout",method = RequestMethod.GET)
+	@RequestMapping(value = "/logout",method = RequestMethod.GET)
 	public ModelAndView logout() {
 		return new ModelAndView("redirect:/");
 	}
