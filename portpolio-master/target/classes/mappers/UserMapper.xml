@@ -19,17 +19,7 @@
  	       )
  	          
  </insert>
-  
- <select id="login" resultMap="LoginResult">
    
-    SELECT   UserEmail
-               , UserPassword
-                                      FROM UserInfo
-                                      
-    WHERE UserEmail = #{email}                             
-         
- </select>
- 
 </mapper>
 
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@  taglib uri="http://java.sun.com/jstl/core"  prefix="c"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,8 @@
 <script type="text/javascript" src="/resources/js/main/Login.js"></script>
 </head>
 <body>
+ 
+
 	<div class="panel panel-primary">
 		<div class="panel-heading">
 			<h3 class="panel-title">로그인</h3>
@@ -28,7 +31,7 @@
 		<div class="panel-body">
 
 
-			<form class="form-horizontal">
+			<form class="form-horizontal" method="post" >
 				<br /> <br />
 				<div class="form-group">
 					<div class="col-sm-12">
@@ -61,7 +64,7 @@
 				<div class="form-group"></div>
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="button" id="confirm">로그인</button>
+						<button type="submit" id="confirm">로그인</button>
 						<a href="register">회원가입</a>
 					</div>
 				</div>

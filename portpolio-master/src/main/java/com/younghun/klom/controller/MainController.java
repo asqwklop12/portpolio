@@ -2,6 +2,7 @@ package com.younghun.klom.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,6 +29,14 @@ public class MainController {
 		return model;
 	}
 	
+	
+	// 로그인 했을 시 
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login() {
+		return new ModelAndView("MainForSearch");
+	}
+	
+	
 	// 검색결과 이동 (search)
 	@RequestMapping(value = "/search",method = RequestMethod.GET)
 	public ModelAndView search() {
@@ -40,9 +49,19 @@ public class MainController {
 		return "redirect:/";
 	}
 	
+	// 회원가입했을 시
+	@RequestMapping(value = "/register",method = RequestMethod.GET)
+	public ModelAndView regit(ModelAndView modelAndView) {
+		UserVo userVO = new UserVo();
+		modelAndView.addObject("userVo",userVO);
+		modelAndView.setViewName("/user/register");
+		return modelAndView;
+	}
+	
 	//회원가입 완료
 	@RequestMapping(value = "/home",method = RequestMethod.POST )
 	public String regitData(UserVo userVo) {
+
 		userService.register(userVo);
 		return "redirect:/";
 	}
@@ -66,13 +85,6 @@ public class MainController {
 		return new ModelAndView("/user/searchPassword");
 	}
 	 	
-	// 회원가입했을 시
-	@RequestMapping(value = "/register",method = RequestMethod.GET)
-	public ModelAndView regit(ModelAndView modelAndView) {
-		UserVo userDto = new UserVo();
-		modelAndView.addObject("userVo",userDto);
-		modelAndView.setViewName("/user/register");
-		return modelAndView;
-	}
+
 	
 }

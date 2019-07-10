@@ -17,15 +17,14 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public void register(UserVo userVo) {
-	
+
 		sqlSession.insert(NAMESPACE + "Register",userVo);
 		
 	}
 
 	@Override
 	public UserVo login(LoginDto loginDto) throws Exception {
-		// TODO Auto-generated method stub
-		return sqlSession.selectOne(NAMESPACE + ".login", loginDto);
+		return sqlSession.selectOne(NAMESPACE + "login", loginDto);
 	}
 
 

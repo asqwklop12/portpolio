@@ -31,7 +31,7 @@ public class SearchController {
 	}
 	
 	// 게시판으로 이동
-	@RequestMapping(value = "/search/board",method = RequestMethod.GET)
+	@RequestMapping(value = "/board",method = RequestMethod.GET)
 	public ModelAndView board() {
 		return new ModelAndView("redirect:/board");
 	}

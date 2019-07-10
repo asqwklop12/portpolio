@@ -10,24 +10,17 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/login")
 public class LoginController {
-		
-	// 로그인 했을 시 (삭제 예정)
-	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView login() {
-		return new ModelAndView("LayoutForMain2");
+
+	// 정보 수정
+	@RequestMapping(value = "/edit", method = RequestMethod.GET)
+	public ModelAndView edit() {
+		return new ModelAndView("/user/userEdit");
 	}
-	
-		// 정보 수정 
-		@RequestMapping(value = "/edit",method = RequestMethod.GET)
-		public ModelAndView edit() {
-			return new ModelAndView("/user/userEdit");
-		}
-		
-		// 로그아웃
-		@RequestMapping(value = "/logout",method = RequestMethod.GET)
-		public ModelAndView logout() {
-			return new ModelAndView("redirect:/");
-		}
-		
-		
+
+	// 로그아웃
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public ModelAndView logout() {
+		return new ModelAndView("redirect:/");
+	}
+
 }
