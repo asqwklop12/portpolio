@@ -21,13 +21,11 @@ public class UserDaoImpl implements UserDao{
 		sqlSession.insert(NAMESPACE + "Register",userVo);
 		
 	}
-
+  
 	@Override
-	public UserVo login(LoginDto loginDto) throws Exception {
-		return sqlSession.selectOne(NAMESPACE + "login", loginDto);
+	public UserVo login(String email, String password) {
+		System.out.println(email + password); 
+		return sqlSession.selectOne(NAMESPACE + "login",email); 
 	}
-
-
-
 
 }

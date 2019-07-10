@@ -5,6 +5,5 @@ import com.younghun.klom.user.vo.UserVo;
 
 public interface UserDao {
 	void register (UserVo userVo);
-	
-	UserVo login(LoginDto loginDto) throws Exception;
+	UserVo login (String email, String password);
  }

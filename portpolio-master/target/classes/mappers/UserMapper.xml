@@ -19,7 +19,17 @@
  	       )
  	          
  </insert>
+         
+ <select id="login" resultType ="LoginResult">
    
+    SELECT   UserEmail
+               , UserPassword
+                                      FROM UserInfo
+                                      
+    WHERE UserEmail = #{email}                             
+         
+ </select>
+ 
 </mapper>
 
 

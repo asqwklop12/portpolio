@@ -1,5 +1,7 @@
 package com.younghun.klom.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.younghun.klom.user.dao.UserDaoImpl;
+import com.younghun.klom.user.dto.LoginDto;
 import com.younghun.klom.user.service.UserService;
 import com.younghun.klom.user.vo.UserVo;
 
@@ -31,9 +34,19 @@ public class MainController {
 	
 	
 	// 로그인 했을 시 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView login() {
-		return new ModelAndView("MainForSearch");
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public ModelAndView login( LoginDto loginDto, HttpSession httpSession) throws Exception {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("redirect:/");
+		
+		UserVo login = userService.login(loginDto.getEmail(),loginDto.getPassword());
+		System.out.println(login);      
+		if (login != null) {
+			
+			httpSession.setAttribute("userLogin", login);
+		}
+		
+		return model;
 	}
 	
 	

@@ -20,8 +20,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserVo login(LoginDto loginDto) throws Exception {
-		return userDao.login(loginDto);
+	public UserVo login(String email, String password) {
+		System.out.println(email);
+		return userDao.login(email,password);
 	}
 
 }
