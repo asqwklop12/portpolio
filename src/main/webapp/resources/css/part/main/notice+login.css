@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.center_notice {
+	display: inline-block;
+	width: 80%;
+	float: left;
+}
+
+.center_Login {
+	display: inline-block;
+	width: 20%;
+	float: right;
+}

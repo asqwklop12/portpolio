@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.border {
+	border-bottom: 1px solid;
+	margin-bottom: 1%;
+}
+
+.result_click {
+	cursor: pointer;
+}

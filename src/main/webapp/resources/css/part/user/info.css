@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+input[type="checkbox"]:checked ~ nav {
+	width: 250px;
+}
+
+input[type="checkbox"]:checked ~ nav ul li a span {
+	opacity: 1;
+	transition: opacity 0.25s ease-in-out;
+}
+
+input[type="checkbox"]:checked ~ main {
+	left: 250px;
+}
+
+nav {
+	position: fixed;
+	z-index: 9;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	background: #383e49;
+	color: #9aa3a8;
+	width: 50px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: lighter;
+	transition: all 0.15s ease-in-out;
+}
+
+nav label[for="menu_state"] i {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	right: -8px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	background: #fff;
+	font-size: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	border: 1px solid #ddd;
+	transition: width 0.15s ease-in-out;
+	z-index: 1;
+}
+
+.nav_img {
+	margin-top: 40%;
+}
+
+.icon {
+	border: 3px solid yellow;
+}
+
+.nav_name {
+	margin-top: 5%;
+}
+
+.nav_button {
+	margin-top: 30%;
+}
