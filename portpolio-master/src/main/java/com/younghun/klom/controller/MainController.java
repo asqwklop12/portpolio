@@ -2,16 +2,14 @@ package com.younghun.klom.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.younghun.klom.model.dao.UserDao;
-import com.younghun.klom.model.dao.UserDaoImpl;
-import com.younghun.klom.model.dto.UserDto;
+import com.younghun.klom.user.dao.UserDaoImpl;
+import com.younghun.klom.user.vo.UserVo;
+
+
 
 
 //step1
@@ -43,8 +41,8 @@ public class MainController {
 	
 	//회원가입 완료
 	@RequestMapping(value = "/home",method = RequestMethod.POST )
-	public String regitData(UserDto userDto) {
-		userDao.register(userDto);
+	public String regitData(UserVo userVo) {
+		userDao.register(userVo);
 		return "redirect:/";
 	}
 	
@@ -76,7 +74,7 @@ public class MainController {
 	// 회원가입했을 시
 	@RequestMapping(value = "/register",method = RequestMethod.GET)
 	public ModelAndView regit(ModelAndView modelAndView) {
-		UserDto userDto = new UserDto();
+		UserVo userDto = new UserVo();
 		modelAndView.addObject("userVo",userDto);
 		modelAndView.setViewName("/user/register");
 		return modelAndView;
