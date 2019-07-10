@@ -1,4 +1,4 @@
-package com.younghun.klom.model.vo;
+package com.younghun.klom.model.dto;
 
 import java.util.Date;
 
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class UserVo {
+public class UserDto {
 	private String image;
 	private String email;
 	private String name;

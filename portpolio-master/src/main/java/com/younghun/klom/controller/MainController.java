@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.younghun.klom.model.dao.UserDao;
 import com.younghun.klom.model.dao.UserDaoImpl;
-import com.younghun.klom.model.vo.UserVo;
+import com.younghun.klom.model.dto.UserDto;
 
 
 //step1
@@ -43,8 +43,8 @@ public class MainController {
 	
 	//회원가입 완료
 	@RequestMapping(value = "/home",method = RequestMethod.POST )
-	public String regitData(UserVo userVo) {
-		userDao.register(userVo);
+	public String regitData(UserDto userDto) {
+		userDao.register(userDto);
 		return "redirect:/";
 	}
 	
@@ -76,8 +76,8 @@ public class MainController {
 	// 회원가입했을 시
 	@RequestMapping(value = "/register",method = RequestMethod.GET)
 	public ModelAndView regit(ModelAndView modelAndView) {
-		UserVo userVo = new UserVo();
-		modelAndView.addObject("userVo",userVo);
+		UserDto userDto = new UserDto();
+		modelAndView.addObject("userVo",userDto);
 		modelAndView.setViewName("/user/register");
 		return modelAndView;
 	}
