@@ -10,5 +10,6 @@
 	<typeAlias alias="LoginResult" type="com.younghun.klom.user.dto.LoginDto"/>
 </typeAliases>
 
-
+ 
 </configuration> 
+	

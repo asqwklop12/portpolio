@@ -1,5 +1,7 @@
 package com.younghun.klom.user.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -17,15 +19,13 @@ public class UserDaoImpl implements UserDao{
 	
 	@Override
 	public void register(UserVo userVo) {
-
 		sqlSession.insert(NAMESPACE + "Register",userVo);
-		
 	}
   
 	@Override
-	public UserVo login(String email, String password) {
-		System.out.println(email + password); 
-		return sqlSession.selectOne(NAMESPACE + "login",email); 
+	public Map<String, String> login(LoginDto loginDto) {
+		System.out.println(loginDto.getPassword()); 
+		return sqlSession.selectOne(NAMESPACE + "login",loginDto); 
 	}
 
 }

@@ -17,9 +17,4 @@ public class UserBoardController {
 		return new ModelAndView("redirect:/login/edit");
 	}
 	
-	// 로그아웃
-	@RequestMapping(value = "/logout",method = RequestMethod.GET)
-	public ModelAndView logout() {
-		return new ModelAndView("redirect:/");
-	}
 }

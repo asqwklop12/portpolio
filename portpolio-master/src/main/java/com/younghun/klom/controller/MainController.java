@@ -1,5 +1,7 @@
 package com.younghun.klom.controller;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,14 +40,14 @@ public class MainController {
 	public ModelAndView login( LoginDto loginDto, HttpSession httpSession) throws Exception {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("redirect:/");
-		
-		UserVo login = userService.login(loginDto.getEmail(),loginDto.getPassword());
-		System.out.println(login);      
+				 
+		Map<String, String> login = userService.login(loginDto);  
+		System.out.println(login);
 		if (login != null) {
 			
 			httpSession.setAttribute("userLogin", login);
 		}
-		
+		 
 		return model;
 	}
 	

@@ -1,5 +1,7 @@
 package com.younghun.klom.user.service;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +22,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public UserVo login(String email, String password) {
-		System.out.println(email);
-		return userDao.login(email,password);
+	public Map<String,String> login(LoginDto loginDto) {
+		return userDao.login(loginDto);
 	}
 
 }

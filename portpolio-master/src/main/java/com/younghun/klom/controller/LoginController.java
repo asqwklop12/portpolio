@@ -1,5 +1,7 @@
 package com.younghun.klom.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,7 +21,8 @@ public class LoginController {
 
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public ModelAndView logout() {
+	public ModelAndView logout(HttpSession httpSession) {
+		httpSession.setAttribute("userLogin", null);
 		return new ModelAndView("redirect:/");
 	}
 
