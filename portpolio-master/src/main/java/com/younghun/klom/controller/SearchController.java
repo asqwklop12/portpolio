@@ -21,7 +21,7 @@ public class SearchController {
 	// home으로 이동
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String redirect() {
-		return "redirect:/login";
+		return "redirect:/";
 	}
 	
 	// 검색목록으로 이동

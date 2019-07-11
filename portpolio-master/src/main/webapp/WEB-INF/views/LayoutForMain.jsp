@@ -18,8 +18,9 @@
        
 </head>
 <body>
-<header>
 	<%@include file="/resources/part/main/headerForHome.jsp" %>
+<header>
+
 </header>
 <nav>
 

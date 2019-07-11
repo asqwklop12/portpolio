@@ -7,9 +7,9 @@
 <configuration>
 
 <typeAliases>
-	<typeAlias alias="LoginResult" type="com.younghun.klom.user.dto.LoginDto"/>
+	<typeAlias alias="LoginResult" type="com.younghun.klom.model.user.dto.LoginDto"/>
+	<typeAlias alias="BoardList" type="com.younghun.klom.model.board.vo.BoardListVo"/>
 </typeAliases>
-
  
 </configuration> 
 	

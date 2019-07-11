@@ -33,7 +33,7 @@
 			<form class="form-horizontal" action="home" method="post" >
 
 				<div class="form-group " align="center">
-					<img src="/resources/img/kakao.png" alt="" class="img-circle" />
+					<img src="/resources/img/kakao.png" alt="" class="img-circle" name="image"/>
 				</div>
 
 				<div class="form-group">
@@ -72,7 +72,7 @@
 				<div class="form-group">
 					<label for="introduce" class="col-sm-2 control-label">introduce</label>
 					<div class="col-sm-8">
-						<textarea class="form-control" rows="7" placeholder="안녕하세요." id="introduce"></textarea>
+						<textarea class="form-control" rows="7" placeholder="안녕하세요." id="introduce" name="introduce"></textarea>
 					</div>
 				</div>
 
