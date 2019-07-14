@@ -6,10 +6,13 @@
 
 <configuration>
 
-<typeAliases>
-	<typeAlias alias="LoginResult" type="com.younghun.klom.model.user.dto.LoginDto"/>
-	<typeAlias alias="BoardList" type="com.younghun.klom.model.board.vo.BoardListVo"/>
-</typeAliases>
- 
+	<typeAliases>
+		<!-- user -->
+		<typeAlias alias="login" type="com.younghun.klom.model.user.dto.LoginDto"/>
+		<!-- board -->
+		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
+		<typeAlias alias="result" type="com.younghun.klom.model.board.dto.DetailDto"/>
+	</typeAliases>
+	 
 </configuration> 
 	

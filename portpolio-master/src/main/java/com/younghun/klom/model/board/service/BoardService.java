@@ -1,9 +1,7 @@
 package com.younghun.klom.model.board.service;
 
-import java.util.List;
+import com.younghun.klom.model.board.dao.BoardDao;
 
-import com.younghun.klom.model.board.vo.BoardListVo;
+public interface BoardService extends BoardDao{
 
-public interface BoardListService {
-	List<BoardListVo> boardList(); 
 }

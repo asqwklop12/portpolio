@@ -18,7 +18,7 @@
  	   boardInfo 
  </select>
  
- <select id="detail" parameterType ="detail" resultType="detail">
+ <select id="detail" resultType="result">
     	
       SELECT 
       		    	boardId			as no
@@ -32,13 +32,12 @@
       		      JOIN 
       		      		userInfo 
       		      				  ON 
-      		      				  		boardWriter = userName;
+      		      				  		boardWriter = userName
       		      				  		
       		     WHERE 
       		     
       		     	   	boardId = #{no}  		
-      		       and
-      		     		userName = #{writer}				  		
+      		     				  		
  </select>
    
 </mapper>

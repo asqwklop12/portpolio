@@ -1,38 +1,57 @@
 package com.younghun.klom.controller;
 
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.younghun.klom.model.board.service.BoardListService;
-import com.younghun.klom.model.board.vo.BoardListVo;
+import com.younghun.klom.model.board.dto.DetailDto;
+import com.younghun.klom.model.board.service.BoardService;
+import com.younghun.klom.model.board.vo.BoardVo;
 
 import lombok.extern.slf4j.Slf4j;
 
 //step2
 
-@Slf4j
+
 @Controller
 @RequestMapping("/board")
 public class BoardController {
 	
-
+    
 	@Autowired
-	private BoardListService boardListService;
+	private BoardService boardListService;
 	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	//TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
 	@GetMapping
-	public ModelAndView main(ModelAndView model) {
-		List<BoardListVo> boardList = boardListService.boardList();
-		model.addObject("boardList", boardList);
+	public ModelAndView main() {
+		List<BoardVo> list = boardListService.boardList();
+		ModelAndView model = new ModelAndView();	 
+		model.addObject("list", list);
 		model.setViewName("MainForBoard");
 		return model;
 	}
+	
+	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
+		@RequestMapping(value = "/into/{no}",method = RequestMethod.GET)
+		public ModelAndView into(@PathVariable("no") long no) {
+			DetailDto detail = boardListService.find(no);
+			ModelAndView model = new ModelAndView();
+			model.addObject("detail",detail);
+			model.setViewName("BoardForInfo");
+			return model;
+		}
 	
 	// 검색화면 이동
 	@RequestMapping(value = "/search",method = RequestMethod.GET)
@@ -44,7 +63,7 @@ public class BoardController {
 	// home으로이동
 	@RequestMapping(value = "/home",method = RequestMethod.GET)
 	public String redirect() {
-		return "redirect:/login";
+		return "redirect:/";
 	}
 	
 	
@@ -60,15 +79,6 @@ public class BoardController {
 	public ModelAndView board() {
 		return new ModelAndView("redirect:/board");
 	}
-	
-
-	
-	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
-	@RequestMapping(value = "/into",method = RequestMethod.GET)
-	public ModelAndView into() {
-		return new ModelAndView("BoardForInfo");
-	}
-	
 	
 
 	
