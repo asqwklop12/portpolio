@@ -42,6 +42,7 @@ public class UserServiceImpl implements UserService {
 		if (passwordEncoder.matches(loginDto.getPassword(), login.get("password"))) {
 			login = userDao.login(loginDto);
 		}
+		
 		return login;
 	}
 
