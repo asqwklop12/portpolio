@@ -8,12 +8,14 @@
 
  <insert id="Register">
  	Insert into  userInfo (
- 							 UserImage
- 						   , UserEmail
- 						   , UserName
- 						   , UserPassword
- 						   , UserIntroduce
- 						   , UserDate )
+ 							  UserImage
+ 						    , UserEmail
+ 						    , UserName
+ 						    , UserPassword
+ 						    , UserIntroduce
+ 						    , UserDate 
+ 						   
+ 						   )
  					 
  	values
  	
@@ -30,18 +32,19 @@
          
  <select id="login"  parameterType="login" resultType ="map">
    
-    SELECT       UserEmail
-               , UserPassword
-               , UserName
+    SELECT        UserEmail 
+    			, UserPassword as password
+    			, UserName
+    
                                       FROM UserInfo
                                       
     WHERE 
                UserEmail = #{email}
                
-               and
-               
-               UserPassword = #{password}   
          
  </select>
-   
+
+
+
+
 </mapper>

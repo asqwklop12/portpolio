@@ -24,8 +24,9 @@ public class UserDaoImpl implements UserDao{
   
 	@Override
 	public Map<String, String> login(LoginDto loginDto) {
-//		System.out.println(loginDto.getPassword()); 
 		return sqlSession.selectOne(NAMESPACE + "login",loginDto); 
 	}
+
+	
 
 }
