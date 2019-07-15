@@ -7,10 +7,18 @@
 <mapper namespace="UserMapper">
 
  <insert id="Register">
- 	Insert into 
- 					userInfo 
+ 	Insert into  userInfo (
+ 							 UserImage
+ 						   , UserEmail
+ 						   , UserName
+ 						   , UserPassword
+ 						   , UserIntroduce
+ 						   , UserDate )
+ 					 
  	values
- 	      (      #{image} 
+ 	
+ 	      ( 	      		 
+ 	             #{image} 
  	          ,  #{email}
  	          ,  #{name} 
  	          ,  #{password}
