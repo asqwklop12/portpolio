@@ -39,19 +39,22 @@
 								aria-hidden="true"></span></th>
 							<th><span class="glyphicon glyphicon-share"
 								aria-hidden="true"></span></th>
+									
 						</tr>
 					</thead>
 			 
-					<tbody  onclick="go()" >
-					<c:forEach var="board" items="${boardList}">
-						<tr>
-							<td>${board.id}</td>
-							<td>${board.title}</td>
-							<td>${board.writer}</td>
-							<td>${board.date}</td>
-
-						</tr>
-				</c:forEach>
+					<tbody>
+						<c:forEach var="board" items="${list}">
+							<tr>
+								<td>${board.no}</td>
+								<td><a href="board/into?no=${board.no}">${board.title}</a></td>
+								<td>${board.writer}</td>
+								<td>${board.date}</td>
+								<td>0</td>
+								<td>0</td>
+								<td>0</td> 
+							</tr>
+					</c:forEach>
 					</tbody>
 			
 				</table>
@@ -66,12 +69,6 @@
 			</div>
 		</div>
 	</div>
-	
-	<script type="text/javascript">
-		function go() {
-			location.href="board/into";
-		}
-	</script>	
-	
+		
 </body>
 </html>

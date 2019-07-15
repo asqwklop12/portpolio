@@ -28,12 +28,12 @@
             <img  src="/resources/img/kakao.png" alt="" class="img-circle imgSize" />
             <br />
             <br />
-            <b id="id">asqwklop12</b>
+            <b id="id">${detail.writer}</b>
           </div>
           <div class="media-body">
             <div class="panel panel-default">
               <div class="panel-body">
-                 글작성 부분
+                 ${detail.content}
               </div>
             </div>
           </div>

@@ -6,14 +6,38 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BoardMapper">
 
- <select id="list" resultType="BoardList">
+ <select id="list" resultType="board">
      
-       SELECT 
-                  *
-                                           FROM 
- 														    boardInfo 
-
+       SELECT  
+                     boardId 		as no
+                    ,boardTitle 	as title
+                    ,boardWriter	as writer
+       	            ,boardDate   	as date
+       	            
+                                                FROM 
+ 	   boardInfo 
+ </select>
  
+ <select id="detail" resultType="result">
+    	
+      SELECT 
+      		    	boardId			as no
+      		  	   ,boardTitle		as title
+      		  	   ,boardWriter		as writer
+      		       ,UserImage		as image
+      		       ,boardContent 	as content
+      		       
+      		        				            FROM
+      boardInfo 
+      		      JOIN 
+      		      		userInfo 
+      		      				  ON 
+      		      				  		boardWriter = userName
+      		      				  		
+      		     WHERE 
+      		     
+      		     	   	boardId = #{no}  		
+      		     				  		
  </select>
    
 </mapper>

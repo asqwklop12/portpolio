@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/search")
 public class SearchController {
 	
-	
+	 
 	// 검색화면으로 이동
 	@RequestMapping(value = "/search",method = RequestMethod.GET)
 	public ModelAndView seacrh() {

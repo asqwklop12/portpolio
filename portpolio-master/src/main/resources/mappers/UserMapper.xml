@@ -20,18 +20,20 @@
  	          
  </insert>
          
- <select id="login"  parameterType="LoginResult" resultType ="map">
+ <select id="login"  parameterType="login" resultType ="map">
    
-    SELECT   UserEmail
+    SELECT       UserEmail
                , UserPassword
                , UserName
                                       FROM UserInfo
                                       
     WHERE 
-               UserEmail = #{email}   
+               UserEmail = #{email}
+               
+               and
+               
+               UserPassword = #{password}   
          
  </select>
    
 </mapper>
-
-

@@ -7,11 +7,12 @@ import lombok.Setter;
 
 @Setter
 @Getter
+// UserInfo
 public class UserVo {
-	private String image;
-	private String email;
-	private String name;
-	private String password;
-	private String introduce;
-	private Date date;
+	private String image;			//UserImage
+	private String email;   		//UserEmail
+	private String name;			//UserName	(P)
+	private String password;		//UserPassword
+	private String introduce;		//UserIntroduce
+	private Date date;				//UserDate
 }

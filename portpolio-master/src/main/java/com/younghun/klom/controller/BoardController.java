@@ -3,6 +3,8 @@ package com.younghun.klom.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,10 +46,11 @@ public class BoardController {
 	}
 	
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
-		@RequestMapping(value = "/into/{no}",method = RequestMethod.GET)
-		public ModelAndView into(@PathVariable("no") long no) {
+		@RequestMapping(value = "/into",method = RequestMethod.GET)
+		public ModelAndView into(@RequestParam(value = "no",required = false) Long no) {
 			DetailDto detail = boardListService.find(no);
 			ModelAndView model = new ModelAndView();
+			logger.debug("{}번째 들어옴", no);
 			model.addObject("detail",detail);
 			model.setViewName("BoardForInfo");
 			return model;
