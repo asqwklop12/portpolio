@@ -8,15 +8,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.younghun.klom.model.user.dto.EditDto;
-import com.younghun.klom.model.user.dto.LoginDto;
 import com.younghun.klom.model.user.service.UserService;
+import com.younghun.klom.model.user.vo.UserVo;
 
 //step2
 
@@ -31,11 +28,11 @@ public class LoginController {
 	
 	// 로그인 했을 시
 	@RequestMapping(method = RequestMethod.POST)
-	public ModelAndView login(LoginDto loginDto, HttpSession httpSession) throws Exception {
+	public ModelAndView login(UserVo  userVo, HttpSession httpSession) throws Exception {
 		ModelAndView model = new ModelAndView();
 		
  
-		Map<String, String> data = userService.login(loginDto);
+		Map<String, String> data = userService.login(userVo);
 		model.setViewName("redirect:/");
 		
 		
@@ -52,8 +49,8 @@ public class LoginController {
 	// 정보 수정
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
 	public ModelAndView edit(ModelAndView model) {		
-		EditDto editDto = new EditDto();
-		model.addObject("editDto",editDto);
+		UserVo userVo = new UserVo();
+		model.addObject("editDto",userVo);
 		model.setViewName("/user/userEdit");
 		return model;
 	}

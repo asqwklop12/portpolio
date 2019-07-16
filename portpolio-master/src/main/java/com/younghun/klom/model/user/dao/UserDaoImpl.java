@@ -8,8 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.younghun.klom.model.user.dto.EditDto;
-import com.younghun.klom.model.user.dto.LoginDto;
 import com.younghun.klom.model.user.vo.UserVo;
 
 @Repository
@@ -27,15 +25,15 @@ public class UserDaoImpl implements UserDao{
 	}
   
 	@Override
-	public Map<String, String> login(LoginDto loginDto) {
-		return sqlSession.selectOne(NAMESPACE + "login",loginDto); 
+	public Map<String, String> login(UserVo userVo) {
+		return sqlSession.selectOne(NAMESPACE + "login",userVo); 
 	}
 
 	// 정보 수정
 	@Override
-	public void edit(EditDto editDto) {
-		logger.debug("{}asassas", editDto);
-		sqlSession.update(NAMESPACE + "update", editDto);
+	public void edit(UserVo userVo) {
+		logger.debug("{}asassas",  userVo);
+		sqlSession.update(NAMESPACE + "update", userVo);
 	}
 
 }

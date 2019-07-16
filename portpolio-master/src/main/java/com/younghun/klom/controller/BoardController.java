@@ -32,13 +32,13 @@ public class BoardController {
 	
     
 	@Autowired
-	private BoardService boardListService;
+	private BoardService boardService;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	//TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
 	@GetMapping
 	public ModelAndView main() {
-		List<BoardVo> list = boardListService.boardList();
+		List<BoardVo> list = boardService.boardList();
 		ModelAndView model = new ModelAndView();	 
 		model.addObject("list", list);
 		model.setViewName("MainForBoard");
@@ -48,7 +48,7 @@ public class BoardController {
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 		@RequestMapping(value = "/into",method = RequestMethod.GET)
 		public ModelAndView into(@RequestParam(value = "no",required = false) Long no) {
-			DetailDto detail = boardListService.find(no);
+			DetailDto detail = boardService.find(no);
 			ModelAndView model = new ModelAndView();
 			logger.debug("{}번째 들어옴", no);
 			model.addObject("detail",detail);
@@ -100,9 +100,14 @@ public class BoardController {
 	
 	
 	// 게시글 작성
-	@RequestMapping(value = "/confirm",method = RequestMethod.GET)
-	public ModelAndView confirm() {
-		return new ModelAndView("redirect:/board");
+	@RequestMapping(value = "/confirm",method = RequestMethod.POST)
+	public ModelAndView confirm(ModelAndView mod) {
+		BoardVo boardVo = new BoardVo();
+		
+		mod.addObject("boardVo",boardVo);
+		boardService.get();
+		mod.setViewName("redirect:/board");
+		return mod;
 	}
 	
 

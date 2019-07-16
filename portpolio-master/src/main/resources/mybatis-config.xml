@@ -9,8 +9,6 @@
 	<typeAliases>
 		<!-- user -->
 		<typeAlias alias="user" type="com.younghun.klom.model.user.vo.UserVo"/>
-		<typeAlias alias="login" type="com.younghun.klom.model.user.dto.LoginDto"/>
-		<typeAlias alias="edit" type="com.younghun.klom.model.user.dto.EditDto"/>
 		
 		
 		<!-- board -->

@@ -5,13 +5,10 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.younghun.klom.model.Encryption;
 import com.younghun.klom.model.user.dao.UserDao;
-import com.younghun.klom.model.user.dto.EditDto;
-import com.younghun.klom.model.user.dto.LoginDto;
 import com.younghun.klom.model.user.vo.UserVo;
 
 @Service
@@ -37,13 +34,13 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Map<String, String> login(LoginDto loginDto) {
+	public Map<String, String> login(UserVo userVo) {
 
-		Map<String, String> data = userDao.login(loginDto);
+		Map<String, String> data = userDao.login(userVo);
 
-		logger.debug("{} and {}", loginDto.getPassword(),data.get("password"));
+		logger.debug("{} and {}", userVo.getPassword(),data.get("password"));
 
-		if (encryption.matches(loginDto.getPassword(), data.get("password"))) {
+		if (encryption.matches(userVo.getPassword(), data.get("password"))) {
 			
 			return data;
 		}
@@ -52,8 +49,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void edit(EditDto editDto) {
-		userDao.edit(editDto);
+	public void edit(UserVo userVo) {
+		userDao.edit(userVo);
 		
 	}
 

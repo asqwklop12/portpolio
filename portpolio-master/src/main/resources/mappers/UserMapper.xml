@@ -33,7 +33,7 @@
  	          
  </insert>
          
- <select id="login"  parameterType="login" resultType ="map">
+ <select id="login"  parameterType="user" resultType ="map">
    
     SELECT        
     
