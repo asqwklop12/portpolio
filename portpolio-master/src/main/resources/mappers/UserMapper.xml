@@ -10,15 +10,15 @@
  	INSERT                                      	                                        
  	                                         INTO  userInfo 
  				
- 				(
- 					UserImage
- 				  , UserEmail
- 			      , UserName
- 				  , UserPassword
- 				  , UserIntroduce
- 				  , UserDate 
+ 						    (
+ 							    UserImage
+ 				  			  , UserEmail
+ 			      			  , UserName
+ 				  	   		  , UserPassword
+ 				  			  , UserIntroduce
+ 							  , UserDate 
  						   
- 			    )
+ 						    )
  					 
  	VALUES
  	
@@ -81,9 +81,10 @@
 
  	 UPDATE		        								UserInfo
     
+    
+    
      SET
-     				  UserEmail       = #{email}
-    				, UserPassword    = #{password}
+    				  UserPassword    = #{password}
     				, UserName        = #{name}
     				, UserDate        = now()
     
@@ -92,7 +93,6 @@
      WHERE 
                    	  UserId = #{id}
  
-
 
  </update>
 
