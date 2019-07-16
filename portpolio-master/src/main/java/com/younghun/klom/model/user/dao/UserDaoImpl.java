@@ -14,7 +14,7 @@ import com.younghun.klom.model.user.vo.UserVo;
 
 @Repository
 public class UserDaoImpl implements UserDao{
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private SqlSession sqlSession;
@@ -31,7 +31,11 @@ public class UserDaoImpl implements UserDao{
 		return sqlSession.selectOne(NAMESPACE + "login",loginDto); 
 	}
 
-
-
+	// 정보 수정
+	@Override
+	public void edit(EditDto editDto) {
+		logger.debug("{}asassas", editDto);
+		sqlSession.update(NAMESPACE + "update", editDto);
+	}
 
 }

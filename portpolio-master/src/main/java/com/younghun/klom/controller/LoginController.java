@@ -51,12 +51,9 @@ public class LoginController {
 	
 	// 정보 수정
 	@RequestMapping(value = "/edit", method = RequestMethod.GET)
-	public ModelAndView edit(@ModelAttribute EditDto editDto) {
-		
-		ModelAndView model = new ModelAndView();
-		
-		
-		
+	public ModelAndView edit(ModelAndView model) {		
+		EditDto editDto = new EditDto();
+		model.addObject("editDto",editDto);
 		model.setViewName("/user/userEdit");
 		return model;
 	}

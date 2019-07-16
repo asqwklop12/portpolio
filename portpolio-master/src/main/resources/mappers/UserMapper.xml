@@ -60,7 +60,7 @@
     
     
     
-     SET
+     SET	
     				  UserPassword    = #{password}
     				, UserName        = #{name}
     				, UserDate        = now()

@@ -51,6 +51,12 @@ public class UserServiceImpl implements UserService {
 		return data;
 	}
 
+	@Override
+	public void edit(EditDto editDto) {
+		userDao.edit(editDto);
+		
+	}
+
 	
 
 }

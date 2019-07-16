@@ -47,11 +47,11 @@ public class MainController {
 		modelAndView.setViewName("/user/register");
 		return modelAndView;
 	}
+	
 
 	// 회원가입 완료
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public String regitData(UserVo userVo) {
-
 		userService.register(userVo);
 		return "redirect:/";
 	}
