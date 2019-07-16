@@ -25,7 +25,7 @@
 	<div class="nav" align="center">
         <div class="nav_img"><img  src="/resources/img/kakao.png" alt="..." class="img-circle icon"></div>
         <div class="nav_name">
-            <p>${sessionScope.userLogin.UserName}님 <br/> 반갑습니다.</p>
+            <p>${sessionScope.userLogin.name}님 <br/> 반갑습니다.</p>
         </div>
 
         <div class="nav_button"><a href="login/edit">

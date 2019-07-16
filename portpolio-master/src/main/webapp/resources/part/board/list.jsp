@@ -45,6 +45,7 @@
 			 
 					<tbody>
 						<c:forEach var="board" items="${list}">
+							
 							<tr>
 								<td>${board.no}</td>
 								<td><a href="board/into?no=${board.no}">${board.title}</a></td>

@@ -31,11 +31,7 @@ public class UserDaoImpl implements UserDao{
 		return sqlSession.selectOne(NAMESPACE + "login",loginDto); 
 	}
 
-	@Override
-	public EditDto editPrepare(int id) {
-		return sqlSession.selectOne(NAMESPACE + "prepareEdit",id);
-	}
 
-	
+
 
 }

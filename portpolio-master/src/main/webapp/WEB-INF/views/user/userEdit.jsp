@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form"  prefix="form"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +26,7 @@
 			<h3 class="panel-title">회원 정보 변경</h3>
 		</div>
 		<div class="panel-body">
-			<form class="form-horizontal" method="get" action="edit/close">
+			<form:form modelAttribute="edit" class="form-horizontal" method="get" action="edit/close">
 
 				<div class="form-group " align="center">
 					<img  src="/resources/img/kakao.png" alt="" class="img-circle imgSize" />
@@ -47,7 +48,7 @@
 					</div>
 				</div>
 				<div class="textRight">
-					<p>형식에 맞게 입력해주세요.</p>
+					<p></p>
 				</div>
 
 				<div class="form-group">
@@ -58,7 +59,7 @@
 				</div>
 
 				<div class="textRight">
-					<p>패스워드가 일치하지 않습니다.</p>
+					<p></p>
 				</div>
 
 				<div class="form-group">
@@ -70,14 +71,16 @@
 				
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">수정
-							완료</button>
+					
+						<button type="submit" class="btn btn-default">수정 완료</button>
+					
 						<br /> <br />
 						<button type="submit" class="btn btn-default pull-right">회원탈퇴
 						</button>
 					</div>
 				</div>
-			</form>
+			</form:form>
+			
 		</div>
 	</div>
 </body>

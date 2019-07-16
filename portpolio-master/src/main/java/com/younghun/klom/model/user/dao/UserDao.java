@@ -11,5 +11,5 @@ public interface UserDao {
 	Map<String,String> login (LoginDto loginDto);
 	
 
-	EditDto editPrepare(int id);
+	
  }

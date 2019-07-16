@@ -8,35 +8,33 @@
 
  <select id="list" resultType="board">
      
-       SELECT  
-                     boardId 		as no
-                    ,boardTitle 	as title
-                    ,boardWriter	as writer
-       	            ,boardDate   	as date
+      SELECT  
+                      boardId 		as no
+                    , boardTitle 	as title
+                    , boardWriter	as writer
+       	            , boardDate   	as date
        	            
-                                                FROM 
- 	   boardInfo 
+             	                                    FROM boardInfo 
  </select>
  
  <select id="detail" resultType="result">
     	
       SELECT 
-      		    	boardId			as no
-      		  	   ,boardTitle		as title
-      		  	   ,boardWriter		as writer
-      		       ,UserImage		as image
-      		       ,boardContent 	as content
-      		       
-      		        				            FROM
-      boardInfo 
-      		      JOIN 
-      		      		userInfo 
-      		      				  ON 
-      		      				  		boardWriter = userName
+      		    	 boardId		as no
+      		  	   , boardTitle		as title
+      		  	   , boardWriter	as writer
+      		       , UserImage		as image
+      		       , boardContent 	as content
+      		    	   
+      		        					            FROM boardInfo
+      		        				             
+        											JOIN userInfo 
+      		      	
+      		      	boardWriter = userName
       		      				  		
-      		     WHERE 
+       WHERE 
       		     
-      		     	   	boardId = #{no}  		
+      		     	boardId = #{no}  		
       		     				  		
  </select>
    

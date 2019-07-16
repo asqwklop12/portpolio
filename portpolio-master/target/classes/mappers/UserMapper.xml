@@ -7,33 +7,94 @@
 <mapper namespace="UserMapper">
 
  <insert id="Register">
- 	Insert into 
- 					userInfo 
- 	values
- 	      (      #{image} 
- 	          ,  #{email}
- 	          ,  #{name} 
- 	          ,  #{password}
- 	          ,  #{introduce}
- 	          ,  now()
- 	       )
+ 	INSERT                                      	                                        
+ 	                                         INTO  userInfo 
+ 				
+ 				(
+ 					UserImage
+ 				  , UserEmail
+ 			      , UserName
+ 				  , UserPassword
+ 				  , UserIntroduce
+ 				  , UserDate 
+ 						   
+ 			    )
+ 					 
+ 	VALUES
+ 	
+ 	                        ( 	      		 
+ 	                            #{image} 
+ 	                          , #{email}
+ 	                          , #{name} 
+ 	                          , #{password}
+ 	                          , #{introduce}
+ 	                          , now()
+ 	                        )
  	          
  </insert>
          
  <select id="login"  parameterType="login" resultType ="map">
    
-    SELECT       UserEmail
-               , UserPassword
-               , UserName
-                                      FROM UserInfo
+    SELECT        
+    
+    			  UserEmail    	  as email
+    			, UserPassword    as password
+    			, UserName        as name
+    
+    
+    		                                     FROM UserInfo
                                       
     WHERE 
-               UserEmail = #{email}
-               
-               and
-               
-               UserPassword = #{password}   
+                   		UserEmail = #{email}
+                   		
+                 
+                   		
          
  </select>
+ 
+
+ <select id="view"  resultType ="edit">
    
+    SELECT        
+    
+    			  UserId 		  as id
+    			, UserEmail    	  as email
+    			, UserPassword    as password
+    			, UserName        as name
+    			, userDate 		  as oldDate
+    			, userDate        as newDate
+    
+    
+    		                                     FROM UserInfo
+                                      
+    WHERE 
+                   		UserId = #{id}
+                   		
+                 
+                   		
+         
+ </select>
+
+ 
+ 
+ <update id="update">
+
+ 	 UPDATE		        								UserInfo
+    
+     SET
+     				  UserEmail       = #{email}
+    				, UserPassword    = #{password}
+    				, UserName        = #{name}
+    				, UserDate        = now()
+    
+    		    	                               
+                                      
+     WHERE 
+                   	  UserId = #{id}
+ 
+
+
+ </update>
+
+
 </mapper>

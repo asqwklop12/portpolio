@@ -51,10 +51,7 @@ public class UserServiceImpl implements UserService {
 		return data;
 	}
 
-	@Override
-	public EditDto editPrepare(int id) {
-		return userDao.editPrepare(id);
-	}
+	
 
 }
   

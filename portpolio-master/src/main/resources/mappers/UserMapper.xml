@@ -42,7 +42,7 @@
     			, UserName        as name
     
     
-    		                                  FROM UserInfo
+    		                                     FROM UserInfo
                                       
     WHERE 
                    		UserEmail = #{email}
@@ -52,28 +52,49 @@
          
  </select>
  
- 
- 
- 
- <select id="prepareEdit" resultType="map">
- 
+
+ <select id="view"  resultType ="edit">
+   
     SELECT        
     
-    			  UserImage 	  as image
+    			  UserId 		  as id
     			, UserEmail    	  as email
     			, UserPassword    as password
     			, UserName        as name
+    			, userDate 		  as oldDate
+    			, userDate        as newDate
     
     
-    		                                  FROM UserInfo
+    		                                     FROM UserInfo
                                       
     WHERE 
                    		UserId = #{id}
                    		
- 
+                 
+                   		
+         
  </select>
 
+ 
+ 
+ <update id="update">
 
+ 	 UPDATE		        								UserInfo
+    
+     SET
+     				  UserEmail       = #{email}
+    				, UserPassword    = #{password}
+    				, UserName        = #{name}
+    				, UserDate        = now()
+    
+    		    	                               
+                                      
+     WHERE 
+                   	  UserId = #{id}
+ 
+
+
+ </update>
 
 
 </mapper>

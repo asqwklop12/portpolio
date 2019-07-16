@@ -21,7 +21,7 @@
 
 					<div class="form-group">
 						<p>
-							<b>${sessionScope.userLogin.UserName}</b>님 만나서 반갑습니다.
+							<b>${sessionScope.userLogin.name}</b>님 만나서 반갑습니다.
 						</p>
 					</div>
 
