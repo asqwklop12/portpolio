@@ -52,30 +52,7 @@
          
  </select>
  
-
- <select id="view"  resultType ="edit">
-   
-    SELECT        
-    
-    			  UserId 		  as id
-    			, UserEmail    	  as email
-    			, UserPassword    as password
-    			, UserName        as name
-    			, userDate 		  as oldDate
-    			, userDate        as newDate
-    
-    
-    		                                     FROM UserInfo
-                                      
-    WHERE 
-                   		UserId = #{id}
-                   		
-                 
-                   		
-         
- </select>
-
- 
+  
  
  <update id="update">
 
