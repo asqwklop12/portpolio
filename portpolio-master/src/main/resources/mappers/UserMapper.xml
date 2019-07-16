@@ -47,6 +47,7 @@
     WHERE 
                    		UserEmail = #{email}
                    		
+                   		
                  
                    		
          
@@ -54,21 +55,22 @@
  
   
  
- <update id="update">
+ <update id="modify">
 
  	 UPDATE		        								UserInfo
     
     
     
      SET	
-    				  UserPassword    = #{password}
-    				, UserName        = #{name}
-    				, UserDate        = now()
+     				  UserName        = #{name}
+    				, UserPassword    = #{password}
+    				, UserIntroduce   = #{introduce}
+    				
     
     		    	                               
                                       
      WHERE 
-                   	  UserId = #{id}
+                   	  UserEmail = #{email}
  
 
  </update>

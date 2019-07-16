@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void edit(UserVo userVo) {
+		logger.debug("{} enter..into",userVo);
 		userDao.edit(userVo);
 		
 	}

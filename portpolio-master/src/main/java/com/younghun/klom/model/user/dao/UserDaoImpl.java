@@ -32,8 +32,8 @@ public class UserDaoImpl implements UserDao{
 	// 정보 수정
 	@Override
 	public void edit(UserVo userVo) {
-		logger.debug("{}asassas",  userVo);
-		sqlSession.update(NAMESPACE + "update", userVo);
+		logger.debug("{} dao",  userVo);
+		sqlSession.update(NAMESPACE + "modify", userVo);
 	}
 
 }

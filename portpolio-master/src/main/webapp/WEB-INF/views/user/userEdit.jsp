@@ -26,25 +26,25 @@
 			<h3 class="panel-title">회원 정보 변경</h3>
 		</div>
 		<div class="panel-body">
-			<form:form modelAttribute="edit" class="form-horizontal" method="get" action="edit/close">
+			<form class="form-horizontal" method="post" action="edit/close">
 
 				<div class="form-group " align="center">
 					<img  src="/resources/img/kakao.png" alt="" class="img-circle imgSize" />
 				</div>
 
 				<div class="form-group">
-					<label for="email" class="col-sm-2 control-label">Email</label>
+					<label for="email" class="col-sm-2 control-label">이메일</label>
 					<div class="col-sm-8">
 						<input type="email" class="form-control" id="email disabledInput"
-							placeholder="exampe@text.com" disabled>
+							name="email" value="${sessionScope.userLogin.email}" readonly="readonly">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="name" class="col-sm-2 control-label">NickName</label>
+					<label for="name" class="col-sm-2 control-label">닉네임</label>
 					<div class="col-sm-8">
 						<input type="text" class="form-control" id="name"
-							placeholder="name">
+							name="name" placeholder="${sessionScope.userLogin.name}">
 					</div>
 				</div>
 				<div class="textRight">
@@ -52,9 +52,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="Password" class="col-sm-2 control-label">Password</label>
-					<span class="col-sm-8"> <input type="Password"
-						class="form-control" id="Password" placeholder="Password">
+					<label for="Password" class="col-sm-2 control-label">패스워드</label>
+					<span class="col-sm-8"> 
+					<input type="Password" class="form-control" id="Password" placeholder="새로운 패스워드를 입력해주세요." name="password">
 					</span>
 				</div>
 
@@ -63,9 +63,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="introduce" class="col-sm-2 control-label">introduce</label>
+					<label for="introduce" class="col-sm-2 control-label">자기 소개</label>
 					<div class="col-sm-8">
-						<textarea class="form-control" rows="7" placeholder="안녕하세요."></textarea>
+						<textarea class="form-control" rows="7" placeholder="안녕하세요." name="introduce"></textarea>
 					</div>
 				</div>
 				
@@ -79,7 +79,7 @@
 						</button>
 					</div>
 				</div>
-			</form:form>
+			</form>
 			
 		</div>
 	</div>
