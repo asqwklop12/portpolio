@@ -2,6 +2,7 @@ package com.younghun.klom.model.user.dao;
 
 import java.util.Map;
 
+import com.younghun.klom.model.user.dto.EditDto;
 import com.younghun.klom.model.user.dto.LoginDto;
 import com.younghun.klom.model.user.vo.UserVo;
 
@@ -10,4 +11,5 @@ public interface UserDao {
 	Map<String,String> login (LoginDto loginDto);
 	
 
+	EditDto editPrepare(int id);
  }

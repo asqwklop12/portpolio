@@ -11,13 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.younghun.klom.model.user.service.UserService;
 import com.younghun.klom.model.user.vo.UserVo;
 
-import lombok.extern.slf4j.Slf4j;
-
 //step1
 
 
 @Controller
-@Slf4j
 public class MainController {
 
 	@Autowired

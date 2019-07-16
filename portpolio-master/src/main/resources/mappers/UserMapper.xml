@@ -7,41 +7,70 @@
 <mapper namespace="UserMapper">
 
  <insert id="Register">
- 	Insert into  userInfo (
- 							  UserImage
- 						    , UserEmail
- 						    , UserName
- 						    , UserPassword
- 						    , UserIntroduce
- 						    , UserDate 
+ 	INSERT                                      	                                        
+ 	                                         INTO  userInfo 
+ 				
+ 				(
+ 					UserImage
+ 				  , UserEmail
+ 			      , UserName
+ 				  , UserPassword
+ 				  , UserIntroduce
+ 				  , UserDate 
  						   
- 						   )
+ 			    )
  					 
- 	values
+ 	VALUES
  	
- 	      ( 	      		 
- 	             #{image} 
- 	          ,  #{email}
- 	          ,  #{name} 
- 	          ,  #{password}
- 	          ,  #{introduce}
- 	          ,  now()
- 	       )
+ 	                        ( 	      		 
+ 	                            #{image} 
+ 	                          , #{email}
+ 	                          , #{name} 
+ 	                          , #{password}
+ 	                          , #{introduce}
+ 	                          , now()
+ 	                        )
  	          
  </insert>
          
  <select id="login"  parameterType="login" resultType ="map">
    
-    SELECT        UserEmail 
-    			, UserPassword as password
-    			, UserName
+    SELECT        
     
-                                      FROM UserInfo
+    			  UserEmail    	  as email
+    			, UserPassword    as password
+    			, UserName        as name
+    
+    
+    		                                  FROM UserInfo
                                       
     WHERE 
-               UserEmail = #{email}
-               
+                   		UserEmail = #{email}
+                   		
+                 
+                   		
          
+ </select>
+ 
+ 
+ 
+ 
+ <select id="prepareEdit" resultType="map">
+ 
+    SELECT        
+    
+    			  UserImage 	  as image
+    			, UserEmail    	  as email
+    			, UserPassword    as password
+    			, UserName        as name
+    
+    
+    		                                  FROM UserInfo
+                                      
+    WHERE 
+                   		UserId = #{id}
+                   		
+ 
  </select>
 
 

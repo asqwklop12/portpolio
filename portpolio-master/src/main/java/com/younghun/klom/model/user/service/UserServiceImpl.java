@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.younghun.klom.model.Encryption;
 import com.younghun.klom.model.user.dao.UserDao;
+import com.younghun.klom.model.user.dto.EditDto;
 import com.younghun.klom.model.user.dto.LoginDto;
 import com.younghun.klom.model.user.vo.UserVo;
 
@@ -19,31 +21,40 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Autowired
-	public PasswordEncoder passwordEncoder;
-
+	public Encryption encryption;
+		
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public void register(UserVo userVo) {
-		logger.info("서비스레지스");
-		String encPassword = passwordEncoder.encode(userVo.getPassword());
-		userVo.setPassword(encPassword);
+		logger.info("start");
+		
+		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
 		userDao.register(userVo);
 
-		logger.debug("{}", encPassword);
-		logger.info("찍힘...");
+		logger.debug("{}", encryption.encrypt(userVo.getPassword()));
+		
 	}
 
 	@Override
 	public Map<String, String> login(LoginDto loginDto) {
 
-		Map<String, String> login = userDao.login(loginDto);
+		Map<String, String> data = userDao.login(loginDto);
 
-		if (passwordEncoder.matches(loginDto.getPassword(), login.get("password"))) {
-			login = userDao.login(loginDto);
+		logger.debug("{} and {}", loginDto.getPassword(),data.get("password"));
+
+		if (encryption.matches(loginDto.getPassword(), data.get("password"))) {
+			
+			return data;
 		}
 		
-		return login;
+		return data;
+	}
+
+	@Override
+	public EditDto editPrepare(int id) {
+		return userDao.editPrepare(id);
 	}
 
 }
+  
