@@ -39,7 +39,9 @@ public class UserServiceImpl implements UserService {
 		Map<String, String> data = userDao.login(userVo);
 
 		logger.debug("{} and {}", userVo.getPassword(),data.get("password"));
-
+		
+		
+		//TODO 수정 필요 현재 이메일만 입력해도 로그인되는 현상이 있음
 		if (encryption.matches(userVo.getPassword(), data.get("password"))) {
 			
 			return data;
@@ -51,6 +53,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void edit(UserVo userVo) {
 		logger.debug("{} enter..into",userVo);
+		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
 		userDao.edit(userVo);
 		
 	}
