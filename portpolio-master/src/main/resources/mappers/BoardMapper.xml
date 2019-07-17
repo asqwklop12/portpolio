@@ -22,21 +22,21 @@
  <select id="detail" resultType="board">
     	
       SELECT 
-      		    	 boardId		as no
-      		  	   , boardTitle		as title
-      		  	   , boardWriter	as writer
-      		       , UserImage		as image
-      		       , boardContent 	as content
+      		    	 b.boardId			as no
+      		  	   , b.boardTitle		as title
+      		  	   , b.boardWriter		as writer
+      		       , b.boardContent 	as content
+      		       , u.UserImage		as image
       		    	   
-      		        					            FROM boardInfo
+      		        					            FROM boardInfo b
       		        				             
-        											JOIN userInfo 
+        											JOIN userInfo u
       		      	
-      		      	boardWriter = userName
+       ON	      	b.boardWriter = u.userName
       		      				  		
        WHERE 
       		     
-      		     	boardId = #{no}  		
+      		     	b.boardId = #{no}  		
       		     				  		
  </select>
   
@@ -57,7 +57,7 @@
  			        )
  			      	
 	    VALUES      (    #{title}
-	                   , #{Id}
+	                   , #{userId}
 	                   , #{content}
 	                   , #{writer}
 				       ,   now()
