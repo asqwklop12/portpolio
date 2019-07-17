@@ -1,27 +1,19 @@
 package com.younghun.klom.controller;
 
 import java.util.List;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.younghun.klom.model.board.dto.DetailDto;
 import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.vo.BoardVo;
-
-import lombok.extern.slf4j.Slf4j;
 
 //step2
 
@@ -48,7 +40,7 @@ public class BoardController {
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 		@RequestMapping(value = "/into",method = RequestMethod.GET)
 		public ModelAndView into(@RequestParam(value = "no",required = false) Long no) {
-			DetailDto detail = boardService.find(no);
+			BoardVo detail = boardService.find(no);
 			ModelAndView model = new ModelAndView();
 			logger.debug("{}번째 들어옴", no);
 			model.addObject("detail",detail);
@@ -82,7 +74,13 @@ public class BoardController {
 	public ModelAndView board() {
 		return new ModelAndView("redirect:/board");
 	}
+
 	
+	// 게시판닫기
+	@RequestMapping(value = "/close",method = RequestMethod.GET)
+	public ModelAndView close() {
+		return new ModelAndView("redirect:/board");
+	}
 
 	
 
@@ -101,13 +99,10 @@ public class BoardController {
 	
 	// 게시글 작성
 	@RequestMapping(value = "/confirm",method = RequestMethod.POST)
-	public ModelAndView confirm(ModelAndView mod) {
-		BoardVo boardVo = new BoardVo();
+	public String confirm(BoardVo boardVo) {
+		boardService.get(boardVo);
 		
-		mod.addObject("boardVo",boardVo);
-		boardService.get();
-		mod.setViewName("redirect:/board");
-		return mod;
+		return "redirect:/board";
 	}
 	
 

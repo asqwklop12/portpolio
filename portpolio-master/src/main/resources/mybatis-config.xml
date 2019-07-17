@@ -13,7 +13,6 @@
 		
 		<!-- board -->
 		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
-		<typeAlias alias="result" type="com.younghun.klom.model.board.dto.DetailDto"/>
 	</typeAliases>
 	 
 </configuration> 

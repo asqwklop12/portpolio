@@ -19,7 +19,7 @@
  </select>
  
  <!-- 상세 보기 -->
- <select id="detail" resultType="result">
+ <select id="detail" resultType="board">
     	
       SELECT 
       		    	 boardId		as no
@@ -42,26 +42,24 @@
   
   
   <!-- 게시글 추가-->
-   <insert id="wrtier">
- 	INSERT                                      	                                        
- 	                                         INTO  boardInfo 
- 				
- 						    (
- 							    boardTitle
- 				  			  , boardContent
- 			      			  , boardWriter
- 				  	   		  , boardDate	
- 						   
- 						    )
- 					 
- 	VALUES
+   <insert id="write" parameterType="board">
+ 	INSERT                          		INTO boardInfo 
  	
- 	                        ( 	      		 
- 	                            #{title} 
- 	                          , #{content}
- 	                          , ("admin") 
- 	                          , now()
- 	                        )
+ 				(
+ 					  boardTitle
+ 					, userId
+ 					, boardContent
+ 					, boardWriter
+ 					, boardDate
+ 			     )
+ 			      	
+	VALUES        (  #{title}
+	            ,    (select userId from userInfo where userId = 1)
+	            , 	 #{content}
+	            ,    (select userName from userInfo where userId = 1)
+				,    now()
+				
+				); 
  	          
  </insert> 
 </mapper>
