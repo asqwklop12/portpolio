@@ -38,7 +38,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	// 게시글 작성
 	@Override
-	public void get(BoardVo boardVo) {
+	public void create(BoardVo boardVo) {
 		
 		session.insert(NAMESPACE + "write",boardVo);
 		logger.debug("{}endtddsdd",boardVo);

@@ -100,7 +100,7 @@ public class BoardController {
 	// 게시글 작성
 	@RequestMapping(value = "/confirm",method = RequestMethod.POST)
 	public String confirm(BoardVo boardVo) {
-		boardService.get(boardVo);
+		boardService.create(boardVo);
 		
 		return "redirect:/board";
 	}

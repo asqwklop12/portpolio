@@ -8,7 +8,7 @@ import com.younghun.klom.model.user.vo.UserVo;
 public interface BoardDao {
 	
 	//create
-	void get(BoardVo boardVo);
+	void create(BoardVo boardVo);
 	
 	
 	// read

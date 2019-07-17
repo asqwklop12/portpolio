@@ -26,8 +26,8 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public void get(BoardVo boardVo) {
-		boardListDao.get(boardVo);
+	public void create(BoardVo boardVo) {
+		boardListDao.create(boardVo);
 		
 	}
 
