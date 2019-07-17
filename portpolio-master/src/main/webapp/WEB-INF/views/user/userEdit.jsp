@@ -72,11 +72,11 @@
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">
 					
-						<button type="submit" class="btn btn-default">수정 완료</button>
+						<button type="submit" class="btn btn-default" formaction="edit/close">수정 완료</button>
 					
 						<br /> <br />
-						<button type="submit" class="btn btn-default pull-right">회원탈퇴
-						</button>
+						
+						<button type="submit"  class="btn btn-default pull-right" formaction="edit/clear">회원탈퇴</button>
 					</div>
 				</div>
 			</form>

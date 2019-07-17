@@ -36,4 +36,10 @@ public class UserDaoImpl implements UserDao{
 		sqlSession.update(NAMESPACE + "modify", userVo);
 	}
 
+	@Override
+	public void delete(UserVo userVo) {
+		sqlSession.delete(NAMESPACE + "clear", userVo);
+		
+	}
+
 }

@@ -58,6 +58,12 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
+	@Override
+	public void delete(UserVo userVo) {
+		userDao.delete(userVo);
+	
+	}
+
 	
 
 }

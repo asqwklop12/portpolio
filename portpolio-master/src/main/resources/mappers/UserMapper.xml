@@ -76,4 +76,19 @@
  </update>
 
 
+
+
+ <delete id="clear">
+
+ 	 DELETE		        								FROM UserInfo
+    				
+    
+    		    	                               
+                                      
+     WHERE 
+                   	   UserEmail = #{email}
+ 
+
+ </delete>
+ 
 </mapper>
