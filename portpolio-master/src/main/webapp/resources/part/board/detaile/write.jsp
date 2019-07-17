@@ -37,8 +37,9 @@
 									<li><button type="submit">완료</button></li>
 									<li><a href="close">취소</a></li>
 								</ul>
-
+ 
 								<div class="panel-body">
+									<input type="text" name="writer" hidden="true" value="${sessionScope.userLogin.name}">
 									<input type="text" class="form-control" placeholder="제목" name="title">
 									
 									<textarea class="form-control" rows="25" name="content">

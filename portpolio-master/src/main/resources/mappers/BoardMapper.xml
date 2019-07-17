@@ -40,28 +40,41 @@
       		     				  		
  </select>
   
+
   
   <!-- 게시글 추가-->
-   <insert id="write" parameterType="board">
- 	INSERT                          		INTO boardInfo 
- 	
- 				(
- 					  boardTitle
- 					, userId
- 					, boardContent
- 					, boardWriter
- 					, boardDate
- 			     )
+   <insert id="write" parameterType= "board" >
+
+		
+	    INSERT                          	     	INTO boardInfo 
+ 		
+ 					(
+ 						  boardTitle
+ 					   ,  userId
+ 					   ,  boardContent
+ 					   ,  boardWriter
+ 					   ,  boardDate
+ 			        )
  			      	
-	VALUES        (  #{title}
-	            ,    (select userId from userInfo where userId = 1)
-	            , 	 #{content}
-	            ,    (select userName from userInfo where userId = 1)
-				,    now()
+	    VALUES      (    #{title}
+	                   , #{Id}
+	                   , #{content}
+	                   , #{writer}
+				       ,   now()
 				
-				); 
- 	          
- </insert> 
+				    ); 
+				    
+	<!-- 	<selectKey  resultType="string"  keyProperty="writer" order="BEFORE">
+		
+			SELECT 
+						 userName as writer		
+														FROM UserInfo
+			WHERE	
+						 userId = #{Id}	 						 
+														
+		</selectKey>		    
+ 	 -->         
+   </insert> 
 </mapper>
 
 
