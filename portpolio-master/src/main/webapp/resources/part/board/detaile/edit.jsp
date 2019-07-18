@@ -21,12 +21,16 @@
                     <div class="media-left media-middle">
                     </div>
                     <div class="media-body">
+                    <form action="edit?id=${detail.no}" method="post">
+                    <input hidden="true" value="${detail.no}" name="no">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                               <input type="text" class="form-control" placeholder="원 제목">
-                                <textarea class="form-control" rows="25"></textarea>
+                               <input name="title" type="text" class="form-control" placeholder="${detail.title}">
+                                <textarea name="content" class="form-control" rows="10"  placeholder="${detail.content}"></textarea>
                             </div>
                         </div>
+                        <button type="submit"  class="pull-right">확인</button>
+                     </form>   
                     </div>
                 </div>
             </div>

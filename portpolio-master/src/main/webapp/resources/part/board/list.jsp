@@ -44,10 +44,10 @@
 					</thead>
 			 
 					<tbody>
-						<c:forEach var="board" items="${list}">
+						<c:forEach var="board" items="${list}" varStatus="status">
 							
 							<tr>
-								<td>${board.no}</td>
+								<td>${status.count}</td>
 								<td><a href="board/into?no=${board.no}">${board.title}</a></td>
 								<td>${board.writer}</td>
 								<td>${board.date}</td>

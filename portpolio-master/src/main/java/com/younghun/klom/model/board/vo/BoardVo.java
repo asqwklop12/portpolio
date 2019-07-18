@@ -11,7 +11,7 @@ public class BoardVo {
 
 	// BoardInfo
 	private Long no;			    //boardId	(P)
-	private Long Id;				//UserId	(F)
+	private Long userId;		    //UserId	(F)
 	private String title;			//boardTitle
 	private String writer;			//boardWriter	
 	private String content;			//boardContent

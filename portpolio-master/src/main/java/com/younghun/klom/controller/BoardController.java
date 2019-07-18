@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,6 +28,7 @@ public class BoardController {
 	private BoardService boardService;
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	//TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
 	@GetMapping
 	public ModelAndView main() {
@@ -90,12 +92,6 @@ public class BoardController {
 		return new ModelAndView("BoardForWrite");
 	}
 	
-	// 게시글 삭제 (본인 글이 아니면 삭제 금지)
-	@RequestMapping(value = "/delete",method = RequestMethod.GET)
-	public ModelAndView delete() {
-		return new ModelAndView("redirect:/board");
-	}
-	
 	
 	// 게시글 작성
 	@RequestMapping(value = "/confirm",method = RequestMethod.POST)
@@ -105,5 +101,27 @@ public class BoardController {
 		return "redirect:/board";
 	}
 	
+	
+	
+	// 게시글 수정
+	@RequestMapping(value = "/edit", method = RequestMethod.POST)
+	public ModelAndView edit(ModelAndView model,BoardVo boardVo) {
+		logger.debug("{}",boardVo);			
+		boardService.update(boardVo);
+		
+		model.setViewName("redirect:/board");
+		return model;
+	}
+	
+	// 게시글 삭제 (본인 글이 아니면 삭제 금지)
+	@RequestMapping(value = "/delete",method = RequestMethod.GET)
+	public ModelAndView delete(@RequestParam long no) {
+		boardService.clear(no);
+		return new ModelAndView("redirect:/board");
+	}
+	
+	
+
+		
 
 }

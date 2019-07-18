@@ -16,4 +16,11 @@ public interface BoardDao {
 	BoardVo find(long no);
 	
 	
+	//update
+	void update(BoardVo boardVo);
+	
+	
+	// delete
+	void clear(long no);
+	
 }

@@ -43,6 +43,15 @@ public class BoardDaoImpl implements BoardDao {
 		session.insert(NAMESPACE + "write",boardVo);
 		logger.debug("{}endtddsdd",boardVo);
 	}
+	@Override
+	public void update(BoardVo boardVo) {
+		session.update(NAMESPACE + "modify",boardVo);
+	}
+	@Override
+	public void clear(long no) {
+		session.delete(NAMESPACE + "clear", no);
+	}
 
 
+	
 }
