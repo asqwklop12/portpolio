@@ -2,6 +2,8 @@ package com.younghun.klom.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.younghun.klom.model.board.service.BoardService;
+import com.younghun.klom.model.board.service.PaggingService;
 import com.younghun.klom.model.board.vo.BoardVo;
+import com.younghun.klom.model.user.vo.UserVo;
 
 //step2
 
@@ -27,6 +31,9 @@ public class BoardController {
 	@Autowired
 	private BoardService boardService;
 	
+	@Autowired
+	private PaggingService paggingService;
+	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	//TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
@@ -36,9 +43,26 @@ public class BoardController {
 		ModelAndView model = new ModelAndView();	 
 		model.addObject("list", list);
 		model.setViewName("MainForBoard");
+		
+		int page = pagging(10);
+		model.addObject("page",page);
 		return model;
 	}
 	
+	
+	public int pagging(int count) {
+		int total = paggingService.board();
+		logger.debug("게시물의 총 갯수: {}" ,total);
+		
+		int page = total / count;
+		
+		if (total % count > 0) {
+			page++;
+		}
+		logger.debug("지금 페이징되는 페이지 갯수 : {}", page);
+		return page;
+	}
+		
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 		@RequestMapping(value = "/into",method = RequestMethod.GET)
 		public ModelAndView into(@RequestParam(value = "no",required = false) Long no) {
@@ -122,6 +146,21 @@ public class BoardController {
 	
 	
 
+	// 로그아웃??? 이게 뭔지
+	@GetMapping(value = "/login/logout")
+	public String logout(HttpSession httpSession) {
+		httpSession.invalidate();
+		return "redirect:/";
+	}
 		
+	
+	// 정보 수정??? 흠
+	@RequestMapping(value = "/login/edit", method = RequestMethod.GET)
+	public ModelAndView edit(ModelAndView model) {		
+		UserVo userVo = new UserVo();
+		model.addObject("editDto",userVo);
+		model.setViewName("redirect:/login/edit");
+		return model;
+	}
 
 }
