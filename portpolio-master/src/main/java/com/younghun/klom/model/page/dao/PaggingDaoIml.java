@@ -1,4 +1,4 @@
-package com.younghun.klom.model.board.dao;
+package com.younghun.klom.model.page.dao;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.younghun.klom.model.board.dao;
+package com.younghun.klom.model.page.dao;
 
 public interface PaggingDao {
 
