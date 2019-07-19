@@ -7,7 +7,7 @@
 <mapper namespace="BoardMapper">
 
  <!-- 게시판 목록 -->
- <select id="list" resultType="board">
+ <select id="list"  parameterType="hashMap" resultType="board">
      
       SELECT  
                       boardId 		as no
@@ -15,7 +15,9 @@
                     , boardWriter	as writer
        	            , boardDate   	as date
        	            
-             	                                    FROM boardInfo 
+             	                                    FROM boardInfo
+      
+      LIMIT         #{display},#{post}               	                                     
  </select>
  
  <!-- 상세 보기 -->
