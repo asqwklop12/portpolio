@@ -29,17 +29,17 @@ public class LoginController {
 	// 로그인 했을 시
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView login(UserVo  userVo, HttpSession httpSession) throws Exception {
-		ModelAndView model = new ModelAndView();
 		
- 
-		Map<String, String> data = userService.login(userVo);
+		
+		ModelAndView model = new ModelAndView();
 		model.setViewName("redirect:/");
+		Map<String, String> data = userService.login(userVo);
 		
 		
 		if (data != null) {
 			
 			httpSession.setAttribute("userLogin", data);
-			logger.debug("{}",data);
+			
 		}
 				
 		return model;
@@ -59,12 +59,12 @@ public class LoginController {
 
 	// 로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public ModelAndView logout(HttpSession httpSession) {
+	public String logout(HttpSession httpSession) {
 		
 		if (httpSession != null) {
 		httpSession.invalidate();
 		}
-		return new ModelAndView("redirect:/");
+		return "redirect:/";
 	}
 
 }

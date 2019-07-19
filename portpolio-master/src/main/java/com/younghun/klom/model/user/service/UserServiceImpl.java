@@ -40,6 +40,7 @@ public class UserServiceImpl implements UserService {
 
 		logger.debug("{} and {}", userVo.getPassword(),data.get("password"));
 		
+//		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
 		
 		//TODO 수정 필요 현재 이메일만 입력해도 로그인되는 현상이 있음
 		if (encryption.matches(userVo.getPassword(), data.get("password"))) {
@@ -47,7 +48,7 @@ public class UserServiceImpl implements UserService {
 			return data;
 		}
 		
-		return data;
+		return null;
 	}
 
 	@Override

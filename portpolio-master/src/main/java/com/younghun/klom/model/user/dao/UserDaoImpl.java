@@ -15,31 +15,35 @@ public class UserDaoImpl implements UserDao{
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
-	private SqlSession sqlSession;
+	private SqlSession session;
 	
 	private static final String NAMESPACE ="UserMapper.";
 	
+	// 회원 가입
 	@Override
 	public void register(UserVo userVo) {
-		sqlSession.insert(NAMESPACE + "Register",userVo);
+		session.insert(NAMESPACE + "Register",userVo);
 	}
   
+	// 로그인
 	@Override
 	public Map<String, String> login(UserVo userVo) {
-		return sqlSession.selectOne(NAMESPACE + "login",userVo); 
+		return session.selectOne(NAMESPACE + "login",userVo); 
 	}
 
 	// 정보 수정
 	@Override
 	public void edit(UserVo userVo) {
 		logger.debug("{} dao",  userVo);
-		sqlSession.update(NAMESPACE + "modify", userVo);
+		session.update(NAMESPACE + "modify", userVo);
 	}
 
+	// 계정 삭제
 	@Override
 	public void delete(UserVo userVo) {
-		sqlSession.delete(NAMESPACE + "clear", userVo);
+		session.delete(NAMESPACE + "clear", userVo);
 		
 	}
+
 
 }
