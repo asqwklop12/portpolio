@@ -24,7 +24,7 @@ public class BoardDaoImpl implements BoardDao {
 	
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Override
-	public List<BoardVo> boardList(int display, int post) {
+	public List<BoardVo> list(int display, int post) {
 		
 		// 매개변수 맵에 삽입
 		Map<String, Integer> listMap = new PostMap().boardList(display, post);

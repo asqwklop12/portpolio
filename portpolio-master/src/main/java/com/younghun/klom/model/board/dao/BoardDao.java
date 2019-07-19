@@ -12,7 +12,7 @@ public interface BoardDao {
 	
 	
 	// read
-	List<BoardVo> boardList(); 
+	List<BoardVo> list(int display, int post); 
 	BoardVo find(long no);
 	
 	
