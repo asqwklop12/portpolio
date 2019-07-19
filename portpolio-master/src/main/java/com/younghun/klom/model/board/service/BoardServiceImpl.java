@@ -20,8 +20,8 @@ public class BoardServiceImpl implements BoardService {
 	
 	// 리스트
 	@Override
-	public List<BoardVo> boardList() {
-		return boardDao.boardList();
+	public List<BoardVo> boardList(int display, int post) {
+		return boardDao.boardList(display,post);
 	}
 
 	// 읽기
@@ -45,6 +45,7 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 
+	// 삭제
 	@Override
 	public void clear(long no) {
 		boardDao.clear(no);
