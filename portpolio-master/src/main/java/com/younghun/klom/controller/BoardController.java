@@ -8,13 +8,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.younghun.klom.model.Pagging;
 import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.service.PaggingService;
 import com.younghun.klom.model.board.vo.BoardVo;
@@ -38,30 +38,24 @@ public class BoardController {
 
 	//TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
 	@GetMapping
-	public ModelAndView main() {
-		List<BoardVo> list = boardService.boardList();
+	public ModelAndView main(@RequestParam(value =  "num", required = false, defaultValue = "1") int num) {
+		logger.debug("{}",num);
 		ModelAndView model = new ModelAndView();	 
-		model.addObject("list", list);
-		model.setViewName("MainForBoard");
 		
-		int page = pagging(10);
-		model.addObject("page",page);
+		// 페이징 처리
+		Pagging p = new Pagging(paggingService.board(),10);
+		model.addObject("page",p.pagging());
+		List<BoardVo> list = boardService.boardList(p.display(num),p.getCount());
+		
+		
+		// 게시판 리스트
+		model.addObject("list", list);
+		
+		model.setViewName("MainForBoard");		
 		return model;
 	}
 	
 	
-	public int pagging(int count) {
-		int total = paggingService.board();
-		logger.debug("게시물의 총 갯수: {}" ,total);
-		
-		int page = total / count;
-		
-		if (total % count > 0) {
-			page++;
-		}
-		logger.debug("지금 페이징되는 페이지 갯수 : {}", page);
-		return page;
-	}
 		
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 		@RequestMapping(value = "/into",method = RequestMethod.GET)
