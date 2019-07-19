@@ -33,9 +33,12 @@ public class LoginController {
 		
 		ModelAndView model = new ModelAndView();
 		model.setViewName("redirect:/");
-		Map<String, String> data = userService.login(userVo);
+		UserVo data = userService.login(userVo);
 		
+		model.addObject("userId",data.getId());
+		model.addObject("userName",data.getName());
 		
+//		logger.debug("{},{}",data.getId(),data.getName());
 		if (data != null) {
 			
 			httpSession.setAttribute("userLogin", data);

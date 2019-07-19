@@ -1,7 +1,5 @@
 package com.younghun.klom.model.user.dao;
 
-import java.util.Map;
-
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +25,7 @@ public class UserDaoImpl implements UserDao{
   
 	// 로그인
 	@Override
-	public Map<String, String> login(UserVo userVo) {
+	public UserVo login(UserVo userVo) {
 		return session.selectOne(NAMESPACE + "login",userVo); 
 	}
 
@@ -44,6 +42,8 @@ public class UserDaoImpl implements UserDao{
 		session.delete(NAMESPACE + "clear", userVo);
 		
 	}
+
+	
 
 
 }

@@ -1,7 +1,5 @@
 package com.younghun.klom.model.user.dao;
 
-import java.util.Map;
-
 import com.younghun.klom.model.user.vo.UserVo;
 
 public interface UserDao {
@@ -10,7 +8,7 @@ public interface UserDao {
 	void register (UserVo userVo);
 	
 	// 로그인
-	Map<String,String> login (UserVo userVo);
+	UserVo login (UserVo userVo);
 	
 	// 정보 수정
 	void edit (UserVo userVo);

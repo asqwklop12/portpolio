@@ -34,27 +34,27 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Map<String, String> login(UserVo userVo) {
+	public UserVo login(UserVo userVo) {
 
-		Map<String, String> data = userDao.login(userVo);
+		UserVo data = userDao.login(userVo);
 
-		logger.debug("{} and {}", userVo.getPassword(),data.get("password"));
+		logger.debug("{} and {}", userVo.getPassword(),data.getPassword());
 		
 //		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
 		
 		//TODO 수정 필요 현재 이메일만 입력해도 로그인되는 현상이 있음
-		if (encryption.matches(userVo.getPassword(), data.get("password"))) {
-			
-			return data;
-		}
+//		if (encryption.matches(userVo.getPassword(), data.getPassword())) {
+//			
+//			return data;
+//		}
 		
-		return null;
+		return data;
 	}
 
 	@Override
 	public void edit(UserVo userVo) {
 		logger.debug("{} enter..into",userVo);
-		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
+//		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
 		userDao.edit(userVo);
 		
 	}
@@ -64,6 +64,8 @@ public class UserServiceImpl implements UserService {
 		userDao.delete(userVo);
 	
 	}
+
+	
 
 	
 

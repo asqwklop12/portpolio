@@ -2,6 +2,8 @@ package com.younghun.klom.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -22,11 +24,16 @@ public class MainController {
 	
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
 	// 루트값설정 (Home)
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView model) {
 		model.setViewName("LayoutForMain");
+
+		
 		return model;
 	}
 
@@ -55,9 +62,9 @@ public class MainController {
 	// 회원가입 완료
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public String regitData(UserVo userVo) {
-		String inputPass = userVo.getPassword();
-		String pass = passwordEncoder.encode(inputPass);
-		userVo.setPassword(pass);
+//		String inputPass = userVo.getPassword();
+//		String pass = passwordEncoder.encode(inputPass);
+//		userVo.setPassword(pass);
 		userService.register(userVo);
 		return "redirect:/";
 	}
