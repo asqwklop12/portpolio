@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SearchMapper">
+
+  <select id="list" resultType="book">
+  	
+  	SELECT 	
+ 	 					  BookTitle 		as title
+  						, BookAuthor 	 	as author	
+  						, BookTranslator 	as translator
+  						, BookPage			as page
+  						, BookPrice 		as price
+  						, BookPublisher 	as publisher
+  																	FROM defaultbookinfo;
+  	
+  </select>
+ 
+ 
+ 
+ 
+</mapper>
