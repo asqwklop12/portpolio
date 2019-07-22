@@ -6,7 +6,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SearchMapper">
 
-  <select id="list" resultType="book">
+  <select id="list" parameterType="hashmap" resultType="book">
   	
   	SELECT 	
  	 					  BookTitle 		as title
@@ -15,8 +15,10 @@
   						, BookPage			as page
   						, BookPrice 		as price
   						, BookPublisher 	as publisher
-  																	FROM defaultbookinfo;
-  	
+  																	FROM defaultbookinfo
+  																	
+  																	
+  	LIMIT        		 #{display},#{post}
   </select>
  
  

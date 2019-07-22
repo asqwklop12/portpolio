@@ -9,4 +9,11 @@
 	
 	</select>
 
+
+	<select id="book" resultType="int">
+		SELECT 
+				count(bookId) 
+								from defaultbookinfo;
+	</select>
+
 </mapper>
