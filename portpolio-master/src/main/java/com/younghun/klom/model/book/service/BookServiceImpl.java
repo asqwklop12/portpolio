@@ -19,10 +19,10 @@ public class BookServiceImpl implements BookService{
 	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	@Override
-	public List<BookVo> search() {
-		List<BookVo> list = bookDao.search();
+	public List<BookVo> search(int display, int post, String keyword) {
+		List<BookVo> list = bookDao.search (display,post,keyword);
 		logger.debug("{}",list);
-		return bookDao.search();
+		return bookDao.search(display,post,keyword);
 	}
 
 }

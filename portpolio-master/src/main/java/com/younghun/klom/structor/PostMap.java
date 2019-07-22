@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class PostMap {
 
-	public Map<String, Integer> map(int display, int post) {
+	public Map<String, Object> map(int display, int post) {
 
-		Map<String, Integer> map = new HashMap<String, Integer>();
+		Map<String, Object> map = new HashMap<>();
 		
 		map.put("display", display);
 		map.put("post", post);

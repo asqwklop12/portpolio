@@ -17,4 +17,9 @@ public class PaggingServiceImpl implements PaggingService {
 		return countDao.board();
 	}
 
+	@Override
+	public int book(String keyword) {
+		return countDao.book(keyword);
+	}
+
 }

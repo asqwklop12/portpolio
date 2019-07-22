@@ -8,12 +8,19 @@
 								from boardInfo;
 	
 	</select>
+ 
 
-
-	<select id="book" resultType="int">
+	<select id="book" resultType="int" parameterType="string">
 		SELECT 
-				count(bookId) 
-								from defaultbookinfo;
+						count(bookId) 
+														FROM defaultbookinfo
+								
+								
+		WHERE				BookTitle LIKE '${value}%' 
+						OR  bookTitle LIKE '%${value}'
+                        OR  bookTitle LIKE '%${value}%'
+                        OR  bookTitle	  = '${value}'						
+								
 	</select>
 
 </mapper>

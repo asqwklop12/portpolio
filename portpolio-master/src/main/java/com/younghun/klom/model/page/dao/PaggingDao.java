@@ -5,5 +5,7 @@ public interface PaggingDao {
 	// board
 	int board();
 	
+	// book
+	int book(String keyword);
 	
 }

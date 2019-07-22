@@ -8,14 +8,20 @@ import org.springframework.stereotype.Repository;
 public class PaggingDaoIml implements PaggingDao {
 
 	@Autowired
-	private SqlSession session;
+	private SqlSession sqlSession;
 	
 	private static final String NAMESPACE = "PaggingMapper.";
 	
 	
 	@Override
 	public int board() {
-		return session.selectOne(NAMESPACE + "board");
+		return sqlSession.selectOne(NAMESPACE + "board");
+	}
+
+
+	@Override
+	public int book(String keyword) {
+		return sqlSession.selectOne(NAMESPACE + "book", keyword);
 	}
 
 }

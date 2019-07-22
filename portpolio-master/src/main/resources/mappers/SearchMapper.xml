@@ -6,9 +6,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SearchMapper">
 
-  <select id="list" parameterType="hashmap" resultType="book">
+  <select id="list" parameterType="hashMap" resultType="book">
   	
-  	SELECT 	
+  	  	SELECT 	
  	 					  BookTitle 		as title
   						, BookAuthor 	 	as author	
   						, BookTranslator 	as translator
@@ -16,7 +16,11 @@
   						, BookPrice 		as price
   						, BookPublisher 	as publisher
   																	FROM defaultbookinfo
-  																	
+  										
+  	WHERE					BookTitle LIKE  '${keyword}%' 
+						OR  bookTitle LIKE '%${keyword}'
+                        OR  bookTitle LIKE '%${keyword}%'
+                        OR  bookTitle     = '${keyword}'
   																	
   	LIMIT        		 #{display},#{post}
   </select>
