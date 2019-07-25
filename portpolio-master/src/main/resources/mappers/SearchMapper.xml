@@ -15,7 +15,7 @@
   						, BookPage			as page
   						, BookPrice 		as price
   						, BookPublisher 	as publisher
-  																	FROM defaultbookinfo
+  																	FROM bookInfo
   										
   	WHERE					BookTitle LIKE  '${keyword}%' 
 						OR  bookTitle LIKE '%${keyword}'
