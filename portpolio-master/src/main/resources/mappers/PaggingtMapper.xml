@@ -13,7 +13,7 @@
 	<select id="book" resultType="int" parameterType="string">
 		SELECT 
 						count(bookId) 
-														FROM defaultbookinfo
+														FROM bookInfo
 								
 								
 		WHERE				BookTitle LIKE '${value}%' 
