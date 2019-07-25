@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,16 +24,21 @@
 </head>
 <body>
 	<%@include file="/resources/part/user/info.jsp"%>
-	<main> 
-	<header> </header> 
-	<%@include file="/resources/part/main/headerForBoard.jsp"%>
+	<main> <header> </header> 
 	<section>
 		<div role="tabpanel">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<b>${detail.no}.</b> <b>${detail.title}</b>
+					<b>${detail.title}</b>
 					<button id="share" class="glyphicon glyphicon-share"
 						aria-hidden="true"></button>
+					
+					<a href="close">
+						<button type="button" class="close" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</a>
+					
 				</div>
 
 				<ul class="nav nav-tabs">
@@ -40,7 +46,7 @@
 						aria-controls="original" role="tab" data-toggle="tab">원문</a></li>
 					<li role="presentation"><a href="#edit" aria-controls="edit"
 						role="tab" data-toggle="tab">수정</a></li>
-					<li><a href="delete" id="change">삭제</a></li>
+					<li><a href="delete?no=${detail.no}" id="change">삭제</a></li>
 				</ul>
 
 				<div class="tab-content">
@@ -52,7 +58,8 @@
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
+		
 	</section>
 	</main>
 

@@ -17,9 +17,8 @@
 </head>
 <body>
 	<%@include file="/resources/part/user/info.jsp"%>
-	<main> 
-	<header> </header> 
-	<%@include file="/resources/part/main/headerForSearch.jsp"%>
+	<main>   
+	<header> </header>   
 	<section>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
