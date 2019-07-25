@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page session="true"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,7 @@
 
 					<div class="form-group">
 						<p>
-							<b>${sessionScope.userLogin.name}</b>님 만나서 반갑습니다.
+							<b>${sessionScope.data.name}</b>님 만나서 반갑습니다.
 						</p>
 					</div>
 

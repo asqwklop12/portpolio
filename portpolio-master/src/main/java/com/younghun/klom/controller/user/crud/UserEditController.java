@@ -2,6 +2,8 @@ package com.younghun.klom.controller.user.crud;
 
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,9 +18,10 @@ import com.younghun.klom.model.user.vo.UserVo;
 @RequestMapping(value = "/login/edit")
 public class UserEditController {
 
-	@Autowired
+	@Autowired  
 	private UserService userService;
 	
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	
 	@RequestMapping(value = "/close", method = RequestMethod.GET)
@@ -27,11 +30,13 @@ public class UserEditController {
 		return "redirect:/";
 	}
 
-	
+	   
 	// home으로 이동(로그인된 상태)(수정 가능성 있음)
 	@RequestMapping(value = "/close", method = RequestMethod.POST)
 	public String edit(HttpSession session, @ModelAttribute UserVo userVo) {
 		userService.edit(userVo);
+		
+		logger.debug("{}", userVo);
 		return "redirect:/";
 	}
 	

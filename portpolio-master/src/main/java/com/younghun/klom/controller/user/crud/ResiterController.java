@@ -16,25 +16,21 @@ public class ResiterController {
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private BCryptPasswordEncoder passwordEncoder;
+
 	
 	// 회원가입했을 시
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public ModelAndView regit(ModelAndView modelAndView) {
+	public ModelAndView regit(ModelAndView model) {
 		UserVo userVO = new UserVo();
-		modelAndView.addObject("userVo", userVO);
-		modelAndView.setViewName("/user/register");
-		return modelAndView;
+		model.addObject("userVo", userVO);
+		model.setViewName("/user/register");
+		return model;
 	}
 	
 
 	// 회원가입 완료
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public String regitData(UserVo userVo) {
-//		String inputPass = userVo.getPassword();
-//		String pass = passwordEncoder.encode(inputPass);
-//		userVo.setPassword(pass);
 		userService.register(userVo);
 		return "redirect:/";
 	}

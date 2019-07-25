@@ -27,7 +27,7 @@
 </head>
 <body>
 	<c:choose>   
-		<c:when test="${not empty sessionScope.userLogin}">
+		<c:when test="${not empty sessionScope.data}">
 				<%@include file="/resources/part/user/afterLogin.jsp" %>
 		</c:when>
 		
