@@ -1,20 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<meta charset="UTF-8">
 <title>글쓰기</title>
 </head>
 <body>
@@ -28,7 +13,7 @@
 
 				<div class="media">
 					<div class="media-left media-middle"></div>
-				
+
 					<form action="confirm" method="post">
 						<div class="media-body">
 							<div class="panel panel-default">
@@ -37,26 +22,27 @@
 									<li><button type="submit">완료</button></li>
 									<li><a href="close">취소</a></li>
 								</ul>
- 
+
 								<div class="panel-body">
-									<input type="text" name="writer" hidden="true" value="${sessionScope.userLogin.name}">
-									<input type="text" class="form-control" placeholder="제목" name="title">
-									
+									<input type="text" name="userId" hidden="true"
+										value="${sessionScope.data.id}"> <input type="text"
+										name="writer" hidden="true" value="${sessionScope.data.name}">
+									<input type="text" class="form-control" placeholder="제목"
+										name="title">
+
 									<textarea class="form-control" rows="25" name="content">
 									
 									</textarea>
 								</div>
-								
+
 							</div>
 
 						</div>
 					</form>
-					
+
 				</div>
 
 
 			</div>
 		</div>
 	</div>
-</body>
-</html>
