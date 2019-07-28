@@ -12,7 +12,7 @@
 
 	<select id="book" resultType="int" parameterType="string">
 		SELECT 
-						count(bookId) 
+						count(bookTitle) 
 														FROM bookInfo
 								
 								
