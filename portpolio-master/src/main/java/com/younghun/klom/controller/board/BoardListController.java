@@ -15,35 +15,36 @@ import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.vo.BoardVo;
 import com.younghun.klom.model.page.service.PaggingService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping(value = "/board")
+@Slf4j
 public class BoardListController {
-
-	
+    
 	@Autowired
 	private BoardService boardService;
-	
+
 	@Autowired
 	private PaggingService paggingService;
-	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	
-	
-	//TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
+
+
+	// TODO: 게시판으로 이동 (로그인이 안되 있으면 접근 불가[현재는 가능])
 	@RequestMapping
-	public ModelAndView main(@RequestParam(value =  "num", required = false, defaultValue = "1") int num) {
-		logger.debug("{}",num);
-		ModelAndView model = new ModelAndView();	 
-		
+	public ModelAndView main(@RequestParam(value = "num", required = false, defaultValue = "1") int num) {
+		log.debug("{}", num);
+		ModelAndView model = new ModelAndView();
+
 		// 페이징 처리
-		Pagging p = new Pagging(paggingService.board(),10);
-		List<BoardVo> list = boardService.list(p.display(num),p.getCount());
-		model.addObject("page",p.pagging());
+		Pagging p = new Pagging(paggingService.board(), 10);
+		List<BoardVo> list = boardService.list(p.display(num), p.getCount());
+		model.addObject("page", p.pagging());
+
 		
 		// 게시판 리스트
 		model.addObject("list", list);
-		
-		model.setViewName("MainForBoard");		
+
+		model.setViewName("MainForBoard");
 		return model;
 	}
 }

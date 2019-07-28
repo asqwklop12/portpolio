@@ -19,9 +19,10 @@ public class Crawing {
 	public Crawing(String bookStore) throws IOException {
 		this.bookStore = bookStore;
 		this.url = new Url().addressMap().get(bookStore);
-		Document doc = Jsoup.connect(url).get();
+		Document doc = Jsoup.connect(url).post();
 		this.elements = doc.select(new Selecter().selectMap().get(bookStore));
 	}
+	
 	
 	
 	

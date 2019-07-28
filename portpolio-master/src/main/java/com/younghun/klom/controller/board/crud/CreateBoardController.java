@@ -15,14 +15,16 @@ import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.vo.BoardVo;
 import com.younghun.klom.model.user.vo.UserVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping(value = "/board/confirm")
+@Slf4j
 public class CreateBoardController {
  
 	@Autowired
 	private BoardService boardService;
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	// 게시글 작성
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView confirm(BoardVo boardVo, HttpSession httpSession) {
@@ -31,18 +33,18 @@ public class CreateBoardController {
 		
 		// 세션에서 받아서 저장하기
 		UserVo data =  (UserVo) httpSession.getAttribute("data");
-		logger.debug("{}", data);
+		log.debug("{}", data);
 		
-		model.addObject("id",data.getId());
+		model.addObject("email",data.getEmail());
 		model.addObject("name",data.getName());
 		
-		logger.debug("{}abcd,{}", data.getId(),data.getName());
-		boardVo.setUserId(data.getId());
+		log.debug("{}abcd,{}", data.getEmail(),data.getName());
+		boardVo.setUserEmail(data.getEmail());
 		boardVo.setWriter(data.getName());
 		
 		model.addObject("board",boardVo);
 		model.setViewName("redirect:/board");
-		logger.debug("{}", boardVo); 
+		log.debug("{}", boardVo); 
 
 		return model;
 	}

@@ -10,11 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserMoveController {
 
-	// 검색결과 이동 (search)
-	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public ModelAndView search() {
-		return new ModelAndView("MainForSearch");
-	}
+	
 
 	// home으로 (Home)
 	@RequestMapping(value = "/home", method = RequestMethod.GET)

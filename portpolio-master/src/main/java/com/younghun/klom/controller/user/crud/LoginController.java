@@ -13,14 +13,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.younghun.klom.model.user.service.UserService;
 import com.younghun.klom.model.user.vo.UserVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping(value = "/login")
+@Slf4j
 public class LoginController {
 
 	@Autowired
 	private UserService userService;
 	
-	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	// 로그인 했을 시
 		@RequestMapping(method = RequestMethod.POST)
@@ -34,12 +36,12 @@ public class LoginController {
 				data = userService.login(userVo);
 					
 			} catch (Exception e) {
-				logger.error("{}",e);
+				log.error("{}",e);
 			}
 			
 			
 			if (data != null) {
-				logger.debug("{},{}",data.getId(),data.getName());	
+				log.debug("{},{}",data.getName());	
 				httpSession.setAttribute("data", data);				
 			}
 					

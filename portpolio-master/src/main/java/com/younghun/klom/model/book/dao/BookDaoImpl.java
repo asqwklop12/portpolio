@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.younghun.klom.model.book.vo.BookVo;
 import com.younghun.klom.structor.PostMap;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Repository
+@Slf4j
 public class BookDaoImpl implements BookDao{
 
-	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private SqlSession sqlSession;
@@ -27,7 +27,7 @@ public class BookDaoImpl implements BookDao{
 		Map<String, Object> listMap = new PostMap().map(display, post);
 		listMap.put("keyword", keyword);
 		List<BookVo> list = sqlSession.selectList(NAMESPCE + "list",listMap);
-		logger.debug("{}",list);
+		log.debug("{}",list);
 		return list;
 	}
 

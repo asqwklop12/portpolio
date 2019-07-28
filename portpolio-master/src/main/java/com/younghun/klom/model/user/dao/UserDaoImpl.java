@@ -1,16 +1,16 @@
 package com.younghun.klom.model.user.dao;
 
 import org.apache.ibatis.session.SqlSession;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.younghun.klom.model.user.vo.UserVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Repository
+@Slf4j
 public class UserDaoImpl implements UserDao{
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@Autowired
 	private SqlSession session;
@@ -32,7 +32,7 @@ public class UserDaoImpl implements UserDao{
 	// 정보 수정
 	@Override
 	public void edit(UserVo userVo) {
-		logger.debug("{} dao",  userVo);
+		log.debug("{} dao",  userVo);
 		session.update(NAMESPACE + "modify", userVo);
 	}
 

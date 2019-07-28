@@ -8,10 +8,10 @@ import lombok.ToString;
 @Getter
 @ToString
 public class BoardVo {
-
+  
 	// BoardInfo
-	private Long no;			    //boardId	(P)
-	private int userId;		    //UserId	(F)
+	private int no;			       //boardId	(P)
+	private String userEmail;		//UserEmail	(F)
 	private String title;			//boardTitle
 	private String writer;			//boardWriter	
 	private String content;			//boardContent

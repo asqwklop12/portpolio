@@ -10,7 +10,6 @@ public interface BoardDao {
 	//create
 	void create(BoardVo boardVo);
 	
-	
 	// read
 	List<BoardVo> list(int display, int post); 
 	BoardVo find(long no);
@@ -22,5 +21,6 @@ public interface BoardDao {
 	
 	// delete
 	void clear(long no);
+	
 	
 }

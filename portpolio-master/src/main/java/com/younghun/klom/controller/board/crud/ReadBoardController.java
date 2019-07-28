@@ -12,14 +12,16 @@ import org.springframework.web.servlet.ModelAndView;
 import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.vo.BoardVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
 @RequestMapping(value = "/board/into")
+@Slf4j
 public class ReadBoardController {
 
 	@Autowired
 	private BoardService boardService;
 	
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
@@ -27,7 +29,8 @@ public class ReadBoardController {
 	public ModelAndView into(@RequestParam(value = "no",required = false) Long no) {
 		BoardVo detail = boardService.find(no);
 		ModelAndView model = new ModelAndView();
-		logger.debug("{}번째 들어옴", no);
+		log.debug("{}번째 들어옴", no);
+		log.debug("{}",detail);
 		model.addObject("detail",detail);
 		model.setViewName("BoardForInfo");
 		return model;
