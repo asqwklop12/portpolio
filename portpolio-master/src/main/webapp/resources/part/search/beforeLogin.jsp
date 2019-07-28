@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 
 
-<%@include file="/resources/part/main/headerForSearch.jsp"%>
+<%@include file="/resources/part/main/notLoginMainHeader.jsp"%>
+
 <section>
 
 	<div class="panel panel-primary">

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<main> <header> </header> <%@include
-		file="/resources/part/main/headerForSearch.jsp"%>
+<main> <header> </header> 
+<%@include file="/resources/part/main/headerForSearch.jsp"%>
 	<section>
 
 		<div class="panel panel-primary">

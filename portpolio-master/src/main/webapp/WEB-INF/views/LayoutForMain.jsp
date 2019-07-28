@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
 
 <!DOCTYPE html>
@@ -32,10 +33,18 @@
 
 </head>
 <body>
-	<%@include file="/resources/part/main/headerForHome.jsp"%>
+	
 	<header> </header>
+	<c:choose>
+		<c:when test="${empty sessionScope.data}">
+			<%@include file="/resources/part/main/notLoginMainHeader.jsp"%>
+		</c:when>
+		<c:otherwise>
+			<%@include file="/resources/part/main/headerForHome.jsp"%>
+		</c:otherwise>
+	</c:choose>
 	<nav>
-
+    
 		<%@include file="/resources/part/main/wellcome.jsp"%>
 		<div class="center container-fluid">
 			<div class="center_notice">
