@@ -37,7 +37,7 @@
 							<td>0</td>
 							<td>0</td>
 							<td hidden="true">${board.content}</td>
-							<td hidden="true">${board.userId}</td>
+							<td hidden="true">${board.userEmail}</td>
 						</tr>
 					</c:forEach>
 				</tbody>

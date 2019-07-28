@@ -5,7 +5,28 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserMapper">
-
+  
+ <select id="login" resultType ="user">
+   
+    SELECT        
+    			  UserEmail    	  as email
+    			, UserPassword    as password
+    			, UserName        as name
+    
+    
+    		                                     FROM UserInfo
+                                      
+    WHERE 
+                   		UserEmail = #{email}
+                   		
+                   		
+                 
+                   		
+         
+ </select>
+ 
+ 
+ <!-- 회원가입 -->
  <insert id="Register">
  	INSERT                                      	                                        
  	                                         INTO  userInfo 
@@ -33,28 +54,10 @@
  	          
  </insert>
          
- <select id="login"  parameterType="user" resultType ="map">
-   
-    SELECT        
-    
-    			  UserEmail    	  as email
-    			, UserPassword    as password
-    			, UserName        as name
-    
-    
-    		                                     FROM UserInfo
-                                      
-    WHERE 
-                   		UserEmail = #{email}
-                   		
-                   		
-                 
-                   		
-         
- </select>
+
  
   
- 
+ <!-- 수정 -->
  <update id="modify">
 
  	 UPDATE		        								UserInfo
@@ -90,5 +93,7 @@
  
 
  </delete>
+ 
+ 
  
 </mapper>

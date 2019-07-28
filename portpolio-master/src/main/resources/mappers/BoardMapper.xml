@@ -6,15 +6,20 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="BoardMapper">
 
+
+
+
  <!-- 게시판 목록 -->
  <select id="list"  parameterType="hashMap" resultType="board">
      
       SELECT  
                       boardId 		as no
+                    , UserEmail     as userEmail    
                     , boardTitle 	as title
                     , boardWriter	as writer
        	            , boardDate   	as date
-       	            
+       	            , boardContent  as content
+       	            	
              	                                    FROM boardInfo
       
       LIMIT         #{display},#{post}               	                                     
@@ -26,10 +31,11 @@
       SELECT 
       		    	 b.boardId			as no
       		  	   , b.boardTitle		as title
+      		  	   , b.userEmail	    as userEmail
       		  	   , b.boardWriter		as writer
       		       , b.boardContent 	as content
       		       , u.UserImage		as image
-      		    	   
+      		    	    
       		        					            FROM boardInfo b
       		        				             
         											JOIN userInfo u
@@ -52,14 +58,14 @@
  		
  					(
  						  boardTitle
- 					   ,  userId
+ 					   ,  userEmail
  					   ,  boardContent
  					   ,  boardWriter
  					   ,  boardDate
  			        )
  			      	
 	    VALUES      (    #{title}
-	                   , #{userId}
+	                   , #{userEmail}
 	                   , #{content}
 	                   , #{writer}
 				       ,   now()
@@ -92,7 +98,8 @@
  
                                       
      WHERE 
-                   	  boardId = #{no}
+                   	     boardId = #{no}
+                   	and  userEmail = #{email} 
   
    </update> 
    
@@ -105,7 +112,9 @@
     		    	                               
                                       
      WHERE 
-                   	   boardId = #{no}					
+                    	   boardId = #{no}
+                      and  userEmail = #{email} 
+  					
    </delete>
 </mapper>
 

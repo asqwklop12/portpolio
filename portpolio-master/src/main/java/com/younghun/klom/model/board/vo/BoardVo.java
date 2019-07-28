@@ -11,6 +11,7 @@ public class BoardVo {
   
 	// BoardInfo
 	private int no;			       //boardId	(P)
+	private int userId;
 	private String userEmail;		//UserEmail	(F)
 	private String title;			//boardTitle
 	private String writer;			//boardWriter	
