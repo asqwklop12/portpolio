@@ -16,36 +16,20 @@ public class RootController {
 	// 루트값설정 (Home)
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView home(ModelAndView model) throws IOException {
-		
-		// Yes24
-		Crawing yes24 = new Crawing("yes24");
-		List<String> yes24List =  yes24.start(5);
-		model.addObject("yes24",yes24List);
 
-		// ypbook
-		Crawing ypbook = new Crawing("ypbook");
-		List<String> ypbookList =  ypbook.start(5);
-		model.addObject("ypbook",ypbookList);
+		String[] bookstore = {"yes24","ypbook","aladin","kyobo","bandi"};
+		// 온라인 서점 크롤링
+		for (int i = 0; i < bookstore.length; i++) {
+			try {
+				Crawing yes24 = new Crawing(bookstore[i]);
+				List<String> yes24List = yes24.start(5);
+				model.addObject("yes24", yes24List);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
-		// aladin
-		Crawing aladin = new Crawing("aladin");
-		List<String> aladinList =  aladin.start(5);
-		model.addObject("aladin",aladinList);
-		
-		// kyobo
-		Crawing kyobo = new Crawing("kyobo");
-		List<String> kyoboList =  kyobo.start(5);
-		model.addObject("kyobo",kyoboList);
-		
-		
-		// bandi
-		Crawing bandi = new Crawing("bandi");
-		List<String> bandiList =  bandi.start(5);
-		model.addObject("bandi",bandiList);
-		
-		
-		
-		model.setViewName("LayoutForMain");		
+		model.setViewName("LayoutForMain");
 		return model;
 	}
 }
