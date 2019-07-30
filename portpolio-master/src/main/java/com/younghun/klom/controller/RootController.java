@@ -15,20 +15,20 @@ import com.younghun.klom.model.crawling.Crawing;
 public class RootController {
 	// 루트값설정 (Home)
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView home(ModelAndView model) throws IOException {
+	public ModelAndView home(ModelAndView model)  {
 
-		String[] bookstore = {"yes24","ypbook","aladin","kyobo","bandi"};
+		String[] bookstore = {"bandi","kyobo","aladin","ypbook","yes24"};
 		// 온라인 서점 크롤링
 		for (int i = 0; i < bookstore.length; i++) {
 			try {
-				Crawing yes24 = new Crawing(bookstore[i]);
-				List<String> yes24List = yes24.start(5);
-				model.addObject("yes24", yes24List);
-			} catch (Exception e) {
+				Crawing bookStore = new Crawing(bookstore[i]);
+				List<String> bookStoreList = bookStore.start(5);
+				model.addObject(bookstore[i], bookStoreList);
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
+		  
 		model.setViewName("LayoutForMain");
 		return model;
 	}
