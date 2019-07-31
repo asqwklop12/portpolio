@@ -45,8 +45,6 @@ public class BoardListController {
 		Pagging p = new Pagging(paggingService.board(), 10);
 		List<BoardVo> list = boardService.list(p.display(num), p.getCount());
 		model.addObject("page", p.pagging());
-
-
 		
 		// 게시판 리스트
 		model.addObject("list", list);
