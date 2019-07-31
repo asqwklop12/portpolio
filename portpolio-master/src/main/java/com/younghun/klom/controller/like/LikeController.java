@@ -1,9 +1,5 @@
 package com.younghun.klom.controller.like;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +22,7 @@ public class LikeController {
 	private LikeService likeService;
 	  
 	@ResponseBody
-	@RequestMapping(value = "/like", method = RequestMethod.GET)
+	@RequestMapping(value = "/like", method = RequestMethod.POST)
 	public String heart(@RequestParam(value = "no",required = false) int no,
             HttpSession session) {
 		String email = ((UserVo)session.getAttribute("data")).getEmail();
