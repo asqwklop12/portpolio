@@ -23,4 +23,9 @@ public interface BoardDao {
 	void clear(long no);
 	
 	
+	// 조회수 증가
+	
+	void updateView(int no);
+	
+	
 }

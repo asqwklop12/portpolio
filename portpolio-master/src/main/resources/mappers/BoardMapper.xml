@@ -9,6 +9,7 @@
 
 
 
+
  <!-- 게시판 목록 -->
  <select id="list"  parameterType="hashMap" resultType="board">
      
@@ -19,12 +20,14 @@
                     , boardWriter	as writer
        	            , boardDate   	as date
        	            , boardContent  as content
+       	            , boardLike     as boardLike
+       	            , boardView     as boardView
        	            	
              	                                    FROM boardInfo
       
       LIMIT         #{display},#{post}               	                                     
  </select>
- 
+   
  <!-- 상세 보기 -->
  <select id="detail" resultType="board">
     	
@@ -49,6 +52,19 @@
  </select>
   
 
+  <update id="view">
+  
+   	 UPDATE		        								BoardInfo
+    
+    
+    
+     SET	
+     				  boardView = boardView + 1
+    				
+                                      
+     WHERE 
+                   	     boardId = #{no}
+  </update>
   
   <!-- 게시글 작성-->
    <insert id="write" parameterType= "board" >
@@ -67,7 +83,10 @@
 	    VALUES      (    #{title}
 	                   , #{userEmail}
 	                   , #{content}
-	                   , #{writer}
+	                   , (SELECT userName as name
+	                                                 FROM  userInfo
+	                       
+	                      WHERE  userEmail = #{userEmail})    
 				       ,   now()
 				
 				    ); 
@@ -99,7 +118,7 @@
                                       
      WHERE 
                    	     boardId = #{no}
-                   	and  userEmail = #{email} 
+                   	and  userEmail = #{userEmail} 
   
    </update> 
    

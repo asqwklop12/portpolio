@@ -55,6 +55,9 @@ public class ReadBoardController {
 			likeService.create(likeVo);
 		}
 		
+		// 조회수 증가
+		boardService.updateView(no);
+		
 		int user_like = likeService.result(likeVo);
 		
   		model.addObject("result",result);

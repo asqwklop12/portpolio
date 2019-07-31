@@ -51,4 +51,10 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.clear(no);
 	}
 
+	@Override
+	public void updateView(int no) {
+		boardDao.updateView(no);
+	}
+
+
 }

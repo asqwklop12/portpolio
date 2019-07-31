@@ -55,6 +55,13 @@ public class BoardDaoImpl implements BoardDao {
 	public void clear(long no) {
 		session.delete(NAMESPACE + "clear", no);
 	}
+	
+	
+	@Override
+	public void updateView(int no) {
+		session.update(NAMESPACE + "view",no);
+	}
+	
 
 
 	

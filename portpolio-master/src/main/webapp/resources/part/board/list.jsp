@@ -29,19 +29,19 @@
 					<c:forEach var="board" items="${list}" varStatus="status">
 
 						<tr>
-							<td>${status.count}</td>
+							<td>${board.no}</td>
 							<td><a href="board/into?no=${board.no}">${board.title}</a></td>
 							<td>${board.writer}</td>
 							<td>${board.date}</td>
-							<td>0</td>
-							<td>0</td>
+							<td>${board.boardView}</td>
+							<td>${board.boardLike}</td>    
 							<td>0</td>
 							<td hidden="true">${board.content}</td>
 							<td hidden="true">${board.userEmail}</td>
+
 						</tr>
 					</c:forEach>
 				</tbody>
-
 			</table>
 			<br /> <a href="board/write" class="btn btn-default pull-right">글쓰기</a>
 
