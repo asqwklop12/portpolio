@@ -44,28 +44,24 @@ public class ReadBoardController {
 		
 		String userEmail = ((UserVo)session.getAttribute("data")).getEmail();
 		
-		LikeVo likeVo = new LikeVo();
-		likeVo.setUserEmail(userEmail);
-		likeVo.setBoardId(no);
+		// 좋아요 증감
+		LikeVo likeVo = setLike(userEmail, no);
 		log.debug("{}",likeVo);
-		
-		
-		int result = likeService.board_result(likeVo.getBoardId());
-		
-		int dulplicate = likeService.duplicate(likeVo);
-  
-		
-		if (dulplicate == 0) {
+		if (likeService.duplicate(likeVo) == 0) {
 			likeService.create(likeVo);
 		}
 		
-		
-		int user_like = likeService.result(likeVo);
-		
-  		model.addObject("result",result);
-  		model.addObject("user",user_like);
+  		model.addObject("result",likeService.board_result(likeVo.getBoardId()));
+  		model.addObject("user",likeService.result(likeVo));
 		model.addObject("detail",detail);
 		model.setViewName("BoardForInfo");
 		return model;
+	}
+	
+	private LikeVo setLike(String email, int id) {
+		LikeVo likeVo = new LikeVo();
+		likeVo.setUserEmail(email);
+		likeVo.setBoardId(id);
+		return likeVo;
 	}
 }
