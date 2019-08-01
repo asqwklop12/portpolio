@@ -19,9 +19,11 @@ public class LikeServiceImpl implements LikeService {
 	}
 
 	@Override
-	public int duplicate(LikeVo likeVo) {
-
-		return likeDao.duplicate(likeVo);
+	public boolean duplicate(LikeVo likeVo) {
+		if (likeDao.duplicate(likeVo) == 0) {
+			return true;
+		}
+		return false;
 	}
 
 	@Override

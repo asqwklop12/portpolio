@@ -47,7 +47,7 @@ public class ReadBoardController {
 		// 좋아요 증감
 		LikeVo likeVo = setLike(userEmail, no);
 		log.debug("{}",likeVo);
-		if (likeService.duplicate(likeVo) == 0) {
+		if (likeService.duplicate(likeVo)) {
 			likeService.create(likeVo);
 		}
 		

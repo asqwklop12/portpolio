@@ -9,7 +9,7 @@ public interface LikeService {
 	void create(LikeVo likeVo);
 	
 	// 중복 확인
-	int duplicate(LikeVo likeVo);
+	boolean duplicate(LikeVo likeVo);
 	
 	// 게시글 좋아요
 	int result(LikeVo likeVo);
