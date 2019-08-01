@@ -33,8 +33,12 @@ public class ReadBoardController {
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView into(@RequestParam(value = "no",required = false) int no,
 			                 HttpSession session) {
+		
 		BoardVo detail = boardService.find(no);
 		ModelAndView model = new ModelAndView();
+		
+		// view 숫자 증가
+		boardService.updateView(detail);
 		log.debug("{}번째 들어옴", no);
 		log.debug("{}",detail);
 		
@@ -49,14 +53,12 @@ public class ReadBoardController {
 		int result = likeService.board_result(likeVo.getBoardId());
 		
 		int dulplicate = likeService.duplicate(likeVo);
-
+  
 		
 		if (dulplicate == 0) {
 			likeService.create(likeVo);
 		}
 		
-		// 조회수 증가
-		boardService.updateView(no);
 		
 		int user_like = likeService.result(likeVo);
 		

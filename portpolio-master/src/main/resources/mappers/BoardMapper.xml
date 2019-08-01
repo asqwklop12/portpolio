@@ -52,7 +52,7 @@
  </select>
   
 
-  <update id="view">
+  <update id="view" parameterType="board">
   
    	 UPDATE		        								BoardInfo
     
@@ -63,7 +63,8 @@
     				
                                       
      WHERE 
-                   	     boardId = #{no}
+                   	        boardId = #{no}
+                   	   and  userEmail = #{userEmail}
   </update>
   
   <!-- 게시글 작성-->
@@ -131,8 +132,7 @@
     		    	                               
                                       
      WHERE 
-                    	   boardId = #{no}
-                      and  userEmail = #{email} 
+                    	   boardId = #{no} 
   					
    </delete>
 </mapper>
