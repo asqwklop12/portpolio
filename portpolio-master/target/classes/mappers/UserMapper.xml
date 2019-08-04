@@ -5,20 +5,41 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserMapper">
-
+  
+ <select id="login" resultType ="user">
+   
+    SELECT        
+    			  UserEmail    	  as email
+    			, UserPassword    as password
+    			, UserName        as name
+    
+    
+    		                                     FROM UserInfo
+                                      
+    WHERE 
+                   		UserEmail = #{email}
+                   		
+                   		
+                 
+                   		
+         
+ </select>
+ 
+ 
+ <!-- 회원가입 -->
  <insert id="Register">
  	INSERT                                      	                                        
  	                                         INTO  userInfo 
  				
- 				(
- 					UserImage
- 				  , UserEmail
- 			      , UserName
- 				  , UserPassword
- 				  , UserIntroduce
- 				  , UserDate 
+ 						    (
+ 							    UserImage
+ 				  			  , UserEmail
+ 			      			  , UserName
+ 				  	   		  , UserPassword
+ 				  			  , UserIntroduce
+ 							  , UserDate 
  						   
- 			    )
+ 						    )
  					 
  	VALUES
  	
@@ -33,68 +54,46 @@
  	          
  </insert>
          
- <select id="login"  parameterType="login" resultType ="map">
-   
-    SELECT        
-    
-    			  UserEmail    	  as email
-    			, UserPassword    as password
-    			, UserName        as name
-    
-    
-    		                                     FROM UserInfo
-                                      
-    WHERE 
-                   		UserEmail = #{email}
-                   		
-                 
-                   		
-         
- </select>
- 
-
- <select id="view"  resultType ="edit">
-   
-    SELECT        
-    
-    			  UserId 		  as id
-    			, UserEmail    	  as email
-    			, UserPassword    as password
-    			, UserName        as name
-    			, userDate 		  as oldDate
-    			, userDate        as newDate
-    
-    
-    		                                     FROM UserInfo
-                                      
-    WHERE 
-                   		UserId = #{id}
-                   		
-                 
-                   		
-         
- </select>
 
  
- 
- <update id="update">
+  
+ <!-- 수정 -->
+ <update id="modify">
 
  	 UPDATE		        								UserInfo
     
-     SET
-     				  UserEmail       = #{email}
+    
+    
+     SET	
+     				  UserName        = #{name}
     				, UserPassword    = #{password}
-    				, UserName        = #{name}
-    				, UserDate        = now()
+    				, UserIntroduce   = #{introduce}
+    				
     
     		    	                               
                                       
      WHERE 
-                   	  UserId = #{id}
+                   	  UserEmail = #{email}
  
-
 
  </update>
 
 
+
+
+ <delete id="clear">
+
+ 	 DELETE		        								FROM UserInfo
+    				
+    
+    		    	                               
+                                      
+     WHERE 
+                   	   UserEmail = #{email}
+ 
+
+ </delete>
+ 
+ 
+ 
 </mapper>

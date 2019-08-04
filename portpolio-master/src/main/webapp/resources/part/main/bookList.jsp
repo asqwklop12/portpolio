@@ -139,7 +139,7 @@
 				
 				// 썸네일 추가
 				var thumbnail = document.createElement('a');
-				thumbnail.setAttribute('href','#');
+				thumbnail.setAttribute('href',arr(book.bandi)[i]);
 				thumbnail.setAttribute('class','thumbnail');
 				col.appendChild(thumbnail);
 				
@@ -169,7 +169,7 @@
 				
 				// 썸네일 추가
 				var thumbnail = document.createElement('a');
-				thumbnail.setAttribute('href','#');
+				thumbnail.setAttribute('href',arr(book.kyobo)[i]);
 				thumbnail.setAttribute('class','thumbnail');
 				col.appendChild(thumbnail);
 				
@@ -198,7 +198,7 @@
 				
 				// 썸네일 추가
 				var thumbnail = document.createElement('a');
-				thumbnail.setAttribute('href','#');
+				thumbnail.setAttribute('href',arr(book.aladin)[i]);
 				thumbnail.setAttribute('class','thumbnail');
 				col.appendChild(thumbnail);
 				
@@ -227,7 +227,7 @@
 				
 				// 썸네일 추가
 				var thumbnail = document.createElement('a');
-				thumbnail.setAttribute('href','#');
+				thumbnail.setAttribute('href',arr(book.ypbook)[i]);
 				thumbnail.setAttribute('class','thumbnail');
 				col.appendChild(thumbnail);
 				
@@ -239,7 +239,7 @@
 			}
 		}
 
-	})
+	});
 	
 		$.ajax({
 		type : "get",
@@ -256,7 +256,7 @@
 				
 				// 썸네일 추가
 				var thumbnail = document.createElement('a');
-				thumbnail.setAttribute('href','#');
+				thumbnail.setAttribute('href',arr(book.yes24)[i]);
 				thumbnail.setAttribute('class','thumbnail');
 				col.appendChild(thumbnail);
 				

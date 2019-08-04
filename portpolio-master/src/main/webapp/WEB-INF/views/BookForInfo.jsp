@@ -29,13 +29,12 @@
 	<section>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<b>${book.title}</b> 
-				<a href="out">
+				<b>${book.title}</b> <a href="out">
 					<button type="button" class="close" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</a>
-              
+				<div class="glyphicon glyphicon-heart-empty" id="heart"></div>
 			</div>
 
 			<div role="tabpanel">
@@ -61,6 +60,39 @@
 
 	</section>
 	</main>
+	<script type="text/javascript">
+		document.addEventListener(`DOMContentLoaded`, function() {
+			var count = 0;
+			if (count == 1) {
+				like.setAttribute("class", solid);
+			}
+		});
 
+		var bno = 0;
+		var like = document.getElementById("heart");
+		var empty = "glyphicon glyphicon-heart-empty";
+		var solid = "glyphicon glyphicon-heart";
+
+		var count = 0;
+
+		like.addEventListener("click", function() {
+
+					if (like.getAttribute("class") === empty) {
+						like.setAttribute("class", solid);
+						count++;
+					}
+
+					else {
+						like.setAttribute("class", empty);
+						count--;
+					}
+
+					console.log(count);
+
+
+			});
+		});
+	</script>
 </body>
 </html>
+

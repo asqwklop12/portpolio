@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SearchMapper">
+
+
+  <select id="result" resultType="book">
+  	
+  	  	SELECT 	
+  	  	                  BookPicture       AS image
+ 	 					, BookTitle 		AS title
+  						, BookAuthor 	 	AS author	
+  						, BookTranslator 	AS translator
+  						, BookPage			AS page
+  						, BookPrice 		AS price
+  						, BookPublisher 	AS publisher
+  						, BookSummary       AS summary
+   						, BookIndex			AS bookIndex
+  																	FROM bookInfo
+  										
+  	WHERE					BookTitle = #{title}
+  </select>
+
+  <select id="list" parameterType="hashMap" resultType="book">
+  	
+  	  	SELECT 	
+  	  	                  bookPicture       AS image
+ 	 					, BookTitle 		AS title
+  						, BookAuthor 	 	AS author	
+  						, BookTranslator 	AS translator
+  						, BookPage			AS page
+  						, BookPrice 		AS price
+  						, BookPublisher 	AS publisher
+  																	FROM bookInfo
+  										
+  	WHERE					BookTitle LIKE  '${keyword}%' 
+						OR  bookTitle LIKE '%${keyword}'
+                        OR  bookTitle LIKE '%${keyword}%'
+                        OR  bookTitle     = '${keyword}'
+  																	
+  	LIMIT        		 #{display},#{post}
+  </select>
+ 
+ 
+ 
+ 
+</mapper>

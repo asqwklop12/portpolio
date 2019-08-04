@@ -5,17 +5,19 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-
+  
 	<typeAliases>
 		<!-- user -->
 		<typeAlias alias="user" type="com.younghun.klom.model.user.vo.UserVo"/>
-		<typeAlias alias="login" type="com.younghun.klom.model.user.dto.LoginDto"/>
-		<typeAlias alias="edit" type="com.younghun.klom.model.user.dto.EditDto"/>
 		
-		
-		<!-- board -->
-		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
-		<typeAlias alias="result" type="com.younghun.klom.model.board.dto.DetailDto"/>
+		<!-- book -->
+		<typeAlias alias="book" type="com.younghun.klom.model.book.vo.BookVo"/>
+	
+	
+	     <!-- like -->
+	    <typeAlias alias="like" type="com.younghun.klom.model.like.vo.LikeVo"/>
+	    
+	    
 	</typeAliases>
 	 
 </configuration> 
