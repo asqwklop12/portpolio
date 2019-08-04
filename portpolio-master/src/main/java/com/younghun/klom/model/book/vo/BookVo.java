@@ -11,7 +11,6 @@ public class BookVo {
 	private String image;						//BookPicture
 	private String title;						//BookTitle
 	private String author;						//BookAuthor
-	private String translator;					//BookTranslator
 	private String publisher;					//BookPublisher
 	private int page;							//BookPage
 	private int price;							//BookPrice

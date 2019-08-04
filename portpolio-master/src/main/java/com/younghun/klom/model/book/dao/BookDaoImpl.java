@@ -24,8 +24,8 @@ public class BookDaoImpl implements BookDao{
 	
 	@Override
 	public List<BookVo> search(int display, int post, String keyword) {
-		Map<String, Object> listMap = new PostMap().map(display, post);
-		listMap.put("keyword", keyword);
+		Map<String, Object> listMap = new PostMap().map(display, post,keyword);
+		
 		List<BookVo> list = sqlSession.selectList(NAMESPCE + "list",listMap);
 		log.debug("{}",list);
 		return list;
