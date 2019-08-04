@@ -21,10 +21,7 @@
 			<div class="form-group">
 				<label for="author">작가: </label> <span id="author">${book.author}</span>
 			</div>
-
-			<div class="form-group hidden">
-				<label for="translator">역자: </label> <span id="translator">${book.translator}</span>
-			</div>
+  
 
 			<div class="form-group">
 				<label for="publish">출판사: </label> <span id="publish">${book.publisher}</span>

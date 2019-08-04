@@ -13,7 +13,6 @@
   	  	                  BookPicture       AS image
  	 					, BookTitle 		AS title
   						, BookAuthor 	 	AS author	
-  						, BookTranslator 	AS translator
   						, BookPage			AS page
   						, BookPrice 		AS price
   						, BookPublisher 	AS publisher
@@ -25,12 +24,11 @@
   </select>
 
   <select id="list" parameterType="hashMap" resultType="book">
-  	
+  	  
   	  	SELECT 	
   	  	                  bookPicture       AS image
  	 					, BookTitle 		AS title
   						, BookAuthor 	 	AS author	
-  						, BookTranslator 	AS translator
   						, BookPage			AS page
   						, BookPrice 		AS price
   						, BookPublisher 	AS publisher
