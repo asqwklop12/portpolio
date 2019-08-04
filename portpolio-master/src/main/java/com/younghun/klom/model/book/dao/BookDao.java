@@ -8,4 +8,6 @@ public interface BookDao {
 	
 	// 검색
 	List<BookVo> search(int display, int post, String keyword);
+	
+	BookVo result(String title);
 }

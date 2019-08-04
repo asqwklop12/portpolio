@@ -25,4 +25,9 @@ public class BookServiceImpl implements BookService{
 		return bookDao.search(display,post,keyword);
 	}
 
+	@Override
+	public BookVo result(String title) {
+		return bookDao.result(title);
+	}
+
 }

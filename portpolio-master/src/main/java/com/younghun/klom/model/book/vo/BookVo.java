@@ -16,4 +16,7 @@ public class BookVo {
 	private int page;							//BookPage
 	private int price;							//BookPrice
 	
+	private String summary;						//BookSummary
+	private String bookIndex;						//BookIndex
+	
 }

@@ -6,15 +6,34 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SearchMapper">
 
+
+  <select id="result" resultType="book">
+  	
+  	  	SELECT 	
+  	  	                  BookPicture       AS image
+ 	 					, BookTitle 		AS title
+  						, BookAuthor 	 	AS author	
+  						, BookTranslator 	AS translator
+  						, BookPage			AS page
+  						, BookPrice 		AS price
+  						, BookPublisher 	AS publisher
+  						, BookSummary       AS summary
+   						, BookIndex			AS bookIndex
+  																	FROM bookInfo
+  										
+  	WHERE					BookTitle = #{title}
+  </select>
+
   <select id="list" parameterType="hashMap" resultType="book">
   	
   	  	SELECT 	
- 	 					  BookTitle 		as title
-  						, BookAuthor 	 	as author	
-  						, BookTranslator 	as translator
-  						, BookPage			as page
-  						, BookPrice 		as price
-  						, BookPublisher 	as publisher
+  	  	                  bookPicture       AS image
+ 	 					, BookTitle 		AS title
+  						, BookAuthor 	 	AS author	
+  						, BookTranslator 	AS translator
+  						, BookPage			AS page
+  						, BookPrice 		AS price
+  						, BookPublisher 	AS publisher
   																	FROM bookInfo
   										
   	WHERE					BookTitle LIKE  '${keyword}%' 

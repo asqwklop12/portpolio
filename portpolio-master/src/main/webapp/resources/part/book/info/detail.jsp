@@ -7,15 +7,15 @@
 
 		<div class="media">
 			<div class="media-left media-middle">
-				<img src="/resources/img/kakao.png" alt=""
-					class="img-circle imgSize" />
-			</div>
+				<img src="${book.image}" alt=""
+					class="imgSize" />
+			</div>         
 			<div class="media-body">
 				<div class="panel panel-default">
 					<div class="panel-heading">
 						<h3 class="panel-title">책 소개</h3>
 					</div>
-					<div class="panel-body">내용적는곳</div>
+					<div class="panel-body">${book.summary}</div>
 				</div>
 
 			</div>
@@ -25,7 +25,7 @@
 			<div class="panel-heading">
 				<h3 class="panel-title">목차</h3>
 			</div>
-			<div class="panel-body">내용 적는곳</div>
+			<div class="panel-body">${book.bookIndex}</div>
 		</div>
 	</div>
 </div>
