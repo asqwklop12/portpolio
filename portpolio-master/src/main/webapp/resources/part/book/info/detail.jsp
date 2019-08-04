@@ -13,7 +13,7 @@
 			<div class="media-body">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title">상세 내용</h3>
+						<h3 class="panel-title">책 소개</h3>
 					</div>
 					<div class="panel-body">내용적는곳</div>
 				</div>
