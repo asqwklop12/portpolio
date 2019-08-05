@@ -15,7 +15,18 @@
 		<div class="media-body" onclick="enterInfo()">
 
 			<div class="form-group">
-				<label for="title">제목: </label><a href="search/info?title=${book.title}"><span id="title">${book.title}</span></a>
+			    
+				<label for="title">제목: </label>
+				
+				<c:choose>
+				 <c:when test="${not empty sessionScope.data}">
+				 <a href="search/sInfo?title=${book.title}"><span id="title">${book.title}</span></a>
+				 </c:when>
+				 <c:otherwise>
+				<a href="search/info?title=${book.title}"><span id="title">${book.title}</span></a>
+				</c:otherwise>
+				</c:choose>
+				
 			</div>
   
 			<div class="form-group">
