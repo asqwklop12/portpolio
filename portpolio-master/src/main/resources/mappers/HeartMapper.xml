@@ -20,7 +20,7 @@
    				    SET	 bookLike = 1
 	               
 	               
-	   					 bookTitle = #{bookTitle}           
+	WHERE   			 bookTitle = #{bookTitle}           
                     AND  userEmail = #{userEmail}               
 	               
 </update>
@@ -33,7 +33,7 @@
    				    SET	 bookLike = 0
 	               
 	               
-	   					 bookTitle = #{bookTitle}           
+	WHERE   			 bookTitle = #{bookTitle}           
                     AND  userEmail = #{userEmail}               
 	               
 </update>
