@@ -34,7 +34,9 @@
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</a>
-				<div class="glyphicon glyphicon-heart-empty" id="heart"></div>
+				<c:if test="${not empty sessionScope.data}">
+					<div class="glyphicon glyphicon-heart-empty" id="heart"></div>
+				</c:if>
 			</div>
 
 			<div role="tabpanel">
@@ -60,39 +62,46 @@
 
 	</section>
 	</main>
-	<script type="text/javascript">
-		document.addEventListener(`DOMContentLoaded`, function() {
-			var count = 0;
-			if (count == 1) {
-				like.setAttribute("class", solid);
-			}
-		});
+	<c:if test="${not empty sessionScope.data}">
+		<script type="text/javascript">
+			document.addEventListener(`DOMContentLoaded`, function() {
+				var count = '${result}';
+				if (count == 1) {
+					like.setAttribute("class", solid);
+				}
+			});
+			var like = document.getElementById("heart");
+			var empty = "glyphicon glyphicon-heart-empty";
+			var solid = "glyphicon glyphicon-heart";
+			var count = '${count}';
 
-		var bno = 0;
-		var like = document.getElementById("heart");
-		var empty = "glyphicon glyphicon-heart-empty";
-		var solid = "glyphicon glyphicon-heart";
+			var title = '${book.title}';
 
-		var count = 0;
+			like.addEventListener("click", function() {
 
-		like.addEventListener("click", function() {
+				$.ajax({
+					url : '/search/heart',
+					data : 'title=' + title,
+					dataType : 'json',
+					success : function() {
 
-					if (like.getAttribute("class") === empty) {
-						like.setAttribute("class", solid);
-						count++;
+						if (like.getAttribute("class") === empty) {
+							like.setAttribute("class", solid);
+							count++;
+						}
+
+						else {
+							like.setAttribute("class", empty);
+							count--;
+						}
+
+						console.log(count);
 					}
-
-					else {
-						like.setAttribute("class", empty);
-						count--;
-					}
-
-					console.log(count);
-
+				});
 
 			});
-		});
-	</script>
+		</script>
+	</c:if>
 </body>
 </html>
 

@@ -8,6 +8,8 @@ import lombok.Setter;
 public class HeartVo {
 
 
+	private int    likeId;
 	private String userEmail;
 	private String bookTitle;
+	private int    heart;					
 }

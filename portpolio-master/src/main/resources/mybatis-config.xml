@@ -14,9 +14,8 @@
 		<typeAlias alias="book" type="com.younghun.klom.model.book.vo.BookVo"/>
 	
 	
-	     <!-- like -->
-	    <typeAlias alias="like" type="com.younghun.klom.model.like.vo.LikeVo"/>
-	    
+	  <!-- heart -->
+	  <typeAlias alias="heart" type="com.younghun.klom.model.heart.vo.HeartVo"/>   
 	    
 	</typeAliases>
 	 

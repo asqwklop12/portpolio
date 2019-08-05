@@ -16,6 +16,7 @@ public class BookVo {
 	private int price;							//BookPrice
 	
 	private String summary;						//BookSummary
-	private String bookIndex;						//BookIndex
+	private String bookIndex;				    //BookIndex
 	
+	private int heart;						    //BookLike
 }

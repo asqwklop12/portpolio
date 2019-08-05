@@ -18,6 +18,7 @@
   						, BookPublisher 	AS publisher
   						, BookSummary       AS summary
    						, BookIndex			AS bookIndex
+   						, BookLike			AS heart
   																	FROM bookInfo
   										
   	WHERE					BookTitle = #{title}
@@ -32,7 +33,7 @@
   						, BookPage			AS page
   						, BookPrice 		AS price
   						, BookPublisher 	AS publisher
-  																	FROM bookInfo
+  						, BookLike			AS heart											FROM bookInfo
   										
   	WHERE					BookTitle LIKE  '${keyword}%' 
 						OR  bookTitle LIKE '%${keyword}'
