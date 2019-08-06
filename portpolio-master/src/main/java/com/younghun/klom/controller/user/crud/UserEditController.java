@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,20 +34,19 @@ public class UserEditController {
 	   
 	// home으로 이동(로그인된 상태)(수정 가능성 있음)
 	@RequestMapping(value = "/close", method = RequestMethod.POST)
-	public String edit(HttpSession session, @ModelAttribute UserVo userVo) {
+	public String edit(HttpSession session
+	 , @ModelAttribute UserVo userVo
+	 , Model model) {
 		userService.edit(userVo);
-		
+		session.setAttribute("data", userVo);
 		logger.debug("{}", userVo);
 		return "redirect:/";
 	}
 	
 	// 정보 수정
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView edit(ModelAndView model ) {			
-		UserVo userVo = new UserVo();
-		model.addObject("editDto",userVo);
-		model.setViewName("/user/userEdit");
-		return model;
+	public String edit() {	
+		return "/user/userEdit";
 	}
 	
 

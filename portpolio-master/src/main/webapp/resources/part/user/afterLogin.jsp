@@ -8,8 +8,9 @@
 	</div>
 	<div class="panel-body ">
 
-		<div class="form-group ">
-			<img src="/resources/img/kakao.png" alt="" class="img-circle imgSize" />
+		<div class="form-group ">  
+			<img width="50%" src="/resources/img/${sessionScope.data.image}" alt="" class="img-circle"/>
+			
 		</div>
 
 		<div class="form-group">
