@@ -12,37 +12,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.younghun.klom.model.Pagging;
-import com.younghun.klom.model.board.vo.BoardVo;
 import com.younghun.klom.model.book.service.BookService;
 import com.younghun.klom.model.book.vo.BookVo;
 import com.younghun.klom.model.page.service.PaggingService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Controller
 @RequestMapping("/search")
 public class SearchListController {
 
-	
+	    
 	@Autowired
 	private BookService bookService;
 	
 	@Autowired
 	private PaggingService paggingService;
-	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView serarhList(@RequestParam(value = "num", required = false, defaultValue = "1") int num) {
+	public ModelAndView serarhList(	  @RequestParam(value = "num", required = false ,defaultValue = "1") int num
+									, @RequestParam(value = "keyword", required = false) String keyword) throws Exception {
 		ModelAndView model = new  ModelAndView();
 		
-		// 페이징 처리
-		Pagging p = new Pagging(paggingService.book(), 2);
-		List<BookVo> bookList = bookService.search(p.display(num), p.getCount());
+		
+		// 페이징 처리 (전체페이지, 화면에 보여지는 게시글수)
+		Pagging p = new Pagging(paggingService.book(keyword), 2);
+		List<BookVo> bookList = bookService.search(p.display(num), p.getCount(),keyword);
+		
 		model.addObject("page", p.pagging());
-		
-		
-		logger.debug("{}", bookList);
-		
+		// 키워드
+		model.addObject("keyword", keyword); 
 		
 		model.addObject("bookList",bookList);
+		
 		model.setViewName("MainForSearch");
 		
 		return model;

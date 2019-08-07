@@ -37,7 +37,7 @@ public class MoveDetailController {
 	  
 	// 정보페이지로 이동 
 	@RequestMapping(value = "/info", method = RequestMethod.GET)
-	public String bookInfo(Model model,@RequestParam String title) {
+	public String bookInfo(Model model,@RequestParam String title) throws Exception {
 		
 		BookVo bookVo = bookService.result(title);
 		model.addAttribute("book",bookVo);
@@ -47,7 +47,7 @@ public class MoveDetailController {
 
 	// 정보페이지로 이동 
 	@RequestMapping(value = "/sInfo", method = RequestMethod.GET)
-	public String bookInfo(Model model,@RequestParam String title, HttpSession session) {
+	public String bookInfo(Model model,@RequestParam String title, HttpSession session) throws Exception {
 		BookVo bookVo = bookService.result(title);
 		model.addAttribute("book",bookVo);
 		

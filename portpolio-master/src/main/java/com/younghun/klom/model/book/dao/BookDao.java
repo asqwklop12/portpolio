@@ -7,7 +7,7 @@ import com.younghun.klom.model.book.vo.BookVo;
 public interface BookDao {
 	
 	// 검색
-	List<BookVo> search(int display, int post, String keyword);
+	List<BookVo> search(int display, int post, String keyword) throws Exception;
 	
-	BookVo result(String title);
+	BookVo result(String title) throws Exception;
 }

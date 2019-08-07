@@ -19,14 +19,14 @@ public class BookServiceImpl implements BookService{
 	private BookDao bookDao;
 	
 	@Override
-	public List<BookVo> search(int display, int post, String keyword) {
+	public List<BookVo> search(int display, int post, String keyword) throws Exception {
 		List<BookVo> list = bookDao.search (display,post,keyword);
 		log.debug("{}",list);
 		return bookDao.search(display,post,keyword);
 	}
 
 	@Override
-	public BookVo result(String title) {
+	public BookVo result(String title) throws Exception {
 		return bookDao.result(title);
 	}
 
