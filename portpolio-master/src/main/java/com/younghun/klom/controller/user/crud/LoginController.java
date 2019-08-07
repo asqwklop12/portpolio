@@ -5,6 +5,8 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,29 +24,19 @@ public class LoginController {
 
 	@Autowired
 	private UserService userService;
-	
-	
+
+
 	// 로그인 했을 시
-		@RequestMapping(method = RequestMethod.POST)
-		public ModelAndView login(UserVo  userVo, HttpSession httpSession) throws Exception {
-			
-			
-			ModelAndView model = new ModelAndView();
-			model.setViewName("redirect:/");
-			UserVo data = null;
-			try {
-				data = userService.login(userVo);
-					
-			} catch (Exception e) {
-				log.error("{}",e);
-			}
-			
-			
-			if (data != null) {
-				log.debug("{},{}",data.getName());	
-				httpSession.setAttribute("data", data);				
-			}
-					
-			return model;
+	@RequestMapping(method = RequestMethod.POST)
+	public String login(UserVo userVo, HttpSession httpSession) throws Exception {
+
+		UserVo login = userService.login(userVo);
+
+		if (login != null && userService.match(userVo.getPassword(), login.getPassword())) {
+			log.debug("{},{}", login.getName());
+			httpSession.setAttribute("data", login);
 		}
+
+		return "redirect:/";
+	}
 }

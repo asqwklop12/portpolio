@@ -1,9 +1,9 @@
 package com.younghun.klom.model.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.younghun.klom.model.Encryption;
 import com.younghun.klom.model.user.dao.UserDao;
 import com.younghun.klom.model.user.vo.UserVo;
 
@@ -17,52 +17,41 @@ public class UserServiceImpl implements UserService {
 	private UserDao userDao;
 
 	@Autowired
-	public Encryption encryption;
-		
+	public PasswordEncoder passwordEncoder;
 
 	@Override
 	public void register(UserVo userVo) {
 		log.info("start");
 
-		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
+		userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
 		userDao.register(userVo);
 
-		log.debug("{}", encryption.encrypt(userVo.getPassword()));
-		
+		log.debug("{}", passwordEncoder.encode(userVo.getPassword()));
+
 	}
 
 	@Override
 	public UserVo login(UserVo userVo) {
-
-		UserVo data = userDao.login(userVo);
-
-//		log.debug("{} and {}", userVo.getPassword(),data.getPassword());
-		
-		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
-		
-		//TODO 수정 필요 현재 이메일만 입력해도 로그인되는 현상이 있음
-//		if (encryption.matches(userVo.getPassword(), data.getPassword())) {
-//			
-//			return data;
-//		}
-		
-		return data;
+		return userDao.login(userVo);
 	}
 
 	@Override
 	public void edit(UserVo userVo) {
-		log.debug("{} enter..into",userVo);
-		userVo.setPassword(encryption.encrypt(userVo.getPassword()));
+		log.debug("{} enter..into", userVo);
+		userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
 		userDao.edit(userVo);
-		
+
 	}
 
 	@Override
 	public void delete(UserVo userVo) {
 		userDao.delete(userVo);
-	
+
 	}
 
+	@Override
+	public boolean match(String row, String encode) {
+		return passwordEncoder.matches(row, encode);
+	}
 
 }
-  
