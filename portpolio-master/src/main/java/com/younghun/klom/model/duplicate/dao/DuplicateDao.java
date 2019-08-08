@@ -4,4 +4,5 @@ import com.younghun.klom.model.duplicate.dto.DuplicateDto;
 
 public interface DuplicateDao {
 	int nameCheck(DuplicateDto duplicateDto);
+	int emailCheck(DuplicateDto duplicateDto);
 }

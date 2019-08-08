@@ -18,12 +18,20 @@ public class DuplicateController {
 	private DuplicateDao duplicateDao;
 	
 	@ResponseBody
-	@RequestMapping(value = "/name" ,method = RequestMethod.GET)
+	@RequestMapping(value = "/name" ,method = RequestMethod.POST)
 	public int chekingName(String name) {
 		DuplicateDto dto = new DuplicateDto();
 		dto.setName(name);
 		return duplicateDao.nameCheck(dto);
 	}
-	  
-    	
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/email" ,method = RequestMethod.POST)
+	public int chekingEmail(String email) {
+		DuplicateDto dto = new DuplicateDto();
+		dto.setEmail(email);
+		return duplicateDao.emailCheck(dto);
+	}
+  	   	
 }

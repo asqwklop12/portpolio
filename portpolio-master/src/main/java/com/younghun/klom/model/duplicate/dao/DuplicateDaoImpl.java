@@ -19,4 +19,9 @@ public class DuplicateDaoImpl implements DuplicateDao{
 		return session.selectOne(NAMESPACE + "nickname",duplicateDto);
 	}
 
+	@Override
+	public int emailCheck(DuplicateDto duplicateDto) {
+		return session.selectOne(NAMESPACE +"email",duplicateDto);
+	}
+
 }
