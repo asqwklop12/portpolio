@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SearchMapper">
+
+  <insert id="result" parameterType="search">
+  
+  
+ 	INSERT  							INTO  searchList
+            (
+               userEmail
+             , bookTitle
+             , searchAuthor
+             , searchPublisher
+             
+             )
+		
+	 VALUES (
+	 		   #{userEmail}
+             , #{bookTitle}
+             , #{searchAuthor}
+             , #{searchPublisher}
+             
+	         )
+  
+  </insert> 
+   
+ 
+ 
+</mapper>

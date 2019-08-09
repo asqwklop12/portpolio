@@ -16,7 +16,10 @@
 	
 	  <!-- heart -->
 	  <typeAlias alias="heart" type="com.younghun.klom.model.heart.vo.HeartVo"/>   
-	    
+
+      <!-- 검색결과 -->	    
+      <typeAlias alias="search" type="com.younghun.klom.model.search.vo.SearchVo"/>   
+      
 	</typeAliases>
 	 
 </configuration> 
