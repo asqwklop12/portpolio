@@ -6,35 +6,53 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SearchMapper">
 
+ <select id="rank" resultType="book">
+
+     SELECT      BookPicture         AS image           FROM BookbasicInfo 
+     
+     
+     ORDER BY   bookLike   DESC 
+              , bookTitle
+         
+     LIMIT 5     
+	                                                       
+ </select>
+
+
 
   <select id="result" resultType="book">
   	
   	  	SELECT 	
-  	  	                  BookPicture       AS image
- 	 					, BookTitle 		AS title
-  						, BookAuthor 	 	AS author	
-  						, BookTranslator 	AS translator
-  						, BookPage			AS page
-  						, BookPrice 		AS price
-  						, BookPublisher 	AS publisher
-  						, BookSummary       AS summary
-   						, BookIndex			AS bookIndex
-  																	FROM bookInfo
+  	  					  b.BookId				AS id
+  	  	                , b.BookPicture         AS image
+ 	 					, b.BookTitle 		    AS title
+  						, b.BookAuthor 	 	    AS author	
+  						, b.BookPage			AS page
+  						, b.BookPrice 		    AS price
+  						, b.BookPublisher 	    AS publisher
+  						, d.BookSummary         AS summary
+   						, d.BookIndex			AS bookIndex
+   						, b.BookLike			AS heart
+  					
+  																	FROM BookbasicInfo   AS b
+  		 													  INNER JOIN BookdetailInfo  AS d
+  		 													  
+  		 	ON																	          														
+  		 	                    b.BookTitle = d.BookTitle
   										
-  	WHERE					BookTitle = #{title}
+  	     WHERE					b.BookTitle = #{title}
   </select>
 
   <select id="list" parameterType="hashMap" resultType="book">
-  	
+  	  
   	  	SELECT 	
   	  	                  bookPicture       AS image
  	 					, BookTitle 		AS title
   						, BookAuthor 	 	AS author	
-  						, BookTranslator 	AS translator
   						, BookPage			AS page
   						, BookPrice 		AS price
   						, BookPublisher 	AS publisher
-  																	FROM bookInfo
+  						, BookLike			AS heart						FROM BookbasicInfo
   										
   	WHERE					BookTitle LIKE  '${keyword}%' 
 						OR  bookTitle LIKE '%${keyword}'
@@ -44,7 +62,7 @@
   	LIMIT        		 #{display},#{post}
   </select>
  
- 
+   
  
  
 </mapper>

@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 // UserInfo
 public class UserVo {
-	private String image;			//UserImage
+	private String image;			//profileImage
 	private String email;   		//UserEmail(p)
 	private String name;			//UserName	
 	private String password;		//UserPassword

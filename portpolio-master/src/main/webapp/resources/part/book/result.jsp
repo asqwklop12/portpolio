@@ -14,7 +14,7 @@
 		<div class="media-body" onclick="enterInfo()">
 
 			<div class="form-group">
-			    
+			
 				<label for="title">제목: </label>
 				
 				<c:choose>
@@ -30,7 +30,7 @@
   
 			<div class="form-group">
 				<label for="author">작가: </label> <span id="author">${book.author}</span>
-				</div>
+			</div>
   
 
 			<div class="form-group">

@@ -67,7 +67,6 @@
     
      SET	
      				  UserName        = #{name}
-    				, UserPassword    = #{password}
     				, ProfileImage    = #{image}
     				, UserIntroduce   = #{introduce}
     				
@@ -79,8 +78,23 @@
  
 
  </update>
+    				
+ <update id="change">
 
+ 	 UPDATE		        								UserInfo
+    
+    
+    
+     SET	
+ 
+					  UserPassword  = #{password}
 
+    		    	                                 
+                                      
+     WHERE                UserEmail = #{email}
+ 
+
+ </update>
 
 
  <delete id="clear">

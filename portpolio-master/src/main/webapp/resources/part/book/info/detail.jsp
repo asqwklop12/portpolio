@@ -4,7 +4,7 @@
 <div class="panel-body">
 
 	<div class="form-group">
-
+  
 		<div class="media">
 			<div class="media-left media-middle">
 				<img src="${book.image}" alt=""

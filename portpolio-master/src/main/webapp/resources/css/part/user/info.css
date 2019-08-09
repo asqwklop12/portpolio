@@ -51,9 +51,9 @@ nav label[for="menu_state"] i {
 }
 
 .icon {
-	border: 3px solid yellow;
+	border: 3px solid;
 }
-
+     
 .nav_name {
 	margin-top: 5%;
 }

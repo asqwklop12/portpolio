@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HeartMapper">
+
+
+<select id="check" resultType="int">
+  SELECT      
+                count(userEmail)              
+                                    FROM likeInfo
+                                    
+  WHERE          bookTitle = #{bookTitle}
+            AND  userEmail = #{userEmail}                                 
+
+</select>
+
+
+
+<insert id="create" parameterType="heart">
+
+INSERT 								INTO likeInfo 
+            (
+               bookTitle
+              ,userEmail
+            )
+             
+VALUES      (
+                 #{bookTitle}
+               , #{userEmail}
+            )     
+
+</insert>
+
+
+
+
+<update id="heart_increase" parameterType="book">
+
+	UPDATE 		                             		bookbasicInfo
+	                
+   				    SET	 bookLike = bookLike + 1
+	               
+	               
+	WHERE   			 bookTitle = #{title}           
+
+</update>
+
+  
+<update id="heart_decrease" parameterType="book">
+
+	UPDATE 							  			bookbasicInfo
+	                
+   				    SET	 bookLike = bookLike - 1
+	               
+	               
+	WHERE   			 bookTitle = #{title}           
+
+</update>
+
+
+<select id="heart_result" parameterType="heart" resultType="int">
+
+   SELECT  				
+                         bookLike
+                                         					FROM bookbasicInfo 
+   WHERE                 
+   						 bookTitle = #{bookTitle}           
+                                               
+</select>
+
+
+<select id="result" parameterType="heart" resultType="int">
+
+   SELECT  				
+                         bookLike
+                                         					FROM likeInfo 
+   WHERE                 
+   						 bookTitle = #{bookTitle}           
+                    AND  userEmail = #{userEmail}              
+                                               
+</select>
+
+<update id="increase" parameterType="heart">
+
+	UPDATE 					        		likeInfo
+	                
+   				    SET	 bookLike = bookLike + 1
+	               
+	               
+	WHERE   			 bookTitle = #{bookTitle}           
+                    AND  userEmail = #{userEmail}               
+	               
+</update>
+
+
+<update id="decrease" parameterType="heart">
+
+	UPDATE 					             	likeInfo
+	                
+   				    SET	 bookLike = 0
+	               
+	               
+	WHERE   			 bookTitle = #{bookTitle}           
+                    AND  userEmail = #{userEmail}               
+	               
+</update>
+
+
+</mapper>

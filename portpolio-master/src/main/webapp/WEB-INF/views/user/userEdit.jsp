@@ -140,19 +140,20 @@
 				$.ajax({
 					url : '/duplicate/name',
 					data : 'name=' + nickname.value,
+					method :'post',
 					success : function(data) {
 						e.preventDefault();
 						
 						switch (data) {
 						case 0:
 							
-							duplicate.innerHTML = "생성가능";
+							duplicate.innerHTML = "변경이 가능합니다.";
 							duplicate.style = "color:green";
 							modifyBtn.disabled = "";
 							break;  
 						case 1:
 							if ('${sessionScope.data.name}' != nickname.value) {
-								duplicate.innerHTML = "생성 불가능";
+								duplicate.innerHTML = "변경이 불가능합니다.";
 								duplicate.style = "color:red";
 								modifyBtn.disabled = "disabled";
 							}

@@ -36,12 +36,21 @@ public class UserDaoImpl implements UserDao{
 		session.update(NAMESPACE + "modify", userVo);
 	}
 
+	@Override
+	public void edit2(UserVo userVo) {
+		session.update(NAMESPACE + "change",userVo);
+	}
+	
 	// 계정 삭제
 	@Override
 	public void delete(UserVo userVo) {
 		session.delete(NAMESPACE + "clear", userVo);
 		
 	}
+
+	
+
+	
 
 	
 

@@ -9,9 +9,10 @@
  <select id="login" resultType ="user">
    
     SELECT        
-    			  UserEmail    	  as email
-    			, UserPassword    as password
-    			, UserName        as name
+    			  UserEmail    	  AS email
+    			, UserPassword    AS password
+    			, UserName        AS name
+    			, profileImage    AS image
     
     
     		                                     FROM UserInfo
@@ -32,7 +33,7 @@
  	                                         INTO  userInfo 
  				
  						    (
- 							    UserImage
+ 							    profileImage
  				  			  , UserEmail
  			      			  , UserName
  				  	   		  , UserPassword
@@ -66,7 +67,7 @@
     
      SET	
      				  UserName        = #{name}
-    				, UserPassword    = #{password}
+    				, ProfileImage    = #{image}
     				, UserIntroduce   = #{introduce}
     				
     
@@ -77,8 +78,23 @@
  
 
  </update>
+    				
+ <update id="change">
 
+ 	 UPDATE		        								UserInfo
+    
+    
+    
+     SET	
+ 
+					  UserPassword  = #{password}
 
+    		    	                                 
+                                      
+     WHERE                UserEmail = #{email}
+ 
+
+ </update>
 
 
  <delete id="clear">

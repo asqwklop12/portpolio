@@ -11,4 +11,13 @@
 
 </select>
 
+<select id="email" resultType="int">
+ 
+  SELECT     COUNT(UserEmail)         FROM userInfo
+  
+  WHERE      UserEmail = #{email}
+
+</select>
+
+
 </mapper>

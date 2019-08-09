@@ -28,10 +28,7 @@
 
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<span class="checkbox"> <label> <input
-							type="checkbox"> 자동 로그인
-					</label>
-					</span> <span class="col-sm-offset-2 col-sm-7"> <a
+					<span class="col-sm-offset-2 col-sm-7"> <a
 						class="seacrhPasswor" href="lost">비밀번호를 잃어버리셨나요?</a>
 					</span>
 				</div>
@@ -42,10 +39,41 @@
 			<div class="form-group"></div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" id="confirm">로그인</button>
+					<button id="confirm">로그인</button>
 					<a href="register">회원가입</a>
 				</div>
 			</div>
 		</form>
 	</div>
 </div>
+<script type="text/javascript">
+	var email = document.getElementById("email");
+	var password = document.getElementById("password");
+	var confirm = document.getElementById("confirm");
+
+	function blank(data) {
+		if (data.value == "") {
+			return true;
+		}
+		return false;
+	}
+	
+	function wrongEmail() {
+		return '${SesseionScope.data.eamil}';
+	}
+
+	confirm.addEventListener('click', function(e) {
+
+		if (blank(email) && blank(password)) {
+			e.preventDefault();
+			alert("입력하지 않았습니다.");
+		} else if (blank(email)) {
+			e.preventDefault();
+			alert("이메일을 입력해주시기 바랍니다.");
+		} else if (blank(password)) {
+			e.preventDefault();
+			alert("패스워드를 입력해주시기 바랍니다.");
+		} 
+		
+	});
+</script>

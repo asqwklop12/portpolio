@@ -39,11 +39,11 @@ public class HeartServiceImpl implements HeartService {
 		
 		
 		if (resultCount == 0) {
-			heartDao.heart_increse(bookVo);
 			heartDao.increse(heartVo);
+			heartDao.heart_increse(bookVo);
 		} else  {
-			heartDao.heart_decrease(bookVo);
 			heartDao.decrese(heartVo);
+			heartDao.heart_decrease(bookVo);
 		}
 		
 		return resultCount;

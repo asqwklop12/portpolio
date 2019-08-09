@@ -38,9 +38,14 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void edit(UserVo userVo) {
 		log.debug("{} enter..into", userVo);
-		userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
 		userDao.edit(userVo);
 
+	}
+	
+	@Override
+	public void edit2(UserVo userVo) {
+		userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
+		userDao.edit2(userVo);
 	}
 
 	@Override
@@ -49,9 +54,15 @@ public class UserServiceImpl implements UserService {
 
 	}
 
+	    
+	
 	@Override
 	public boolean match(String row, String encode) {
 		return passwordEncoder.matches(row, encode);
 	}
+
+	
+
+
 
 }

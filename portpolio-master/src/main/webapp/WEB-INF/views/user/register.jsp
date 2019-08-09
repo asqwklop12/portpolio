@@ -296,8 +296,9 @@
 		password.addEventListener("focus", function(e) {
 			e.preventDefault();
 			password.value = "";
+			rePassword.value = "";
 		});
-
+  
 		rePassword.addEventListener("focus", function(e) {
 			e.preventDefault();
 			rePassword.value = "";
@@ -310,7 +311,7 @@
   
 		// LAST EVENT
 		function checkBtn() {
-			if (blank(email) && blank(name) && blank(password)
+			if (blank(email) && blank(name) && blank(password) && blank(rePassword)
 					&& validate(info_email) && validate(info_name)
 					&& validate(info_password)) {
 				
@@ -321,11 +322,13 @@
 			}    
 			return false;
 		}
-	  
-		document.addEventListener('click', function() {
+	    
+		document.addEventListener('keydown', function() {
 			
 			if(checkBtn()) {
 				confirm.disabled = "";
+			} else {
+				confirm.disabled = "disabled";
 			}
 		});
 	</script>
