@@ -31,14 +31,15 @@ public class HeartServiceImpl implements HeartService {
 
 	@Override
 	public int change(HeartVo heartVo) {
-		int resultCount = heartDao.heartResult(heartVo);
-				
+		int resultCount = heartDao.heartResult(heartVo);				
+		int result = result(heartVo);
+		
 		BookVo bookVo = new BookVo();
 		bookVo.setTitle(heartVo.getBookTitle());
 
 		
 		
-		if (resultCount == 0) {
+		if (result == 0) {
 			heartDao.increse(heartVo);
 			heartDao.heart_increse(bookVo);
 		} else  {

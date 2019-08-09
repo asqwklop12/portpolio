@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="BookMapper">
+
+ <select id="rank" resultType="book">
+
+     SELECT      BookPicture         AS image           FROM BookbasicInfo 
+     
+     
+     ORDER BY   bookLike   DESC 
+              , bookTitle
+         
+     LIMIT 5     
+	                                                       
+ </select>
+
+
+
+  <!-- 개별 화면 -->
+  <select id="result" resultType="book">
+  	
+  	  	SELECT 	
+  	  					  b.BookPicture         AS image
+ 	 					, b.BookTitle 		    AS title
+  						, b.BookAuthor 	 	    AS author	
+  						, b.BookPage			AS page
+  						, b.BookPrice 		    AS price
+  						, b.BookPublisher 	    AS publisher
+  						, d.BookSummary         AS summary
+   						, d.BookIndex			AS bookIndex
+   						, b.BookLike			AS heart
+  					
+  																	FROM BookbasicInfo   AS b
+  		 													  INNER JOIN BookdetailInfo  AS d
+  		 													  
+  		 	ON																	          														
+  		 	                    b.BookTitle = d.BookTitle
+  										
+  	     WHERE					b.BookTitle = #{title}
+  </select>
+
+
+   <!-- 리스트 -->
+  <select id="list" parameterType="hashMap" resultType="book">
+  	  
+  	  	SELECT 	
+  	  	                  bookPicture       AS image
+ 	 					, BookTitle 		AS title
+  						, BookAuthor 	 	AS author	
+  						, BookPage			AS page
+  						, BookPrice 		AS price
+  						, BookPublisher 	AS publisher
+  						, BookLike			AS heart						FROM BookbasicInfo
+  										
+  	WHERE					BookTitle LIKE  '${keyword}%' 
+						OR  bookTitle LIKE '%${keyword}'
+                        OR  bookTitle LIKE '%${keyword}%'
+                        OR  bookTitle     = '${keyword}'
+  																	
+  	LIMIT        		 #{display},#{post}
+  </select>
+ 
+   
+ 
+ 
+</mapper>

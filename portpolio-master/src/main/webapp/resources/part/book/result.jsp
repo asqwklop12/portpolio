@@ -14,24 +14,28 @@
 		<div class="media-body" onclick="enterInfo()">
 
 			<div class="form-group">
-			
-				<label for="title">제목: </label>
-				
-				<c:choose>
-				 <c:when test="${not empty sessionScope.data}">
-				 <a href="search/sInfo?title=${book.title}"><span id="title">${book.title}</span></a>
-				 </c:when>
-				 <c:otherwise>
-				<a href="search/info?title=${book.title}"><span id="title">${book.title}</span></a>
-				</c:otherwise>
-				</c:choose>
-				
+				<label for="id">번호: </label> <span id="id">${book.id}</span>
 			</div>
-  
+			
+			<div class="form-group">
+
+				<label for="title">제목: </label>
+
+				<c:choose>
+					<c:when test="${not empty sessionScope.data}">
+						<a href="search/sInfo?title=${book.title}"><span id="title">${book.title}</span></a>
+					</c:when>
+					<c:otherwise>
+						<a href="search/info?title=${book.title}"><span id="title">${book.title}</span></a>
+					</c:otherwise>
+				</c:choose>
+
+			</div>
+
 			<div class="form-group">
 				<label for="author">작가: </label> <span id="author">${book.author}</span>
 			</div>
-  
+
 
 			<div class="form-group">
 				<label for="publish">출판사: </label> <span id="publish">${book.publisher}</span>
@@ -50,7 +54,7 @@
 			<div class="form-group">
 				<label for="like">좋아요: </label> <span id="like">${book.heart}</span>
 			</div>
-  
+
 		</div>
 		<br />
 	</c:forEach>
