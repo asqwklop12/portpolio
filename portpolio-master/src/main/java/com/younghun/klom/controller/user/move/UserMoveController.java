@@ -18,12 +18,5 @@ public class UserMoveController {
 		return "redirect:/";
 	}
 	
-	//TODO: 검색목록 이동 (로그인이 안되있으면 접근 불가[현재는 가능])
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public ModelAndView list(HttpSession session) {
-
-		return new ModelAndView("MainForBookList");
-
-	}
 
 }

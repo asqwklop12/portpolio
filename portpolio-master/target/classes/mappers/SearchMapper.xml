@@ -27,6 +27,18 @@
 	         )
   
   </insert> 
+  
+  <select id="list" resultType="search">
+  
+    SELECT       	
+                     SearchId
+	               , bookTitle
+	               , searchAuthor
+	               , searchPublisher                     FROM searchList
+	               
+	WHERE          userEmail = #{userEmail}                 
+  
+  </select>
    
  
  

@@ -1,5 +1,7 @@
 package com.younghun.klom.model.search.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,6 +18,10 @@ public class SearchDaoImpl implements SearchDao{
 	@Override
 	public void insert(SearchVo searchVo) {
 		sqlSession.insert(NAMESPACE + "result",searchVo);
+	}
+	@Override
+	public List<SearchVo> list(String email) {
+		return sqlSession.selectList(NAMESPACE + "list",email);
 	}
 
 }

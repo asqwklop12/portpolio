@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="panel panel-primary">
 	<div class="panel-heading">
 		<h3 class="panel-title">검색목록</h3>
@@ -19,11 +19,12 @@
 				</thead>
 				<tbody>
 					<tr>
-
-						<td>0</td>
-						<td>제목명</td>
-						<td>어드민</td>
-						<td>출판사명</td>
+						<c:forEach var="search" items="${list}" varStatus="status">
+						<td>${status.count}</td>
+						<td>${search.bookTitle}</td>
+						<td>${search.searchAuthor}</td>
+						<td>${search.searchPublisher}</td>
+						</c:forEach>
 					</tr>
 
 				</tbody>
