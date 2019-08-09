@@ -35,7 +35,7 @@ VALUES      (
 
 <update id="heart_increase" parameterType="book">
 
-	UPDATE 		                             		bookInfo
+	UPDATE 		                             		bookbasicInfo
 	                
    				    SET	 bookLike = bookLike + 1
 	               
@@ -47,7 +47,7 @@ VALUES      (
   
 <update id="heart_decrease" parameterType="book">
 
-	UPDATE 							  			bookInfo
+	UPDATE 							  			bookbasicInfo
 	                
    				    SET	 bookLike = bookLike - 1
 	               
@@ -61,7 +61,7 @@ VALUES      (
 
    SELECT  				
                          bookLike
-                                         					FROM bookInfo 
+                                         					FROM bookbasicInfo 
    WHERE                 
    						 bookTitle = #{bookTitle}           
                                                
