@@ -20,7 +20,7 @@ public class BookDaoImpl implements BookDao{
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private static final String NAMESPCE = "SearchMapper.";
+	private static final String NAMESPCE = "BookMapper.";
 	
 	@Override
 	public List<BookVo> search(int display, int post, String keyword) {
