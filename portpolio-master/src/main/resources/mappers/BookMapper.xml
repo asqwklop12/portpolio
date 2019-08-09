@@ -20,11 +20,11 @@
 
 
 
+  <!-- 개별 화면 -->
   <select id="result" resultType="book">
   	
   	  	SELECT 	
-  	  					  b.BookId				AS id
-  	  	                , b.BookPicture         AS image
+  	  					  b.BookPicture         AS image
  	 					, b.BookTitle 		    AS title
   						, b.BookAuthor 	 	    AS author	
   						, b.BookPage			AS page
@@ -43,6 +43,8 @@
   	     WHERE					b.BookTitle = #{title}
   </select>
 
+
+   <!-- 리스트 -->
   <select id="list" parameterType="hashMap" resultType="book">
   	  
   	  	SELECT 	
