@@ -30,4 +30,9 @@ public class BookServiceImpl implements BookService{
 		return bookDao.result(title);
 	}
 
+	@Override
+	public List<BookVo> rank() {
+		return bookDao.rank();
+	}
+
 }

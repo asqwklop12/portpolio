@@ -36,4 +36,9 @@ public class BookDaoImpl implements BookDao{
 		return sqlSession.selectOne(NAMESPCE + "result",title);
 	}
 
+	@Override
+	public List<BookVo> rank() {
+		return sqlSession.selectList(NAMESPCE + "rank");
+	}
+
 }

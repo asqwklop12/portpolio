@@ -9,5 +9,8 @@ public interface BookDao {
 	// 검색
 	List<BookVo> search(int display, int post, String keyword) throws Exception;
 	
+	
+	// 좋아요 순위
+	List<BookVo> rank();
 	BookVo result(String title) throws Exception;
 }
