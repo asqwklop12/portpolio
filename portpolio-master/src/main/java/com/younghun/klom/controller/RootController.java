@@ -25,7 +25,7 @@ public class RootController {
 	private BookService bookService;
 	// 루트값설정 (Home)
 	@RequestMapping(method = RequestMethod.GET)
-	public String home(Model model)  {
+	public String home(Model model) throws Exception  {
 
 		String[] bookstore = {"bandi","kyobo","aladin","ypbook","yes24"};
 		// 온라인 서점 크롤링
@@ -38,11 +38,9 @@ public class RootController {
 				e.printStackTrace();
 			}
 		}
-		
+		  
 		List<BookVo> rank = bookService.rank();
-		for (BookVo b : rank) {
-			log.debug("{},i",b);
-		}  
+		
 		model.addAttribute("rank",rank);
 		return "LayoutForMain";
 	}
