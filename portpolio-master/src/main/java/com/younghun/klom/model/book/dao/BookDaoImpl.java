@@ -1,14 +1,13 @@
 package com.younghun.klom.model.book.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.younghun.klom.model.book.vo.BookVo;
-import com.younghun.klom.structor.PostMap;
+import com.younghun.klom.model.page.vo.SearchVo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,10 +22,8 @@ public class BookDaoImpl implements BookDao{
 	private static final String NAMESPCE = "BookMapper.";
 	
 	@Override
-	public List<BookVo> search(int display, int post, String keyword) {
-		Map<String, Object> listMap = new PostMap().map(display, post,keyword);
-		
-		List<BookVo> list = sqlSession.selectList(NAMESPCE + "list",listMap);
+	public List<BookVo> search(SearchVo searchVo) {
+		List<BookVo> list = sqlSession.selectList(NAMESPCE + "list",searchVo);
 		log.debug("{}",list);
 		return list;
 	}

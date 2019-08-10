@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.younghun.klom.model.book.dao.BookDao;
 import com.younghun.klom.model.book.vo.BookVo;
+import com.younghun.klom.model.page.vo.SearchVo;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,9 +21,13 @@ public class BookServiceImpl implements BookService{
 	
 	@Override
 	public List<BookVo> search(int display, int post, String keyword) throws Exception {
-		List<BookVo> list = bookDao.search (display,post,keyword);
+		SearchVo searchVo = new SearchVo();
+		searchVo.setDisplay(display);
+		searchVo.setPost(post);
+		searchVo.setKeyword(keyword);
+		List<BookVo> list = bookDao.search (searchVo);
 		log.debug("{}",list);
-		return bookDao.search(display,post,keyword);
+		return bookDao.search(searchVo);
 	}
 
 	@Override

@@ -3,11 +3,12 @@ package com.younghun.klom.model.book.dao;
 import java.util.List;
 
 import com.younghun.klom.model.book.vo.BookVo;
+import com.younghun.klom.model.page.vo.SearchVo;
 
 public interface BookDao {
 	
 	// 검색
-	List<BookVo> search(int display, int post, String keyword) throws Exception;
+	List<BookVo> search(SearchVo searchVo) throws Exception;
 	
 	
 	// 좋아요 순위

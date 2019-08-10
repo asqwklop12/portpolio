@@ -1,7 +1,16 @@
 package com.younghun.klom.model.book.service;
 
-import com.younghun.klom.model.book.dao.BookDao;
+import java.util.List;
 
-public interface BookService  extends BookDao{
+import com.younghun.klom.model.book.vo.BookVo;
 
+public interface BookService {
+
+	// 검색
+	List<BookVo> search(int display, int post, String keyword) throws Exception;
+
+	// 좋아요 순위
+	List<BookVo> rank() throws Exception;
+
+	BookVo result(String title) throws Exception;
 }
