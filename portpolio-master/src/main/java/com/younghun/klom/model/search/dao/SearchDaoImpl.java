@@ -6,7 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.younghun.klom.model.search.vo.SearchVo;
+import com.younghun.klom.model.search.dto.SearchDto;
+import com.younghun.klom.model.search.vo.SearchListVo;
   
 @Repository
 public class SearchDaoImpl implements SearchDao{
@@ -16,12 +17,12 @@ public class SearchDaoImpl implements SearchDao{
 	
 	private static final String NAMESPACE = "SearchMapper.";
 	@Override
-	public void insert(SearchVo searchVo) {
+	public void insert(SearchListVo searchVo) {
 		sqlSession.insert(NAMESPACE + "result",searchVo);
 	}
 	@Override
-	public List<SearchVo> list(String email) {
-		return sqlSession.selectList(NAMESPACE + "list",email);
+	public List<SearchListVo> list(SearchDto searchDto) {
+		return sqlSession.selectList(NAMESPACE + "list",searchDto);
 	}
 	@Override
 	public int user(String email) {
@@ -32,7 +33,7 @@ public class SearchDaoImpl implements SearchDao{
 		return sqlSession.selectOne(NAMESPACE + "max");
 	}
 	@Override
-	public void delete(SearchVo searchVo) {
+	public void delete(SearchListVo searchVo) {
 		sqlSession.delete(NAMESPACE + "delete",searchVo);
 	}
 	@Override
@@ -40,7 +41,7 @@ public class SearchDaoImpl implements SearchDao{
 		sqlSession.update(NAMESPACE + "downId",id);
 	}
 	@Override
-	public void updateGroup(SearchVo searchVo) {
+	public void updateGroup(SearchListVo searchVo) {
 		sqlSession.update(NAMESPACE + "downGroup",searchVo);
 	}
 	

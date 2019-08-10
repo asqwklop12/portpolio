@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.younghun.klom.model.search.dao.SearchDao;
-import com.younghun.klom.model.search.dao.SearchService;
-import com.younghun.klom.model.search.vo.SearchVo;
+import com.younghun.klom.model.search.service.SearchService;
+import com.younghun.klom.model.search.vo.SearchListVo;
 import com.younghun.klom.model.user.vo.UserVo;
 
 @Controller
@@ -27,7 +27,7 @@ public class DeleteSearchController {
 	public String delete(@PathVariable int id,@PathVariable int group, HttpSession session) {
 		
 		String email = ((UserVo)(session.getAttribute("data"))).getEmail();
-		SearchVo searchVo = new SearchVo();
+		SearchListVo searchVo = new SearchListVo();
 		
 		searchVo.setSearchId(id);
 		searchVo.setSearchNumber(group);

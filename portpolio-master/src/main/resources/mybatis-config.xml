@@ -17,8 +17,14 @@
 	  <!-- heart -->
 	  <typeAlias alias="heart" type="com.younghun.klom.model.heart.vo.HeartVo"/>   
 
+       <!-- search -->
+      <typeAlias alias="search" type="com.younghun.klom.model.page.vo.SearchVo"/>
+      
+      <!-- searchPage -->
+      <typeAlias alias="searchPage" type="com.younghun.klom.model.search.dto.SearchDto"/>
+      
       <!-- 검색결과 -->	    
-      <typeAlias alias="search" type="com.younghun.klom.model.search.vo.SearchVo"/>   
+      <typeAlias alias="result" type="com.younghun.klom.model.search.vo.SearchListVo"/>   
       
 	</typeAliases>
 	 

@@ -4,6 +4,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.younghun.klom.model.page.vo.SearchVo;
+import com.younghun.klom.model.search.dto.SearchDto;
+
 @Repository
 public class PaggingDaoIml implements PaggingDao {
 
@@ -20,8 +23,14 @@ public class PaggingDaoIml implements PaggingDao {
 
 
 	@Override
-	public int book(String keyword) {
-		return sqlSession.selectOne(NAMESPACE + "book", keyword);
+	public int book(SearchVo searchVo) {
+		return sqlSession.selectOne(NAMESPACE + "book", searchVo);
+	}
+
+
+	@Override
+	public int search(SearchDto searchDto) {
+		return sqlSession.selectOne(NAMESPACE + "search",searchDto);
 	}
 
 }

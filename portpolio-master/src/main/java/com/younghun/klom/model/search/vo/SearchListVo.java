@@ -7,7 +7,7 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-public class SearchVo {
+public class SearchListVo {
 
 	private int searchId;
 	private int searchNumber;

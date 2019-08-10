@@ -2,21 +2,22 @@ package com.younghun.klom.model.search.dao;
 
 import java.util.List;
 
-import com.younghun.klom.model.search.vo.SearchVo;
+import com.younghun.klom.model.search.dto.SearchDto;
+import com.younghun.klom.model.search.vo.SearchListVo;
 
 public interface SearchDao {
 
-	void insert(SearchVo searchVo);
+	void insert(SearchListVo searchVo);
 	
-	List<SearchVo> list(String email);
+	List<SearchListVo> list(SearchDto searchDto);
 	
-	void delete(SearchVo searchVo);
+	void delete(SearchListVo searchVo);
 	
 	
 	int user(String email);
 	int max();
 	
 	void updateId(int id);
-	void updateGroup(SearchVo searchVo);
+	void updateGroup(SearchListVo searchVo);
 	
 }
