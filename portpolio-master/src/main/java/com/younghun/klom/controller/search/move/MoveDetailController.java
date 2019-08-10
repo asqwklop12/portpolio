@@ -54,25 +54,26 @@ public class MoveDetailController {
 		BookVo bookVo = bookService.result(title);
 		model.addAttribute("book", bookVo);
 
+		log.debug("this click = {}",bookVo);
 		String email = ((UserVo) session.getAttribute("data")).getEmail();
-		
+
 		HeartVo heartVo = like(title, email);
 
-		if (session.getAttribute("data") != null) {
-			searchDao.insert(search(email, bookVo));
-		}
+		searchDao.insert(search(email, bookVo));
+		
+		
 		int check = heartService.check(heartVo);
 
 		if (check == 0) {
 			heartService.create(heartVo);
 		}
-		
-		
-		log.debug("{}vbvbvbvcbvcbcvbbv", check);
+
+		log.debug("{}", check);
 
 		model.addAttribute("result", heartService.result(heartVo));
 		return "BookForInfo";
 	}
+
 	private HeartVo like(String title, String email) {
 		HeartVo heartVo = new HeartVo();
 		heartVo.setBookTitle(title);
@@ -82,10 +83,28 @@ public class MoveDetailController {
 
 	private SearchVo search(String email, BookVo bookVo) {
 		SearchVo searchVo = new SearchVo();
+
+
+		
+		try {
+			searchVo.setSearchNumber(searchDao.user(email) + 1);
+		} catch (NullPointerException e) {
+			searchVo.setSearchNumber(1);
+		}
+		
+		try {
+			searchVo.setSearchId(searchDao.max() + 1);
+		} catch (NullPointerException e) {
+			searchVo.setSearchId(1);
+		}
+
+
 		searchVo.setUserEmail(email);
 		searchVo.setBookTitle(bookVo.getTitle());
 		searchVo.setSearchAuthor(bookVo.getAuthor());
 		searchVo.setSearchPublisher(bookVo.getPublisher());
 		return searchVo;
 	}
+	
+	
 }

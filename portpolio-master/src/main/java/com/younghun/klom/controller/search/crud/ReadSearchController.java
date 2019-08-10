@@ -15,7 +15,10 @@ import com.younghun.klom.model.search.dao.SearchDao;
 import com.younghun.klom.model.search.vo.SearchVo;
 import com.younghun.klom.model.user.vo.UserVo;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 public class ReadSearchController {
 
 	@Autowired
@@ -31,6 +34,7 @@ public class ReadSearchController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		log.debug("{}",list);
 		model.addAttribute("list", list);
 		return "MainForBookList";
 

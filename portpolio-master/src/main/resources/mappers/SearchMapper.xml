@@ -6,12 +6,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="SearchMapper">
 
+ <!-- 개별 -->
+  <select id="user" resultType="int">
+  
+  SELECT         MAX(searchNumber)  AS maxNum    
+                                            FROM searchList
+                                            
+  WHERE          userEmail = #{userEmail}                   
+  
+  </select>
+
+ <!-- 전체크기 -->
+  <select id="max" resultType="int">
+  
+  SELECT         MAX(searchId)  AS maxId    
+                                            FROM searchList                                                           
+  </select>
+
+ <!-- 입력 -->
   <insert id="result" parameterType="search">
   
+   
   
  	INSERT  							INTO  searchList
             (
-               userEmail
+               searchId
+             , searchNumber  
+             , userEmail
              , bookTitle
              , searchAuthor
              , searchPublisher
@@ -19,7 +40,9 @@
              )
 		
 	 VALUES (
-	 		   #{userEmail}
+	           #{searchId}
+	         , #{searchNumber}  
+	 		 , #{userEmail}
              , #{bookTitle}
              , #{searchAuthor}
              , #{searchPublisher}
@@ -28,18 +51,48 @@
   
   </insert> 
   
+  <!-- 리스트 -->
   <select id="list" resultType="search">
   
     SELECT       	
                      SearchId
+                   , searchNumber  
 	               , bookTitle
 	               , searchAuthor
 	               , searchPublisher                     FROM searchList
 	               
 	WHERE          userEmail = #{userEmail}                 
-  
+	ORDER BY	   searchNumber
   </select>
    
  
- 
+  <delete id="delete" parameterType="search">
+    
+     DELETE 												FROM      searchList
+     
+     
+ 	  WHERE 
+        				   	userEmail    =  #{userEmail}
+					   AND  searchNumber = #{searchNumber}         
+  </delete>
+
+<update id="downId">
+
+      UPDATE                                  searchList 
+         SET      searchId = searchId - 1
+      
+       WHERE      searchId = #{searchId}
+</update>
+
+<update id="downGroup">
+
+      UPDATE                                  		  searchList 
+      
+         SET         searchNumber = searchNumber - 1
+      
+       WHERE         searchNumber = #{searchNumber}
+               AND   userEmail    = #{userEmail}
+</update>
+
+
 </mapper>
