@@ -15,6 +15,7 @@ import com.younghun.klom.model.Pagging;
 import com.younghun.klom.model.book.service.BookService;
 import com.younghun.klom.model.book.vo.BookVo;
 import com.younghun.klom.model.page.service.PaggingService;
+import com.younghun.klom.model.page.vo.SearchVo;
 
 import lombok.extern.slf4j.Slf4j;
 

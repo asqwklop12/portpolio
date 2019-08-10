@@ -14,7 +14,7 @@ import com.younghun.klom.model.book.vo.BookVo;
 import com.younghun.klom.model.heart.service.HeartService;
 import com.younghun.klom.model.heart.vo.HeartVo;
 import com.younghun.klom.model.search.dao.SearchDao;
-import com.younghun.klom.model.search.vo.SearchVo;
+import com.younghun.klom.model.search.vo.SearchListVo;
 import com.younghun.klom.model.user.vo.UserVo;
 
 import lombok.extern.slf4j.Slf4j;
@@ -81,8 +81,8 @@ public class MoveDetailController {
 		return heartVo;
 	}
 
-	private SearchVo search(String email, BookVo bookVo) {
-		SearchVo searchVo = new SearchVo();
+	private SearchListVo search(String email, BookVo bookVo) {
+		SearchListVo searchVo = new SearchListVo();
 
 
 		

@@ -5,21 +5,29 @@
 	<select id="board" resultType="int">
 		SELECT 
 				count(boardId) 
-								from BookbasicInfo;
+								from BookbasicInfo
 	
 	</select>
  
+ 
+ 	<select id="search" resultType="int">
+		SELECT 
+				count(searchNumber) 
+											FROM searchList
+		WHERE  userEmail = #{userEmail}									
+	
+	</select>
 
-	<select id="book" resultType="int" parameterType="string">
+	<select id="book" resultType="int">
 		SELECT 
 						count(bookTitle) 
 														FROM BookbasicInfo
 								
 								
-		WHERE				BookTitle LIKE '${value}%' 
-						OR  bookTitle LIKE '%${value}'
-                        OR  bookTitle LIKE '%${value}%'
-                        OR  bookTitle	  = '${value}'						
+		WHERE				BookTitle LIKE '${keyword}%' 
+						OR  bookTitle LIKE '%${keyword}'
+                        OR  bookTitle LIKE '%${keyword}%'
+                        OR  bookTitle	  = '${keyword}'						
 								
 	</select>
 
