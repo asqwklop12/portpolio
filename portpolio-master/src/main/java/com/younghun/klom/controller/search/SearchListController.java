@@ -36,12 +36,16 @@ public class SearchListController {
 									, @RequestParam(value = "keyword", required = false) String keyword) throws Exception {
 		ModelAndView model = new  ModelAndView();
 		
+		List<BookVo> bookList = null;
+		if (keyword != "") {
+			// 페이징 처리 (전체페이지, 화면에 보여지는 게시글수)
+			Pagging p = new Pagging(paggingService.book(keyword), 2);
+			bookList = bookService.search(p.display(num), p.getCount(),keyword);
+			
+			model.addObject("page", p.pagging());
+		} 
 		
-		// 페이징 처리 (전체페이지, 화면에 보여지는 게시글수)
-		Pagging p = new Pagging(paggingService.book(keyword), 2);
-		List<BookVo> bookList = bookService.search(p.display(num), p.getCount(),keyword);
 		
-		model.addObject("page", p.pagging());
 		// 키워드
 		model.addObject("keyword", keyword); 
 		
