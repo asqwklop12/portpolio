@@ -1,11 +1,18 @@
 package com.younghun.klom.model.user.service;
 
+import java.io.UnsupportedEncodingException;
+
+import javax.mail.MessagingException;
+
 import com.younghun.klom.model.user.vo.UserVo;
 
 public interface UserService{	
 
 	// 회원가입
 	void register (UserVo userVo) throws Exception;
+	
+	// 비밀번호 찾기
+	void searchPassword(String email) throws MessagingException, UnsupportedEncodingException;
 	
 	// 로그인
 	UserVo login (UserVo userVo);

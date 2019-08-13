@@ -1,5 +1,9 @@
 package com.younghun.klom.model.user.service;
 
+import java.io.UnsupportedEncodingException;
+
+import javax.mail.MessagingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -29,7 +33,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void register(UserVo userVo) throws Exception {
 		log.info("start");
-
+		
 		userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
 		userDao.register(userVo);
 		// 인증 보내기 메서드
@@ -59,6 +63,25 @@ public class UserServiceImpl implements UserService {
 
 		log.debug("{}", passwordEncoder.encode(userVo.getPassword()));
   
+	}
+	
+	@Override
+	public void searchPassword(String email) throws MessagingException, UnsupportedEncodingException {
+		String authKey = new TempKey().getKey(10, false);	
+		MailUtils sendMail = new MailUtils(mailSender);		
+		sendMail.setSubject("임시 비밀번호입니다.");
+		sendMail.setText(new StringBuffer().append("<h1>비밀번호 찾기</h1>")
+				       .append("<p>임시번호를 발송합니다.</p>")
+				       .append(authKey)
+				       .toString());
+		sendMail.setFrom("divdragon93@gmail.com", "관리자");
+		sendMail.setTo(email);
+		sendMail.send();
+		
+		UserVo userVo = new UserVo();
+		userVo.setEmail(email);
+		userVo.setPassword(passwordEncoder.encode(authKey));
+		userDao.edit2(userVo);
 	}
 
 	@Override
@@ -107,6 +130,8 @@ public class UserServiceImpl implements UserService {
 		userVo.setEmail(email);
 		return userDao.authorization(userVo);
 	}
+
+	
 
 	
 
