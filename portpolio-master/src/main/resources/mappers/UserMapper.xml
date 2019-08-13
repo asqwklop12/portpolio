@@ -5,111 +5,142 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="UserMapper">
-  
- <select id="login" resultType ="user">
+
+	<update id="authorization" parameterType="authorization">
+
+		UPDATE 	 userInfo
+		SET 	 userAuthorization = #{key}
+	    WHERE    userEmail = #{email}
+	</update>
+
+
+	<update id="yes" parameterType="user">
+
+		UPDATE   userInfo
+		SET      userAuthorization = #{key}
+		WHERE    userEmail = #{email}
+
+	</update>
+
+
+   <select id="confirmLogin" resultType="user">
    
-    SELECT        
-    			  UserEmail    	  AS email
-    			, UserPassword    AS password
-    			, UserName        AS name
-    			, profileImage    AS image
-    
-    
-    		                                     FROM UserInfo
-                                      
-    WHERE 
-                   		UserEmail = #{email}
-                   		
-                   		
-                 
-                   		
-         
- </select>
- 
- 
- <!-- 회원가입 -->
- <insert id="Register">
- 	INSERT                                      	                                        
- 	                                         INTO  userInfo 
- 				
- 						    (
- 							    profileImage
- 				  			  , UserEmail
- 			      			  , UserName
- 				  	   		  , UserPassword
- 				  			  , UserIntroduce
- 							  , UserDate 
- 						   
- 						    )
- 					 
- 	VALUES
- 	
- 	                        ( 	      		 
- 	                            #{image} 
- 	                          , #{email}
- 	                          , #{name} 
- 	                          , #{password}
- 	                          , #{introduce}
- 	                          , now()
- 	                        )
- 	          
- </insert>
-         
+   		SELECT
+					UserEmail AS email
+				  , UserName AS name
+				  , userAuthorization As authorization
 
- 
-  
- <!-- 수정 -->
- <update id="modify">
-
- 	 UPDATE		        								UserInfo
-    
-    
-    
-     SET	
-     				  UserName        = #{name}
-    				, ProfileImage    = #{image}
-    				, UserIntroduce   = #{introduce}
-    				
-    
-    		    	                               
-                                      
-     WHERE 
-                   	  UserEmail = #{email}
- 
-
- </update>
-    				
- <update id="change">
-
- 	 UPDATE		        								UserInfo
-    
-    
-    
-     SET	
- 
-					  UserPassword  = #{password}
-
-    		    	                                 
-                                      
-     WHERE                UserEmail = #{email}
- 
-
- </update>
+																FROM UserInfo
+																
+		WHERE UserEmail = #{email}
+   
+   </select>
 
 
- <delete id="clear">
+	<select id="login" resultType="user">
 
- 	 DELETE		        								FROM UserInfo
-    				
-    
-    		    	                               
-                                      
-     WHERE 
-                   	   UserEmail = #{email}
- 
+		SELECT
+		UserEmail AS email
+		, UserPassword AS password
+		, UserName AS name
+		, profileImage AS image
+		, userAuthorization As authorization
 
- </delete>
- 
- 
- 
+		FROM UserInfo
+
+		WHERE
+		UserEmail = #{email}
+
+
+
+
+
+	</select>
+
+
+	<!-- 회원가입 -->
+	<insert id="Register">
+		INSERT
+		INTO userInfo
+
+		(
+		profileImage
+		, UserEmail
+		, UserName
+		, UserPassword
+		, UserIntroduce
+		, UserDate
+
+		)
+
+		VALUES
+
+		(
+		#{image}
+		, #{email}
+		, #{name}
+		, #{password}
+		, #{introduce}
+		, now()
+		)
+
+	</insert>
+
+
+
+
+	<!-- 수정 -->
+	<update id="modify">
+
+		UPDATE UserInfo
+
+
+
+		SET
+		UserName = #{name}
+		, ProfileImage = #{image}
+		, UserIntroduce = #{introduce}
+
+
+
+
+		WHERE
+		UserEmail = #{email}
+
+
+	</update>
+
+	<update id="change">
+
+		UPDATE UserInfo
+
+
+
+		SET
+
+		UserPassword = #{password}
+
+
+
+		WHERE UserEmail = #{email}
+
+
+	</update>
+
+
+	<delete id="clear">
+
+		DELETE FROM UserInfo
+
+
+
+
+		WHERE
+		UserEmail = #{email}
+
+
+	</delete>
+
+
+
 </mapper>

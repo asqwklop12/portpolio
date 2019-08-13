@@ -1,5 +1,6 @@
 package com.younghun.klom.model.user.dao;
 
+import com.younghun.klom.model.user.vo.AuthorizationVo;
 import com.younghun.klom.model.user.vo.UserVo;
 
 public interface UserDao {
@@ -17,5 +18,11 @@ public interface UserDao {
 	// 유저 삭제
 	void delete(UserVo userVo);
 
+	// 인증1
+	void getKey(AuthorizationVo vo);
+	// 인증2
+	void yesAuth(AuthorizationVo vo);
 	
+	// 인증 확인
+	UserVo authorization(UserVo userVo);
  }

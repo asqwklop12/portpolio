@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.younghun.klom.model.user.vo.AuthorizationVo;
 import com.younghun.klom.model.user.vo.UserVo;
 
 import lombok.extern.slf4j.Slf4j;
@@ -46,6 +47,22 @@ public class UserDaoImpl implements UserDao{
 	public void delete(UserVo userVo) {
 		session.delete(NAMESPACE + "clear", userVo);
 		
+	}
+
+	@Override
+	public void getKey(AuthorizationVo vo) {
+		session.update(NAMESPACE + "authorization",vo);
+		
+	}
+
+	@Override
+	public void yesAuth(AuthorizationVo vo) {
+		session.update(NAMESPACE + "yes",vo);
+	}
+
+	@Override
+	public UserVo authorization(UserVo userVo) {
+		return session.selectOne(NAMESPACE + "confirmLogin", userVo);
 	}
 
 	
