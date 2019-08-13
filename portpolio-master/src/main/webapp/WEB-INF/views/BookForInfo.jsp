@@ -29,11 +29,11 @@
 	<section>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
-				<b>${book.title}</b> <a href="out">
-					<button type="button" class="close" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</a>
+				<b>${book.title}</b>
+				<button type="button" class="close" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+  
 				<c:if test="${not empty sessionScope.data}">
 					<div class="glyphicon glyphicon-heart-empty" id="heart"></div>
 				</c:if>
@@ -57,9 +57,14 @@
 					</div>
 				</div>
 			</div>
-			<!-- tappannel -->
+			<!-- tappannel -->  
 		</div>
-
+		<script type="text/javascript">
+			const close = document.getElementsByClassName("close")[0];
+			close.addEventListener('click', function() {
+				history.go(-1);
+			});
+		</script>
 	</section>
 	</main>
 	<c:if test="${not empty sessionScope.data}">
