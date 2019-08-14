@@ -10,23 +10,27 @@
 		<!-- user -->
 		<typeAlias alias="user" type="com.younghun.klom.model.user.vo.UserVo"/>
 		
+		<!-- authorization -->
+		<typeAlias alias="authorization" type="com.younghun.klom.model.user.vo.AuthorizationVo"/>
+		
+		<!-- board -->
+		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
+	
 		<!-- book -->
 		<typeAlias alias="book" type="com.younghun.klom.model.book.vo.BookVo"/>
 	
-	
-	  <!-- heart -->
-	  <typeAlias alias="heart" type="com.younghun.klom.model.heart.vo.HeartVo"/>   
+	    <!-- heart -->
+	    <typeAlias alias="heart" type="com.younghun.klom.model.heart.vo.HeartVo"/>   
 
-       <!-- search -->
-      <typeAlias alias="search" type="com.younghun.klom.model.page.vo.SearchVo"/>
+        <!-- search -->
+        <typeAlias alias="search" type="com.younghun.klom.model.page.vo.SearchVo"/>
       
-      <!-- searchPage -->
-      <typeAlias alias="searchPage" type="com.younghun.klom.model.search.dto.SearchDto"/>
+        <!-- searchPage -->
+        <typeAlias alias="searchPage" type="com.younghun.klom.model.search.dto.SearchDto"/>
       
-      <!-- 검색결과 -->	    
-      <typeAlias alias="result" type="com.younghun.klom.model.search.vo.SearchListVo"/>   
+        <!-- 검색결과 -->	    
+        <typeAlias alias="result" type="com.younghun.klom.model.search.vo.SearchListVo"/>   
       
 	</typeAliases>
 	 
 </configuration> 
-	

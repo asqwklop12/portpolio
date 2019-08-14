@@ -1,0 +1,25 @@
+@charset "EUC-KR";
+
+.board {
+	border-right: 1px solid #dddddd;
+	height: 42px;
+	width: 62px;
+}
+
+    
+.board:hover {
+	background-color: #eeeeee;
+}
+
+#confirm {
+	color : #337ab7;
+	position : absolute;
+	height : inherit;
+	width : inherit;
+	background: none;
+	border: none;
+	top:0;
+	bottoom:0;
+	left: 0;
+	right: 0;
+}
