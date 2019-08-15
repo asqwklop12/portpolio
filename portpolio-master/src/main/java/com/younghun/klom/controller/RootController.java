@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.younghun.klom.model.board.vo.BoardVo;
 import com.younghun.klom.model.book.service.BookService;
 import com.younghun.klom.model.book.vo.BookVo;
 import com.younghun.klom.model.crawling.Crawing;
+import com.younghun.klom.model.notice.service.NoticeSecvice;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +25,10 @@ public class RootController {
 	
 	@Autowired
 	private BookService bookService;
+	
+	@Autowired
+	private NoticeSecvice noticeSecvice;
+	
 	// 루트값설정 (Home)
 	@RequestMapping(method = RequestMethod.GET)
 	public String home(Model model) throws Exception  {
@@ -39,9 +45,11 @@ public class RootController {
 			}
 		}
 		  
-		List<BookVo> rank = bookService.rank();
-		
+		List<BookVo> rank = bookService.rank();	
 		model.addAttribute("rank",rank);
+		
+		List<BoardVo> notice = noticeSecvice.list();
+		model.addAttribute("notice",notice);
 		return "LayoutForMain";
 	}
 }
