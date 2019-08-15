@@ -16,6 +16,8 @@
 		<!-- board -->
 		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
 	
+	    <!-- comment -->
+	    <typeAlias alias="comment" type="com.younghun.klom.model.comment.vo.CommentVo"/>
 		<!-- book -->
 		<typeAlias alias="book" type="com.younghun.klom.model.book.vo.BookVo"/>
 	
