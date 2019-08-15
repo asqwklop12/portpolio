@@ -35,7 +35,7 @@
 		          
 	</insert>
 
-   <select id="list" resultType="board">
+   <select id="list" parameterType="page" resultType="board">
     	SELECT           
     	            		boardId
 				  		  , boardTitle
@@ -43,6 +43,8 @@
 				  	      , boardDate
 				  	      , boardView
 				  	                                 FROM boardInfo
+		 LIMIT         #{display},#{post}
+ 		  	                                 
    
    </select>
    
@@ -75,13 +77,12 @@
    		  AND			   userEmail = #{userEmail} 
    </update>
   
-  <update id="view" parameterType="board">
+  <update id="view" parameterType="int">
     	UPDATE  									boardInfo 
    	       SET 		
    		       			   boardView = boardView + 1
   
    		 WHERE			   boardId   = #{boardId}	
-   		   AND			   userEmail = #{userEmail} 
   
   </update> 
 
