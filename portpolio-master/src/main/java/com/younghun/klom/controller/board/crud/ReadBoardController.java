@@ -24,12 +24,13 @@ public class ReadBoardController {
 
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public String into(@PathVariable int id, Model model) {
-
+	public String into(@PathVariable int id, Model model,HttpSession session) {
+		UserVo userVo = (UserVo) session.getAttribute("data");
 		BoardVo detail = boardService.read(id);
 
 		model.addAttribute("detail", detail);
 
+		boardService.view(userVo.getEmail(), id);
 		return "BoardForInfo";
 	}
 

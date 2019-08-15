@@ -14,5 +14,5 @@ public class BoardVo {
 	private String boardTitle;
 	private String boardDate;
 	private int boardView;
-	private int boardLike;
+	
 }

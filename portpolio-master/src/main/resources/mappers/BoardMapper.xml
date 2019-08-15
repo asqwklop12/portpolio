@@ -42,8 +42,7 @@
 				  		  , boardWriter
 				  	      , boardDate
 				  	      , boardView
-				  	      , boardLike  
-    	                                             FROM boardInfo
+				  	                                 FROM boardInfo
    
    </select>
    
@@ -56,7 +55,7 @@
    		                , boardTitle
    		                , userEmail
    		                , boardWriter
-   		                , boardContent 				 FROM  boardInfo
+   		                , boardContent                FROM  boardInfo
    		                
 		WHERE            boardId = #{boardId};
    </select>
@@ -75,7 +74,16 @@
    		WHERE			   boardId   = #{boardId}	
    		  AND			   userEmail = #{userEmail} 
    </update>
-   
+  
+  <update id="view" parameterType="board">
+    	UPDATE  									boardInfo 
+   	       SET 		
+   		       			   boardView = boardView + 1
+  
+   		 WHERE			   boardId   = #{boardId}	
+   		   AND			   userEmail = #{userEmail} 
+  
+  </update> 
 
    <delete id="delete" parameterType="board">
    

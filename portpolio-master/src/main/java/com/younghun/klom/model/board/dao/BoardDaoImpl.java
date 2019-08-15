@@ -30,6 +30,11 @@ public class BoardDaoImpl implements BoardDao{
 	public int countId() {
 		return sqlSession.selectOne(NAMESPACE + "count");
 	}
+	
+	@Override
+	public void view(BoardVo boardVo) {
+		sqlSession.update(NAMESPACE + "view",boardVo);
+	}
 
 	@Override
 	public List<BoardVo> list() {
@@ -51,6 +56,8 @@ public class BoardDaoImpl implements BoardDao{
 	public void decrease(int boardId) {
 		sqlSession.update(NAMESPACE + "change",boardId);
 	}
+
+	
 
 	
 

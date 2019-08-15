@@ -31,6 +31,15 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVo> list() {
 		return boardDao.list();
 	}
+	
+	@Override
+	public void view(String email, int boardId) {
+		BoardVo boardVo = new BoardVo();
+		boardVo.setBoardId(boardId);
+		boardVo.setUserEmail(email);
+		boardDao.view(boardVo);
+		
+	}
 
 	@Override
 	public BoardVo read(int boardId) {
@@ -58,6 +67,8 @@ public class BoardServiceImpl implements BoardService {
 			boardDao.decrease(i);	
 		}
 	}
+
+	
 
 	
 
