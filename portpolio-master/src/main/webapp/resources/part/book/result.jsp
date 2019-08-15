@@ -23,10 +23,10 @@
 
 				<c:choose>
 					<c:when test="${not empty sessionScope.data}">
-						<a href="search/sInfo?title=${book.title}"><span id="title">${book.title}</span></a>
+						<a href="search/sInfo/${book.title}"><span id="title">${book.title}</span></a>
 					</c:when>
 					<c:otherwise>
-						<a href="search/info?title=${book.title}"><span id="title">${book.title}</span></a>
+						<a href="search/info/${book.title}"><span id="title">${book.title}</span></a>
 					</c:otherwise>
 				</c:choose>
 

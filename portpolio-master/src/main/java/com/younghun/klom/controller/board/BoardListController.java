@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.younghun.klom.model.Pagging;
 import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.vo.BoardVo;
+import com.younghun.klom.model.page.service.PaggingService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,11 +22,21 @@ public class BoardListController {
 	
 	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private PaggingService paggingService;
+	
+	
 	@RequestMapping
-	public String main(Model model) {
+	public String main(@RequestParam(value = "num", required = false ,defaultValue = "1") int num,
+			           Model model) {
 		
-		List<BoardVo> list = boardService.list();
+		
+		Pagging p = new Pagging(paggingService.board(), 10);
+		List<BoardVo> list = boardService.list(p.display(num), p.getCount());
+		
 		model.addAttribute("list",list);
+		model.addAttribute("page", p.pagging());
 		return "MainForBoard";
 	}
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.younghun.klom.model.board.dao.BoardDao;
 import com.younghun.klom.model.board.vo.BoardVo;
+import com.younghun.klom.model.page.vo.PageVo;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -28,8 +29,11 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public List<BoardVo> list() {
-		return boardDao.list();
+	public List<BoardVo> list(int display, int post) {
+		PageVo pageVo = new PageVo();
+		pageVo.setDisplay(display);
+		pageVo.setPost(post);
+		return boardDao.list(pageVo);
 	}
 	
 

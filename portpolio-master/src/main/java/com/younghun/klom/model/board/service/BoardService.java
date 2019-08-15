@@ -9,7 +9,7 @@ public interface BoardService {
 	void insert(BoardVo boardVo);
 	
 	// 전체 읽기
-	List<BoardVo> list();
+	List<BoardVo> list(int display, int post);
 	
 	// 하나만 읽기
 	BoardVo read(int boardId);

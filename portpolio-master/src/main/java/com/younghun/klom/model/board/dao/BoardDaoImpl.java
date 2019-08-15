@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.younghun.klom.model.board.vo.BoardVo;
+import com.younghun.klom.model.page.vo.PageVo;
 
 @Repository
 public class BoardDaoImpl implements BoardDao{
@@ -37,8 +38,8 @@ public class BoardDaoImpl implements BoardDao{
 	}
 
 	@Override
-	public List<BoardVo> list() {
-		return sqlSession.selectList(NAMESPACE + "list");
+	public List<BoardVo> list(PageVo pageVo) {
+		return sqlSession.selectList(NAMESPACE + "list",pageVo);
 	}
 	@Override
 	public void update(BoardVo boardVo) {

@@ -3,6 +3,7 @@ package com.younghun.klom.model.board.dao;
 import java.util.List;
 
 import com.younghun.klom.model.board.vo.BoardVo;
+import com.younghun.klom.model.page.vo.PageVo;
 
 public interface BoardDao {
 	int countId ();
@@ -12,7 +13,7 @@ public interface BoardDao {
 	
 	// 읽기
 	BoardVo read(BoardVo boardVo);
-	List<BoardVo> list();
+	List<BoardVo> list(PageVo pageVo);
 	
 	void view(int boardId);
 	
