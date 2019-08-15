@@ -5,7 +5,7 @@
 	<select id="board" resultType="int">
 		SELECT 
 				count(boardId) 
-								from BookbasicInfo
+								from boardInfo
 	
 	</select>
  

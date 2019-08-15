@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+
+    <select id="count" resultType="int" >
+    
+		SELECT           max(boardId)            FROM boardInfo
+    
+    </select>
+
+	<insert id="insert" parameterType="board">
+		INSERT    								INTO   boardInfo
+				 		(  
+				 			boardId
+				  		  , userEmail
+				  		  , boardProfile
+				  	      , boardWriter
+				  	      , boardTitle
+				  	      , boardDate
+				          , boardContent
+				 		 )
+				 		 
+				 		 
+		VALUES      	 (
+		
+		                  #{boardId}
+		                 ,#{userEmail}
+		                 ,#{boardProfile}
+		                 ,#{boardWriter}
+		                 ,#{boardTitle}
+		                 ,sysdate()
+		                 ,#{boardContent}
+		                 
+		                 )	 		        
+		          
+	</insert>
+
+   <select id="list" parameterType="page" resultType="board">
+    	SELECT           
+    	            		boardId
+				  		  , boardTitle
+				  		  , boardWriter
+				  	      , boardDate
+				  	      , boardView
+				  	                                 FROM boardInfo
+		 LIMIT         #{display},#{post}
+ 		  	                                 
+   
+   </select>
+   
+   
+   
+   <select id="board" resultType="board">
+   
+   		SELECT			  boardId
+   		                , boardProfile
+   		                , boardTitle
+   		                , userEmail
+   		                , boardWriter
+   		                , boardContent                FROM  boardInfo
+   		                
+		WHERE            boardId = #{boardId};
+   </select>
+   
+   <update id="update" parameterType="board">
+   
+   		UPDATE  									boardInfo 
+   		SET 		
+   		       			   boardTitle   = #{boardTitle} 
+   		        		 , boardContent = #{boardContent}
+   		        		 , boardWriter   = #{boardWriter} 
+   		        		 , boardProfile = #{boardProfile}
+   		        		 , boardDate    = sysdate()
+   		        
+   		         
+   		WHERE			   boardId   = #{boardId}	
+   		  AND			   userEmail = #{userEmail} 
+   </update>
+  
+  <update id="view" parameterType="int">
+    	UPDATE  									boardInfo 
+   	       SET 		
+   		       			   boardView = boardView + 1
+  
+   		 WHERE			   boardId   = #{boardId}	
+  
+  </update> 
+
+   <delete id="delete" parameterType="board">
+   
+   		DELETE  								        FROM    	boardInfo 
+   		
+   		                
+   		WHERE			   boardId   = #{boardId}	
+   		  AND			   userEmail = #{userEmail} 
+   </delete>   
+   
+   <update id="change" parameterType="int">
+   
+  	 UPDATE  									boardInfo 
+   
+   		SET 	boardId   =  boardId - 1
+   	  WHERE     boardId   = #{boardId}	        
+   		          
+   </update>
+   
+  
+</mapper>

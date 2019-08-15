@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.younghun.klom.model.user.MailUtils;
 import com.younghun.klom.model.user.TempKey;
@@ -31,6 +32,7 @@ public class UserServiceImpl implements UserService {
 	private JavaMailSender mailSender;
 
 	@Override
+	@Transactional
 	public void register(UserVo userVo) throws Exception {
 		log.info("start");
 		
@@ -66,6 +68,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
+	@Transactional
 	public void searchPassword(String email) throws MessagingException, UnsupportedEncodingException {
 		String authKey = new TempKey().getKey(10, false);	
 		MailUtils sendMail = new MailUtils(mailSender);		

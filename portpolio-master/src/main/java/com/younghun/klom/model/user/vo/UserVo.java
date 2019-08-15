@@ -16,5 +16,9 @@ public class UserVo {
 	private String name;			//UserName	
 	private String password;		//UserPassword
 	private String introduce;		//UserIntroduce
+	private String authorization;	//userAuthoration
 	private Date date;				//UserDate
+	private String grade;
+	
+	private String key;
 }

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="panel panel-primary">
 	<div class="panel-heading">
@@ -40,6 +40,7 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<button id="confirm">로그인</button>
+
 					<a href="register">회원가입</a>
 				</div>
 			</div>
@@ -57,7 +58,7 @@
 		}
 		return false;
 	}
-	
+
 	function wrongEmail() {
 		return '${SesseionScope.data.eamil}';
 	}
@@ -73,7 +74,7 @@
 		} else if (blank(password)) {
 			e.preventDefault();
 			alert("패스워드를 입력해주시기 바랍니다.");
-		} 
-		
+		}
+
 	});
 </script>

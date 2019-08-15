@@ -2,9 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@  taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="true"%>
-
+  
 <c:choose>
-	<c:when test="${not empty sessionScope.data}">
+	<c:when test="${not empty sessionScope.data && sessionScope.data.authorization == 'Y'}">
 		<%@include file="/resources/part/user/afterLogin.jsp"%>
 	</c:when>
 

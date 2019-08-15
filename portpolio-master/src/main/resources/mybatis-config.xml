@@ -16,6 +16,7 @@
 		<!-- board -->
 		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
 	
+	    
 	    <!-- comment -->
 	    <typeAlias alias="comment" type="com.younghun.klom.model.comment.vo.CommentVo"/>
 		<!-- book -->
@@ -23,7 +24,9 @@
 	
 	    <!-- heart -->
 	    <typeAlias alias="heart" type="com.younghun.klom.model.heart.vo.HeartVo"/>   
-
+   
+		<!-- page -->
+		<typeAlias alias="page" type="com.younghun.klom.model.page.vo.PageVo"/>
         <!-- search -->
         <typeAlias alias="search" type="com.younghun.klom.model.page.vo.SearchVo"/>
       

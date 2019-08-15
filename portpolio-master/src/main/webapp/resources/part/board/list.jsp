@@ -17,8 +17,6 @@
 						<th>작성자</th>
 						<th>날짜</th>
 						<th>조회수</th>
-						<th><span class="glyphicon glyphicon-heart"
-							aria-hidden="true"></span></th>
 
 					</tr>
 				</thead>
@@ -31,7 +29,6 @@
 							<td>${board.boardWriter}</td>
 							<td>${board.boardDate}</td>
 							<td>${board.boardView}</td>
-							<td>${board.boardLike}</td>
 						</tr>
 
 					</c:forEach>
@@ -42,8 +39,9 @@
 			<div class="text-center">
 
 				<ul class="pagination">
-					<li><a href="#">1</a></li>
-
+					<c:forEach begin="1" end="${page}" var="num">
+						<li><a href="?num=${num}">${num}</a></li>
+					</c:forEach>
 				</ul>
 			</div>
 		</div>

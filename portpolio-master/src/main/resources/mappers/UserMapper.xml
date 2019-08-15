@@ -39,21 +39,18 @@
 
 	<select id="login" resultType="user">
 
-		SELECT
-		UserEmail AS email
-		, UserPassword AS password
-		, UserName AS name
-		, profileImage AS image
-		, userAuthorization As authorization
+        SELECT
+				  UserEmail 		AS email
+				, UserPassword 		AS password
+				, UserName 			AS name
+				, profileImage 		AS image
+				, userAuthorization As authorization
+				, userGrade			AS grade 
 
 		FROM UserInfo
 
 		WHERE
 		UserEmail = #{email}
-
-
-
-
 
 	</select>
 

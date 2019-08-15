@@ -30,7 +30,7 @@ public class ResiterController {
 
 	// 회원가입 완료
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
-	public String regitData(UserVo userVo) {
+	public String regitData(UserVo userVo) throws Exception {
 		userService.register(userVo);
 		return "redirect:/";
 	}
