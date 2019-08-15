@@ -32,8 +32,8 @@ public class BoardDaoImpl implements BoardDao{
 	}
 	
 	@Override
-	public void view(BoardVo boardVo) {
-		sqlSession.update(NAMESPACE + "view",boardVo);
+	public void view(int boardId) {
+		sqlSession.update(NAMESPACE + "view",boardId);
 	}
 
 	@Override

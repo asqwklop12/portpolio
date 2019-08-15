@@ -13,7 +13,6 @@ public interface BoardService {
 	
 	// 하나만 읽기
 	BoardVo read(int boardId);
-	void view(String email, int boardId);
 	// 수정
 	void update(BoardVo boardVo);
 	

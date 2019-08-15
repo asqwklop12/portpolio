@@ -27,10 +27,9 @@ public class ReadBoardController {
 	public String into(@PathVariable int id, Model model,HttpSession session) {
 		UserVo userVo = (UserVo) session.getAttribute("data");
 		BoardVo detail = boardService.read(id);
-
+ 
 		model.addAttribute("detail", detail);
 
-		boardService.view(userVo.getEmail(), id);
 		return "BoardForInfo";
 	}
 

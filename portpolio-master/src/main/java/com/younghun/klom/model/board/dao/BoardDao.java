@@ -14,7 +14,7 @@ public interface BoardDao {
 	BoardVo read(BoardVo boardVo);
 	List<BoardVo> list();
 	
-	void view(BoardVo boardVo);
+	void view(int boardId);
 	
 	// 수정
 	void update(BoardVo boardVo);

@@ -32,19 +32,12 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.list();
 	}
 	
-	@Override
-	public void view(String email, int boardId) {
-		BoardVo boardVo = new BoardVo();
-		boardVo.setBoardId(boardId);
-		boardVo.setUserEmail(email);
-		boardDao.view(boardVo);
-		
-	}
 
 	@Override
 	public BoardVo read(int boardId) {
 		BoardVo boardVo = new BoardVo();
 		boardVo.setBoardId(boardId);
+		boardDao.view(boardId);
 		return boardDao.read(boardVo);
 	}
 
