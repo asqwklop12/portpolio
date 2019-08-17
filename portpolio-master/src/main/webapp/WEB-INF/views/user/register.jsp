@@ -4,19 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
 <title>회원 가입</title>
 <%@ include file="/resources/bootstrap/package.jsp"%>
-
+<link rel="stylesheet" href="/resources/css/user/register.css">
 <link rel="stylesheet" href="/resources/css/part/other.css">
 
-<style type="text/css">
-#left {
-
-	margin-left: 18%;
-
-}
-
-</style>
 
 </head>
 <body>
@@ -77,7 +70,7 @@
 				<div class="info" id="left">
 					<h4 id="info_password"></h4>
 				</div>
-  
+
 
 				<div class="form-group">
 					<label for="introduce" class="col-sm-2 control-label">introduce</label>
@@ -153,6 +146,7 @@
 				url : '/duplicate/email',
 				method : 'post',
 				data : 'email=' + email.value,
+				
 				success : function(data) {
 					switch (data) {
 					case 0:
@@ -220,8 +214,10 @@
 				success : function(data) {
 					switch (data) {
 					case 0:
+						if (name.value != "")  {
 						info_name.innerHTML = "사용 가능합니다."
 						info_name.style = "color:green";
+						}
 						return false;
 					case 1:
 						info_name.innerHTML = "중복된 이름이 있습니다."
@@ -229,7 +225,7 @@
 
 						return true;
 					default:
-						info_name.innerHTML = "이상한 값이 들어왔습니다."
+						info_name.innerHTML = "사용할 수 없는 값입니다."
 						break;
 					}
 					return true;
@@ -238,6 +234,8 @@
 
 			});
 		}
+		
+		
 
 		// 중복된 값 체크
 		function validate(data) {
@@ -256,6 +254,7 @@
 
 		email.addEventListener("focusout", function(e) {
 			e.preventDefault();
+			
 			if (info_email.innerHTML != "사용 가능합니다.") {
 				info_email.innerHTML = "";
 			}
@@ -279,6 +278,15 @@
 		name.addEventListener("focus", function(e) {
 			e.preventDefault();
 			name.value = "";
+		});
+		
+		name.addEventListener("focusout", function(e) {
+			e.preventDefault();
+			
+			if (name.value == "" || info_name.innerHTML != "사용 가능합니다.") {
+				info_name.innerHTML = "";
+				name.value = "";
+			}
 		});
 
 		password.addEventListener("focus", function(e) {
@@ -313,12 +321,24 @@
 	    
 		document.addEventListener('keydown', function() {
 			
+			if (event.keycode == 13) {
+				alert("성공");
+			}
+			
 			if(checkBtn()) {
 				confirm.disabled = "";
+				
 			} else {
 				confirm.disabled = "disabled";
 			}
+			
+			
 		});
+		  
+	//	window.addEventListener('keypress',function() {	
+			//confirm.disabled = "disabled";
+		//	alert();
+		//})
 	</script>
 </body>
 </html>

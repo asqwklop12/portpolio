@@ -4,29 +4,16 @@
 	text-align: center;
 }
 
-#comment_main{
-	margin-top: 10%;
+#btn {
+	float: right;
 }
-  
-.comment_sub {
-	margin: 5%;
-	border: 1px solid #dddddd;
-}
-
-
-#user {
-	background-color: #DDDDFF;    
-	margin-right: 5%;
-	width: 50px;
-}	
-  
-  
-
 #area {
 	width: 100%;
 	border: 3px solid #dddddd;
 }
 
-#btn {
-	float: right;
+
+.user {
+	width: 10%;
+	text-align: center;
 }  

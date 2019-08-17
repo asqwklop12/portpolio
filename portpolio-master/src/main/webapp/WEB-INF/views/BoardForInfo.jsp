@@ -92,7 +92,7 @@
 			$.ajax({
 				url : '/comment/insert',
 				data : 'bno=' + bno + "&content=" + area.value,
-				method : 'get',
+				method : 'post',
 				success : function(data) {
 					area.value = "";
 					one();
@@ -108,12 +108,12 @@
 				url : '/comment/list',
 				data : 'bno=' + bno,
 				dataType : 'json',
-				method : 'get',
+				method : 'post',
 				success : function(data) {
 					tab(data[data.length - 1].userEmail);
 					commentContext(data[data.length - 1]);
 					remove(data[data.length - 1]);
-					
+
 				},
 
 				error : function(e) {
@@ -127,16 +127,15 @@
 				url : '/comment/list',
 				data : 'bno=' + bno,
 				dataType : 'json',
-				method : 'get',
+				method : 'post',
 				success : function(data) {
 
 					for (var i = 0; i < data.length; i++) {
 						tab(data[i].userEmail);
 						commentContext(data[i]);
 						remove(data[i]);
-						
 					}
-				},
+				},      
 
 				error : function(e) {
 					alert(e)
@@ -194,19 +193,23 @@
 
 		function remove(data) {
 			const removeItem = document.getElementById('remove');
-			removeItem.addEventListener('click', function() {
-				$.ajax({
-					url : '/comment/remove',
-					data : "email=" + data.userEmail,
-					success : function() {
-						window.location.reload();
-				  	},  
-					error : function() {
-						alert("삭제에 실패하셨습니다.");
-					}
-				});
-			});
+			removeItem.addEventListener('click', removeAction);
 		}
+
+		function removeAction() {
+			$.ajax({
+				url : '/comment/remove',
+				data : "email=" + data.userEmail,
+				method : 'post',
+				success : function() {
+					window.location.reload();
+				},
+				error : function() {
+					alert("삭제에 실패하셨습니다.");
+				}
+			});
+		};
+
 	</script>
 </body>
 
