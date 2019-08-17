@@ -31,6 +31,14 @@ public class CommentServiceImpl implements CommentService{
 		return commentDao.list(boardId);
 	}
 
+	@Override
+	public void delete(String email) {
+		
+		CommentVo commentVo = new CommentVo();
+		commentVo.setUserEmail(email);
+		commentDao.delete(commentVo);
+	}
+
 	
 
 }

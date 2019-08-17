@@ -31,12 +31,23 @@ VALUES  (
 
 <select id="list" resultType="comment">
 		SELECT 
-		       		 commentWriter
+		             commentId
+		            ,boardId 
+		       		,commentWriter
+		       		,userEmail 
                		,commentProfile
                		,commentContent                FROM   commentInfo
         
         WHERE      boardId = #{boardId}       
 
 </select>
+
+<delete id="remove" parameterType="comment"> 
+
+	DELETE                    FROM  commentInfo
+	
+	WHERE	   userEmail = #{userEmail}
+
+</delete>
 
 </mapper>

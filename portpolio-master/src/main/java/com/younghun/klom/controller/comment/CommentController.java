@@ -38,4 +38,11 @@ public class CommentController {
 	public List<CommentVo> list (@RequestParam int bno) {
 		return commentService.list(bno);
 	}
+	
+	@RequestMapping(value = "/remove")
+	@ResponseBody
+	public void remove(@RequestParam String email) {
+		
+		commentService.delete(email);
+	}
 }

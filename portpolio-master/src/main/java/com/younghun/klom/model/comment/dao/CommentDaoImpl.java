@@ -27,5 +27,10 @@ public class CommentDaoImpl implements CommentDao{
 		return sqlSession.selectList(NAMESPACE + "list",boardId);
 	}
 
+	@Override
+	public void delete(CommentVo commentVo) {
+		sqlSession.delete(NAMESPACE + "remove",commentVo);
+	}
+
 
 }
