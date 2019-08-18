@@ -57,29 +57,29 @@
 
 	<!-- 회원가입 -->
 	<insert id="Register">
-		INSERT
-		INTO userInfo
+		INSERT IGNORE 
+											INTO userInfo
 
-		(
-		profileImage
-		, UserEmail
-		, UserName
-		, UserPassword
-		, UserIntroduce
-		, UserDate
+					(
+						profileImage
+					  , UserEmail
+					  , UserName
+					  , UserPassword
+					  , UserIntroduce
+					  , UserDate
 
-		)
+					)
 
 		VALUES
 
-		(
-		#{image}
-		, #{email}
-		, #{name}
-		, #{password}
-		, #{introduce}
-		, now()
-		)
+					(
+						#{image}
+					  , #{email}
+					  , #{name}
+					  , #{password}
+					  , #{introduce}
+					  , now()
+					)
 
 	</insert>
 

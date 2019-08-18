@@ -19,15 +19,6 @@
 </delete>
 
 
-
-<update id="heartDecrease" parameterType="heart">
-   UPDATE                                          LikeInfo
-      SET       bookLike =  bookLike - 1
-    WHERE       UserEmail = #{userEmail}
-      AND       boardId = #{boardId}   
-      
-</update>
-
 <delete id="board" parameterType="board">
    DELETE              						FROM   boardInfo
    WHERE       UserEmail = #{userEmail}
@@ -38,21 +29,11 @@
       SET       boardId = #{boardId}
 </update>
 
-<select id="boardCount" resultType="int">
-  SELECT           MAX(boardId)               FROM   boardInfo
-</select>
 
 <delete id="search"  parameterType="result">
    DELETE              						FROM   searchList
    WHERE       UserEmail = #{userEmail}
 </delete>
-
-<update id="searchNumber" parameterType="result">
-   UPDATE                                          searchList
-      SET       searchId = #{searchId}
-     WHERE       searchId = #{currentId}
-</update>
-
 
 
 </mapper>

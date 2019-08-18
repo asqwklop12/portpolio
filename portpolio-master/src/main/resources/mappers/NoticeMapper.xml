@@ -4,13 +4,14 @@
 
   <insert id="create" parameterType="notice">
   
-     INSERT                           INTO   noticeInfo
+     INSERT  IGNORE                         INTO   noticeInfo
+                 
                  (
                      boardId
                    , userEmail
                    , boardTitle
                  )
-                 
+ 
     VALUES       (     #{boardId}
                      , #{userEmail}
                      , #{boardTitle}
