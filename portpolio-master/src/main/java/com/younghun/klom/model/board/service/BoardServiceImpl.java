@@ -17,14 +17,14 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void insert(BoardVo boardVo) {
-		
+
 		try {
-		    boardVo.setBoardId(boardDao.countId() + 1);
-		}catch (NullPointerException e) {
+			boardVo.setBoardId(boardDao.countId() + 1);
+		} catch (NullPointerException e) {
 			boardVo.setBoardId(1);
-		
+
 		}
-		
+
 		boardDao.insert(boardVo);
 	}
 
@@ -35,7 +35,6 @@ public class BoardServiceImpl implements BoardService {
 		pageVo.setPost(post);
 		return boardDao.list(pageVo);
 	}
-	
 
 	@Override
 	public BoardVo read(int boardId) {
@@ -49,24 +48,30 @@ public class BoardServiceImpl implements BoardService {
 	public void update(BoardVo boardVo) {
 		boardDao.update(boardVo);
 	}
-	
-	
 
 	@Override
 	public void delete(String email, int id) {
-		
+
 		BoardVo boardVo = new BoardVo();
 		boardVo.setBoardId(id);
 		boardVo.setUserEmail(email);
+		boardDao.comment(id);
 		boardDao.delete(boardVo);
 		
-		for (int i = id; i < boardDao.countId() + 1; i++) {
-			boardDao.decrease(i);	
+		try {
+			
+			countReapt(id, boardDao.countId());
+		}catch (NullPointerException e) {
+		
+		}
+
+	}
+	
+	private void countReapt(int id, int max) {
+		
+		for (int i = id; i <= max; i++) {
+			boardDao.decrease(i);
 		}
 	}
-
-	
-
-	
 
 }

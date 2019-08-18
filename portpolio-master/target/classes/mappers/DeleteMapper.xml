@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace ="DeleteMapper">
+
+
+<delete id="comment" parameterType="comment">
+  DELETE              						FROM   commentInfo
+  WHERE       UserEmail = #{userEmail}  
+</delete>
+
+<delete id="notice"  parameterType="notice">
+   DELETE              						FROM   noticeInfo
+   WHERE       UserEmail = #{userEmail}
+</delete>
+
+<delete id="heart" parameterType="heart">
+   DELETE              						FROM   LikeInfo
+   WHERE       UserEmail = #{userEmail}
+</delete>
+
+
+
+<update id="heartDecrease" parameterType="heart">
+   UPDATE                                          LikeInfo
+      SET       bookLike =  bookLike - 1
+    WHERE       UserEmail = #{userEmail}
+      AND       boardId = #{boardId}   
+      
+</update>
+
+<delete id="board" parameterType="board">
+   DELETE              						FROM   boardInfo
+   WHERE       UserEmail = #{userEmail}
+</delete>
+
+<update id="boardNumber">
+   UPDATE                                          boardInfo
+      SET       boardId = #{boardId}
+</update>
+
+<select id="boardCount" resultType="int">
+  SELECT           MAX(boardId)               FROM   boardInfo
+</select>
+
+<delete id="search"  parameterType="result">
+   DELETE              						FROM   searchList
+   WHERE       UserEmail = #{userEmail}
+</delete>
+
+<update id="searchNumber" parameterType="result">
+   UPDATE                                          searchList
+      SET       searchId = #{searchId}
+     WHERE       searchId = #{currentId}
+</update>
+
+
+
+</mapper>

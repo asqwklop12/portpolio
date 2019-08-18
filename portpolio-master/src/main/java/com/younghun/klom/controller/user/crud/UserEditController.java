@@ -36,7 +36,6 @@ public class UserEditController {
 	public String edit(HttpSession session, @ModelAttribute UserVo userVo) {
 
 		userService.edit(userVo);
-
 		session.setAttribute("data", userVo);
 		logger.debug("{}", userVo);
 		return "redirect:/";

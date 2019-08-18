@@ -95,7 +95,6 @@ public class MoveDetailController {
 			searchVo.setSearchId(1);
 		}
 
-
 		searchVo.setUserEmail(email);
 		searchVo.setBookTitle(bookVo.getTitle());
 		searchVo.setSearchAuthor(bookVo.getAuthor());

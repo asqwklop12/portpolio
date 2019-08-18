@@ -2,23 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="NoticeMapper">
 
-  <insert id="create" parameterType="board">
+  <insert id="create" parameterType="notice">
   
      INSERT                           INTO   noticeInfo
                  (
-                     userEmail
+                     boardId
+                   , userEmail
                    , boardTitle
                  )
                  
-    VALUES       (
-                       #{userEmail}
+    VALUES       (     #{boardId}
+                     , #{userEmail}
                      , #{boardTitle}
                  )
     
   
   </insert>
   
-  <select id="select" resultType="board">
+  <select id="select" resultType="notice">
   
     SELECT            boardTitle    
     								 FROM  noticeInfo     
@@ -26,5 +27,20 @@
   
   
   </select>
-
+  
+  <update id="update"  parameterType="notice">
+  UPDATE							       noticeInfo
+     SET     boardTitle = #{boardTitle}      
+   WHERE     userEmail  = #{userEmail}
+     AND     boardId    = #{boardId}
+               
+  </update>
+  
+  <delete id="delete" parameterType="notice">
+   DELETE                                from  noticeInfo
+    WHERE    userEmail = #{userEmail}
+      AND    boardId   = #{boardId}
+  
+  </delete>
+  
 </mapper>

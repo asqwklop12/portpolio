@@ -16,6 +16,5 @@ public class SearchListVo {
 	private String searchAuthor;
 	private String searchPublisher;
 	
-	private int maxId;    //전체 최대값
-	private int maxNum;    //유저별 최대값
+	private int currentId;
 }

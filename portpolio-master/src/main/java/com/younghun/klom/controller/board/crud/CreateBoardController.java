@@ -47,7 +47,7 @@ public class CreateBoardController {
 		}
 		
 		if (userVo.getGrade().equals("admin")) {
-			noticeSecvice.create(boardVo);
+			noticeSecvice.create(boardVo.getBoardId(),email,boardVo.getBoardTitle());
 		}
 
 		return "redirect:/board";

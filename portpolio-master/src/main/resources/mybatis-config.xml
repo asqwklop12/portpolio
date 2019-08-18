@@ -16,6 +16,9 @@
 		<!-- board -->
 		<typeAlias alias="board" type="com.younghun.klom.model.board.vo.BoardVo"/>
 	
+		<!-- notice -->
+		<typeAlias alias="notice" type="com.younghun.klom.model.notice.vo.NoticeVo"/>
+	
 	    
 	    <!-- comment -->
 	    <typeAlias alias="comment" type="com.younghun.klom.model.comment.vo.CommentVo"/>

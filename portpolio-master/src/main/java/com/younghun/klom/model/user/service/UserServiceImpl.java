@@ -10,6 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.younghun.klom.model.delete.service.DeleteService;
 import com.younghun.klom.model.user.MailUtils;
 import com.younghun.klom.model.user.TempKey;
 import com.younghun.klom.model.user.dao.UserDao;
@@ -24,6 +25,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserDao userDao;
+	
+	@Autowired
+	private DeleteService deleteService;
 
 	@Autowired
 	public PasswordEncoder passwordEncoder;
@@ -35,9 +39,9 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public void register(UserVo userVo) throws Exception {
 		log.info("start");
-		
 		userVo.setPassword(passwordEncoder.encode(userVo.getPassword()));
 		userDao.register(userVo);
+
 		// 인증 보내기 메서드
 		String authKey = new TempKey().getKey(50, false);
 		userVo.setAuthorization(authKey);
@@ -62,7 +66,6 @@ public class UserServiceImpl implements UserService {
 		sendMail.setFrom("divdragon93@gmail.com", "관리자");
 		sendMail.setTo(userVo.getEmail());
 		sendMail.send();
-
 		log.debug("{}", passwordEncoder.encode(userVo.getPassword()));
   
 	}
@@ -117,7 +120,14 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Transactional
 	public void delete(UserVo userVo) {
+		
+		deleteService.comment(userVo.getEmail());
+		deleteService.notice(userVo.getEmail());
+		deleteService.heart(userVo.getEmail());
+		deleteService.board(userVo.getEmail());
+		deleteService.search(userVo.getEmail());
 		userDao.delete(userVo);
 
 	}

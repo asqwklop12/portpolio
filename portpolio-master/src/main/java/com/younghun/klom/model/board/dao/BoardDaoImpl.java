@@ -52,11 +52,18 @@ public class BoardDaoImpl implements BoardDao{
 	public void delete(BoardVo boardVo) {
 		sqlSession.delete(NAMESPACE + "delete", boardVo);
 	}
+	
+	@Override
+	public void comment(int boardId) {
+		sqlSession.delete(NAMESPACE + "comment",boardId);
+	}
 
 	@Override
 	public void decrease(int boardId) {
 		sqlSession.update(NAMESPACE + "change",boardId);
 	}
+
+	
 
 	
 

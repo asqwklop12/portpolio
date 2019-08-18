@@ -85,7 +85,13 @@
    		 WHERE			   boardId   = #{boardId}	
   
   </update> 
+  
+   <delete id="comment">
+   	   DELETE  								        FROM 		commentInfo	                
+   		WHERE			   boardId   = #{boardId}	
+   </delete>
 
+  
    <delete id="delete" parameterType="board">
    
    		DELETE  								        FROM    	boardInfo 

@@ -22,6 +22,8 @@ public interface BoardDao {
 	
 	// 삭제
 	void delete(BoardVo boardVo);
+	void comment(int boardId);
+	
 	
 	// 번호감소
 	void decrease(int boardId);

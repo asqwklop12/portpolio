@@ -22,7 +22,7 @@
 				</thead>
 
 				<tbody id="board">
-					<c:forEach var="board" items="${list}">
+					<c:forEach var="board" items="${list}" varStatus="status">
 						<tr>
 							<td>${board.boardId}</td>
 							<td><a href="/board/into/${board.boardId}">${board.boardTitle}</a></td>
@@ -30,7 +30,7 @@
 							<td>${board.boardDate}</td>
 							<td>${board.boardView}</td>
 						</tr>
-
+  
 					</c:forEach>
 				</tbody>
 			</table>
