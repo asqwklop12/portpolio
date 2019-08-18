@@ -22,7 +22,12 @@ public class DeleteBoardController {
 	private NoticeSecvice noticeSecvice;
 	@RequestMapping(method = RequestMethod.GET)
 	public String delete(@PathVariable int id, HttpSession session) {
-		UserVo userVo = (UserVo) session.getAttribute("data");
+		UserVo userVo = null;
+		try {
+		 userVo = (UserVo) session.getAttribute("data");
+		} catch (NullPointerException e) {
+			return "redirect:/";
+		}
 		String email = userVo.getEmail();
 		
 		if (userVo.getGrade().equals("admin")) {

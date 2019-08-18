@@ -26,8 +26,12 @@ public class CommentController {
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
 	@ResponseBody
 	public void insert(@RequestParam int bno, @RequestParam String content,HttpSession session) {
-		
-		UserVo userVo = (UserVo) session.getAttribute("data");
+		UserVo userVo = null;
+		try {
+			userVo = (UserVo) session.getAttribute("data");
+				
+		} catch (NullPointerException e) {
+		}
 		commentService.insert(bno, userVo.getEmail(), userVo.getName(), userVo.getImage(), content);
 		
 	}

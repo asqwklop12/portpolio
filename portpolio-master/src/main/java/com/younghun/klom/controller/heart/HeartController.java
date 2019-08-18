@@ -28,7 +28,12 @@ public class HeartController {
 	@RequestMapping(value = "/heart", method = RequestMethod.GET)
 	public HeartVo heart(@RequestParam String title,HttpSession session
 			, Model model) {
-		String email = ((UserVo)session.getAttribute("data")).getEmail();
+		String email = null;
+		try {
+			email = ((UserVo)session.getAttribute("data")).getEmail();
+			
+		} catch (NullPointerException e) {
+		}
 		
 		HeartVo heartVo = new HeartVo();
 		heartVo.setBookTitle(title);

@@ -35,7 +35,14 @@ public class ReadSearchController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String list(@RequestParam(value = "num", required = false, defaultValue = "1") int num, HttpSession session,
 			Model model) {
-		String email = ((UserVo) session.getAttribute("data")).getEmail();
+		String email = null;
+		
+		try {
+			email = ((UserVo) session.getAttribute("data")).getEmail();
+			
+		}catch (NullPointerException e) {
+			return "redirect:/";
+		}
 		
 		// 페이징 처리 (전체페이지, 화면에 보여지는 게시글수)
 		Pagging p = null;

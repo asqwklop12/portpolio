@@ -28,7 +28,13 @@ public class UpdateBoardController {
 	// 게시글 수정
 		@RequestMapping(method = RequestMethod.POST)
 		public String edit(BoardVo boardVo,HttpSession session ,@PathVariable int id) {
-			UserVo userVo = (UserVo) session.getAttribute("data");
+			UserVo userVo = null;
+			try {
+				userVo = (UserVo) session.getAttribute("data");
+				
+			} catch (NullPointerException e) {
+				return "redirect:/";
+			}
 			boardVo.setUserEmail(userVo.getEmail());
 			boardVo.setBoardWriter(userVo.getName());
 			boardVo.setBoardProfile(userVo.getImage());

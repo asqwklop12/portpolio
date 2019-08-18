@@ -29,8 +29,13 @@ public class LoginController {
 	// 로그인 했을 시
 	@RequestMapping(method = RequestMethod.POST)
 	public String login(UserVo userVo, HttpSession httpSession) throws Exception {
-
-		UserVo login = userService.login(userVo);
+		UserVo login = null;
+		try {
+			login = userService.login(userVo);
+			
+ 		} catch (NullPointerException e) {
+ 			return "redirect:/";
+		}
 
 		if (login != null && userService.match(userVo.getPassword(), login.getPassword())) {
 			log.debug("{},{}", login.getName());

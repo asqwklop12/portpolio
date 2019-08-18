@@ -29,12 +29,16 @@ public class CreateBoardController {
 	// 게시글 작성
 	@RequestMapping(method = RequestMethod.POST)
 	public String confirm(@ModelAttribute BoardVo boardVo, HttpSession session) {
-		UserVo userVo = (UserVo) session.getAttribute("data");
+		UserVo userVo = null;
+		try {
+			userVo = (UserVo) session.getAttribute("data");
+			
+		} catch (NullPointerException e) {
+			return "redirect:/";
+		}
 		String email = userVo.getEmail();
 		String name = userVo.getName();
 		String profile = userVo.getImage();
-		
-		
 		
 		boardVo.setUserEmail(email);
 		boardVo.setBoardWriter(name);

@@ -20,8 +20,13 @@ public class DeleteSearchController {
 	
 	@RequestMapping(value = "/list/{id}/{group}", method = RequestMethod.GET)
 	public String delete(@PathVariable int id,@PathVariable int group, HttpSession session) {
+		String email = null;
+		try {
+			email = ((UserVo)(session.getAttribute("data"))).getEmail();	
+		} catch (NullPointerException e) {
+			return "redirect:/";
+		}
 		
-		String email = ((UserVo)(session.getAttribute("data"))).getEmail();
 		SearchListVo searchVo = new SearchListVo();
 		
 		searchVo.setSearchId(id);
