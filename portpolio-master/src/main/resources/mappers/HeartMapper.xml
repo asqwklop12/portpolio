@@ -17,7 +17,7 @@
 
 <insert id="create" parameterType="heart">
 
-INSERT 	IGNORE							INTO likeInfo 
+INSERT 	  							INTO likeInfo 
             (
                bookTitle
               ,userEmail

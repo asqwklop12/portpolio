@@ -22,7 +22,7 @@
   
    
   
- 	INSERT IGNORE 
+ 	INSERT   
  	        							INTO  searchList
             (
                searchNumber  

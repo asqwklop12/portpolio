@@ -4,7 +4,7 @@
 
   <insert id="create" parameterType="notice">
   
-     INSERT  IGNORE                         INTO   noticeInfo
+     INSERT                              INTO   noticeInfo
                  
                  (
                      boardId

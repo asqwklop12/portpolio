@@ -9,7 +9,7 @@
     </select>
 
 	<insert id="insert" parameterType="board">
-		INSERT  IGNORE 								INTO   boardInfo
+		INSERT   								INTO   boardInfo
 				 		(  
 				 		    userEmail
 				  		  , boardProfile

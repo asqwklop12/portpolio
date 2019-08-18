@@ -25,7 +25,14 @@ VALUES  (
            , #{commentContent}
 
 		)
- 
+  ON DUPLICATE KEY UPDATE
+  
+            boardId         =  #{boardId}
+ 		   ,userEmail       =  #{userEmail}
+ 		   ,commentWriter   =  #{commentWriter}
+           ,commentProfile  =  #{commentProfile}
+           ,commentContent  =  #{commentContent}
+         
 </insert>
 
 
