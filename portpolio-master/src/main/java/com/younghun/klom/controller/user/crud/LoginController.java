@@ -29,6 +29,11 @@ public class LoginController {
 	// 로그인 했을 시
 	@RequestMapping(method = RequestMethod.POST)
 	public String login(UserVo userVo, HttpSession httpSession) throws Exception {
+		
+		if (httpSession.getAttribute("data") != null) {
+			return "/error/400";
+		}
+		
 		UserVo login = null;
 		try {
 			login = userService.login(userVo);

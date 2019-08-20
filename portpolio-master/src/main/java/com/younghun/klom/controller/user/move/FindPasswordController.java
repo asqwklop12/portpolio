@@ -1,5 +1,7 @@
 package com.younghun.klom.controller.user.move;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,13 +20,20 @@ public class FindPasswordController {
 
 	// 비밀번호 찾을시
 	@RequestMapping(method = RequestMethod.GET)
-	public String lost() throws Exception {		
+	public String lost(HttpSession httpSession) throws Exception {
+		if (httpSession.getAttribute("data") != null) {
+			return "/error/400";
+		}
 	    return "/user/searchPassword";
 	}
 	
 	//완료
 	@RequestMapping(value = "/action",method = RequestMethod.GET)
-	public String confirm(@RequestParam String email) throws Exception {
+	public String confirm(@RequestParam String email,HttpSession httpSession) throws Exception {
+		if (httpSession.getAttribute("data") != null) {
+			return "/error/400";
+		}
+		
 		userService.searchPassword(email);
 	    return "redirect:/";
 	}
