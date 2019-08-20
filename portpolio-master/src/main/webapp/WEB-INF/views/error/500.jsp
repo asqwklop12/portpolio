@@ -20,9 +20,10 @@
        <div class="media-body">
            <h4 class="media-heading">오류</h4>
            죄송합니다. 요청하신 서버로는 접속이 불가능 합니다.
-           <button type="button" class="btn btn-info">돌아가기</button>
+           <button type="button" id="btn" class="btn btn-info">돌아가기</button>
        </div>
 
    </div>
+   <script type="text/javascript" src="/resources/js/error/error.js"></script>
 </body>
 </html>
