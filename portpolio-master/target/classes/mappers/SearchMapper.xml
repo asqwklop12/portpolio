@@ -16,32 +16,25 @@
   
   </select>
 
- <!-- 전체크기 -->
-  <select id="max" resultType="int">
-  
-  SELECT         MAX(searchId)  AS maxId    
-                                            FROM searchList                                                           
-  </select>
-
+ 
  <!-- 입력 -->
   <insert id="result" parameterType="result">
   
    
   
- 	INSERT  							INTO  searchList
+ 	INSERT   
+ 	        							INTO  searchList
             (
-               searchId
-             , searchNumber  
+               searchNumber  
              , userEmail
              , bookTitle
              , searchAuthor
              , searchPublisher
              
              )
-		
 	 VALUES (
-	           #{searchId}
-	         , #{searchNumber}  
+	          
+	           #{searchNumber}  
 	 		 , #{userEmail}
              , #{bookTitle}
              , #{searchAuthor}
@@ -77,13 +70,6 @@
 					   AND  searchNumber = #{searchNumber}         
   </delete>
 
-<update id="downId">
-
-      UPDATE                                  searchList 
-         SET      searchId = searchId - 1
-      
-       WHERE      searchId = #{searchId}
-</update>
 
 <update id="downGroup">
 

@@ -11,10 +11,10 @@
 			<img class="media-object" src="${book.image}" alt="...">
 		</div>
 
-		<div class="media-body" onclick="enterInfo()">
+		<div class="media-body">
 
 			<div class="form-group">
-				<label for="id">번호: </label> <span id="id">${book.id}</span>
+				<label for="id">번호: </label> <span id="id">${book.ISBN}</span>
 			</div>
 			
 			<div class="form-group">
@@ -61,8 +61,3 @@
 </div>
 
 <div class="border"></div>
-<script type="text/javascript">
-	function enterInfo() {
-		location.href = "";
-	}
-</script>

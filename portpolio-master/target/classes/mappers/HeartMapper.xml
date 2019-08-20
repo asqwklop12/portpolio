@@ -17,12 +17,12 @@
 
 <insert id="create" parameterType="heart">
 
-INSERT 								INTO likeInfo 
+INSERT 	  							INTO likeInfo 
             (
                bookTitle
               ,userEmail
             )
-             
+                         
 VALUES      (
                  #{bookTitle}
                , #{userEmail}

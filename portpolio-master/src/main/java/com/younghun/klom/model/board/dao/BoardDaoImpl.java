@@ -57,18 +57,4 @@ public class BoardDaoImpl implements BoardDao{
 	public void comment(int boardId) {
 		sqlSession.delete(NAMESPACE + "comment",boardId);
 	}
-
-	@Override
-	public void decrease(int boardId) {
-		sqlSession.update(NAMESPACE + "change",boardId);
-	}
-
-	
-
-	
-
-	
-
-	
-
 }

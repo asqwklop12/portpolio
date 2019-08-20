@@ -17,7 +17,7 @@
   
 					<li><label for="publisher">출판사: </label> <b id="publisher">${book.publisher}</b></li>
 
-					<li><label for="date">출판일: </label> <b id="date">1999-09-09</b>
+					<li><label for="date">출판일: </label> <b id="date">${book.date}</b>
 					</li>
 
 					<li><label for="page">페이지: </label> <b id="page">${book.page}</b>p</li>

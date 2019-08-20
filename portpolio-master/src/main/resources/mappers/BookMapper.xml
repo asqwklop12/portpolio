@@ -45,9 +45,9 @@
   </select>
 
 
-   <!-- 리스트 -->
+   <!-- 리스트 -->  
   <select id="list" parameterType="search" resultType="book">
-  	  
+  	<if test="keyword != ''">									  
   	  	SELECT 	
   	  	                  bookPicture       AS image
  	 					, BookTitle 		AS title
@@ -57,13 +57,13 @@
   						, BookPublisher 	AS publisher
   						, BookISBN          AS ISBN
   						, BookLike			AS heart						FROM BookbasicInfo
-  										
+  
   	WHERE					BookTitle LIKE  '${keyword}%' 
 						OR  bookTitle LIKE '%${keyword}'
                         OR  bookTitle LIKE '%${keyword}%'
-                        OR  bookTitle     = '${keyword}'
-  																	
+                        OR  bookTitle     = '${keyword}'															
   	LIMIT        		 #{display},#{post}
+  	</if>
   </select>
  
    

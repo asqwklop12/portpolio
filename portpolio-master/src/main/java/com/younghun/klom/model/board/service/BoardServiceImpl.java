@@ -17,14 +17,6 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void insert(BoardVo boardVo) {
-
-		try {
-			boardVo.setBoardId(boardDao.countId() + 1);
-		} catch (NullPointerException e) {
-			boardVo.setBoardId(1);
-
-		}
-
 		boardDao.insert(boardVo);
 	}
 
@@ -58,20 +50,9 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.comment(id);
 		boardDao.delete(boardVo);
 		
-		try {
-			
-			countReapt(id, boardDao.countId());
-		}catch (NullPointerException e) {
-		
-		}
 
 	}
 	
-	private void countReapt(int id, int max) {
-		
-		for (int i = id; i <= max; i++) {
-			boardDao.decrease(i);
-		}
-	}
+	
 
 }

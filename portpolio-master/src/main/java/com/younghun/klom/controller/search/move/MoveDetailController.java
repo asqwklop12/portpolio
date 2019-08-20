@@ -89,11 +89,7 @@ public class MoveDetailController {
 			searchVo.setSearchNumber(1);
 		}
 		
-		try {
-			searchVo.setSearchId(searchDao.max() + 1);
-		} catch (NullPointerException e) {
-			searchVo.setSearchId(1);
-		}
+		
 
 		searchVo.setUserEmail(email);
 		searchVo.setBookTitle(bookVo.getTitle());

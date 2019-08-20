@@ -5,7 +5,7 @@
 
 <insert id="insert" parameterType="comment">
 
-INSERT        		       INTO    commentInfo
+INSERT   IGNORE     		       INTO    commentInfo
 		(
 		
             boardId
@@ -25,7 +25,14 @@ VALUES  (
            , #{commentContent}
 
 		)
- 
+  ON DUPLICATE KEY UPDATE
+  
+            boardId         =  #{boardId}
+ 		   ,userEmail       =  #{userEmail}
+ 		   ,commentWriter   =  #{commentWriter}
+           ,commentProfile  =  #{commentProfile}
+           ,commentContent  =  #{commentContent}
+         
 </insert>
 
 

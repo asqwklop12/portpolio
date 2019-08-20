@@ -1,11 +1,18 @@
 @charset "UTF-8";
 .footer {
-	background-color: black;
+	background-color: #333333;
 	width: 100%;
 	color: white;
 	font-size: 5rem;
 	text-align: center;
 	padding-bottom :5%;
-	margin: 0;
+
 }
 
+
+.logo {
+	width:5%;
+	margin-top:5%;	
+	display: inline-block;
+	cursor: pointer;
+}

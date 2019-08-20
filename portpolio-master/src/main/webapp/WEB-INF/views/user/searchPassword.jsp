@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>비밀번호 찾기</title>
+<title>비밀번호 찾기</title>  
 <%@ include file="/resources/bootstrap/package.jsp"%>
 <link rel="stylesheet" href="/resources/css/part/other.css">
-<script type="text/javascript" src="/resources/js/user/password.js"></script>
+<style type="text/css">
+.info {
+	margin-left: 18%;
+}
+</style>
 </head>
 <body>
 	<div class="panel panel-primary">

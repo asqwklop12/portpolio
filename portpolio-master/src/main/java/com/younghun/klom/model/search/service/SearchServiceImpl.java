@@ -21,18 +21,20 @@ public class SearchServiceImpl implements SearchService {
 		searchDao.delete(searchVo);
 		String email = searchVo.getUserEmail();
 
-		// 전체 감소
-		for (int i = searchVo.getSearchId(); i <= searchDao.max(); i++) {
-			searchDao.updateId(i);
-		}
+		
 
 		// 그룹별 감소
-		for (int i = searchVo.getSearchNumber(); i <= searchDao.user(email); i++) {
-			SearchListVo vo = new SearchListVo();
-			vo.setSearchNumber(i);
-			vo.setUserEmail(email);
-			searchDao.updateGroup(vo);
+		try {
+			for (int i = searchVo.getSearchNumber(); i <= searchDao.user(email); i++) {
+				SearchListVo vo = new SearchListVo();
+				vo.setSearchNumber(i);
+				vo.setUserEmail(email);
+				searchDao.updateGroup(vo);
+			}
+		} catch (NullPointerException e) {
+			// TODO: handle exception
 		}
+		
 
 	}
 

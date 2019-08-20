@@ -7,7 +7,7 @@
 
 <title>회원 가입</title>
 <%@ include file="/resources/bootstrap/package.jsp"%>
-<link rel="stylesheet" href="/resources/css/user/register.css">
+<link rel="stylesheet" href="/resources/css/part/user/register.css">
 <link rel="stylesheet" href="/resources/css/part/other.css">
 
 
@@ -26,9 +26,10 @@
 
 		<div class="panel-body">
 			<form class="form-horizontal" action="home" method="post">
-
+  
 				<div id="profile" class="form-group " align="center">
-					<img id="image" src="/resources/img/kakao.png" alt="" name="image" />
+					<img id="image" src="/resources/img/owl.svg" alt="" name="image" width="10%"/>
+					<input type="hidden" value="owl.svg" name="image" id="inputs">
 				</div>
 
 				<div class="form-group">
@@ -321,24 +322,13 @@
 	    
 		document.addEventListener('keydown', function() {
 			
-			if (event.keycode == 13) {
-				alert("성공");
-			}
-			
 			if(checkBtn()) {
 				confirm.disabled = "";
 				
-			} else {
-				confirm.disabled = "disabled";
 			}
 			
-			
 		});
-		  
-	//	window.addEventListener('keypress',function() {	
-			//confirm.disabled = "disabled";
-		//	alert();
-		//})
+		 
 	</script>
 </body>
 </html>

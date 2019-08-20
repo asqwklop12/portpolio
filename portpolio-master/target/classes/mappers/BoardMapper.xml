@@ -9,22 +9,19 @@
     </select>
 
 	<insert id="insert" parameterType="board">
-		INSERT    								INTO   boardInfo
+		INSERT   								INTO   boardInfo
 				 		(  
-				 			boardId
-				  		  , userEmail
+				 		    userEmail
 				  		  , boardProfile
 				  	      , boardWriter
 				  	      , boardTitle
 				  	      , boardDate
 				          , boardContent
 				 		 )
-				 		 
-				 		 
+				 		 	 		 
 		VALUES      	 (
 		
-		                  #{boardId}
-		                 ,#{userEmail}
+		                  #{userEmail}
 		                 ,#{boardProfile}
 		                 ,#{boardWriter}
 		                 ,#{boardTitle}
@@ -100,15 +97,6 @@
    		WHERE			   boardId   = #{boardId}	
    		  AND			   userEmail = #{userEmail} 
    </delete>   
-   
-   <update id="change" parameterType="int">
-   
-  	 UPDATE  									boardInfo 
-   
-   		SET 	boardId   =  boardId - 1
-   	  WHERE     boardId   = #{boardId}	        
-   		          
-   </update>
    
   
 </mapper>

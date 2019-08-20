@@ -19,16 +19,15 @@
 	</select>
 
 	<select id="book" resultType="int">
+		<if test="keyword != ''">		  				
 		SELECT 
 						count(bookTitle) 
 														FROM BookbasicInfo
-								
-								
 		WHERE				BookTitle LIKE '${keyword}%' 
 						OR  bookTitle LIKE '%${keyword}'
                         OR  bookTitle LIKE '%${keyword}%'
                         OR  bookTitle	  = '${keyword}'						
-								
+       </if>
 	</select>
 
 </mapper>

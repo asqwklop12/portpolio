@@ -15,9 +15,7 @@ public interface SearchDao {
 	
 	
 	int user(String email);
-	int max();
 	
-	void updateId(int id);
 	void updateGroup(SearchListVo searchVo);
 	
 }

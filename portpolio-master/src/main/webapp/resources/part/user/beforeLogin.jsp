@@ -39,7 +39,7 @@
 			<div class="form-group"></div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-					<button id="confirm">로그인</button>
+					<button type="button" class="btn btn-link" id="confirm">로그인</button>
 
 					<a href="register">회원가입</a>
 				</div>

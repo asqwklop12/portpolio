@@ -13,7 +13,9 @@ public class BookVo {
 	private String author;						//BookAuthor
 	private String publisher;					//BookPublisher
 	private int page;							//BookPage
-	private int price;							//BookPrice
+	private String price;							//BookPrice
+	private long ISBN;						//BookISBN
+	private String date;						//BookDate
 	
 	private String summary;						//BookSummary
 	private String bookIndex;				    //BookIndex

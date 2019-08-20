@@ -28,18 +28,13 @@ public class SearchDaoImpl implements SearchDao{
 	public int user(String email) {
 		return sqlSession.selectOne(NAMESPACE + "user",email);
 	}
-	@Override
-	public int max() {
-		return sqlSession.selectOne(NAMESPACE + "max");
-	}
+	
 	@Override
 	public void delete(SearchListVo searchVo) {
 		sqlSession.delete(NAMESPACE + "delete",searchVo);
 	}
-	@Override
-	public void updateId(int id) {
-		sqlSession.update(NAMESPACE + "downId",id);
-	}
+	
+	
 	@Override
 	public void updateGroup(SearchListVo searchVo) {
 		sqlSession.update(NAMESPACE + "downGroup",searchVo);
