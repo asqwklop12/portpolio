@@ -38,4 +38,14 @@ public class BookDaoImpl implements BookDao{
 		return sqlSession.selectList(NAMESPCE + "rank");
 	}
 
+	@Override
+	public void insertBasic(BookVo bookVo) throws Exception {
+		sqlSession.insert(NAMESPCE + "basic",bookVo);
+	}
+
+	@Override
+	public void insertDetail(BookVo bookVo) throws Exception {
+		sqlSession.insert(NAMESPCE + "detail",bookVo);
+	}
+
 }

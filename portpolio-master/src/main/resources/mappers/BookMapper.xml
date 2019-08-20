@@ -29,6 +29,7 @@
   						, b.BookAuthor 	 	    AS author	
   						, b.BookPage			AS page
   						, b.BookPrice 		    AS price
+  						, b.BookDate            AS date
   						, b.BookPublisher 	    AS publisher
   						, d.BookSummary         AS summary
    						, d.BookIndex			AS bookIndex
@@ -54,6 +55,7 @@
   						, BookPage			AS page
   						, BookPrice 		AS price
   						, BookPublisher 	AS publisher
+  						, BookISBN          AS ISBN
   						, BookLike			AS heart						FROM BookbasicInfo
   										
   	WHERE					BookTitle LIKE  '${keyword}%' 
@@ -65,6 +67,64 @@
   </select>
  
    
- 
- 
+  <insert id="basic" parameterType="book">
+    INSERT                                 INTO BookbasicInfo
+            ( 
+               bookPicture
+             , BookTitle
+             , BookAuthor
+             , BookPublisher
+             , BookISBN
+             , BookPage
+             , BookDate
+             , BookPrice
+             
+            )
+     VALUES  
+            (
+                #{image}
+              , #{title}
+              , #{author}
+              , #{publisher}
+              , #{ISBN}
+              , #{page}
+              , #{Date}
+              , #{Price}
+            )   
+                
+    ON DUPLICATE KEY UPDATE        
+               bookPicture		 = 	 #{image}
+             , BookTitle   		 = 	 #{title}
+             , BookAuthor 		 = 	 #{author}
+             , BookPublisher 	 = 	 #{publisher}
+             , BookISBN   		 = 	 #{ISBN}
+             , BookPage   		 = 	 #{page}
+             , BookDate   		 = 	 #{Date}
+             , BookPrice  		 =	 #{Price}
+
+  </insert>
+
+
+  <insert id="detail" parameterType="book">
+    INSERT                                 INTO BookDetailInfo
+            ( 
+                BookTitle
+              , BookSummary
+              , BookIndex
+            )
+     VALUES  
+            (
+                #{title}
+              , #{summary}
+              , #{bookIndex}
+              
+            )   
+                
+    ON DUPLICATE KEY UPDATE        
+    
+               BookTitle		 = 	 #{title}
+             , BookSummary   	 = 	 #{summary}
+             , bookIndex 		 = 	 #{bookIndex}
+  </insert> 
+  										
 </mapper>

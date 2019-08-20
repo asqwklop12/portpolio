@@ -13,4 +13,8 @@ public interface BookService {
 	List<BookVo> rank() throws Exception;
 
 	BookVo result(String title) throws Exception;
+	
+	void insertBasic(String image, String title, String author, String publisher, long isbn, int page, String date, String price) throws Exception;
+	
+	void insertDetail(String title, String introduce, String index) throws Exception;
 }
