@@ -21,10 +21,14 @@ public class DeleteBoardController {
 	@Autowired
 	private NoticeSecvice noticeSecvice;
 	@RequestMapping(method = RequestMethod.GET)
-	public String delete(@PathVariable int id, HttpSession session) {
+	public String delete(@PathVariable int id, HttpSession httpSession) {
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
+		
 		UserVo userVo = null;
 		try {
-		 userVo = (UserVo) session.getAttribute("data");
+		 userVo = (UserVo) httpSession.getAttribute("data");
 		} catch (NullPointerException e) {
 			return "redirect:/";
 		}

@@ -28,10 +28,14 @@ public class CreateBoardController {
 
 	// 게시글 작성
 	@RequestMapping(method = RequestMethod.POST)
-	public String confirm(@ModelAttribute BoardVo boardVo, HttpSession session) {
+	public String confirm(@ModelAttribute BoardVo boardVo, HttpSession httpSession) {
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
+		
 		UserVo userVo = null;
 		try {
-			userVo = (UserVo) session.getAttribute("data");
+			userVo = (UserVo) httpSession.getAttribute("data");
 			
 		} catch (NullPointerException e) {
 			return "redirect:/";

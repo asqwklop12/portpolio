@@ -13,6 +13,9 @@ public class LogoutController {
 	// 로그아웃
 	@RequestMapping(method = RequestMethod.GET)
 	public String logout(HttpSession httpSession) {
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
 		
 		httpSession.invalidate();
 		return "redirect:/";

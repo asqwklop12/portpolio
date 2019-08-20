@@ -1,5 +1,7 @@
 package com.younghun.klom.controller.board.crud;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,10 @@ public class ReadBoardController {
 
 	// 게시글 읽기 (본인 글이면 수정, 삭제태그 보여줌)
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	public String into(@PathVariable int id, Model model) {
+	public String into(@PathVariable int id, Model model,HttpSession httpSession) {
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
 		BoardVo detail = boardService.read(id);
  
 		model.addAttribute("detail", detail);

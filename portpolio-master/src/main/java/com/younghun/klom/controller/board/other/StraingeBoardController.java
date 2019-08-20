@@ -16,13 +16,20 @@ public class StraingeBoardController {
 	// 로그아웃??? 이게 뭔지
 		@GetMapping(value = "/logout")
 		public String logout(HttpSession httpSession) {
+			if (httpSession.getAttribute("data") == null) {
+				return "/error/400";
+			}
+			
 			httpSession.invalidate();
 			return "redirect:/";
 		}
 
 		// 정보 수정??? 흠
 		@RequestMapping(value = "/edit", method = RequestMethod.GET)
-		public String edit() {		
+		public String edit(HttpSession httpSession) {
+			if (httpSession.getAttribute("data") == null) {
+				return "/error/400";
+			}
 			return "redirect:/login/edit";
 		}
 	}

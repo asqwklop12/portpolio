@@ -27,10 +27,13 @@ public class UpdateBoardController {
 	private NoticeSecvice noticeSecvice;
 	// 게시글 수정
 		@RequestMapping(method = RequestMethod.POST)
-		public String edit(BoardVo boardVo,HttpSession session ,@PathVariable int id) {
+		public String edit(BoardVo boardVo,HttpSession httpSession ,@PathVariable int id) {
+			if (httpSession.getAttribute("data") == null) {
+				return "/error/400";
+			}
 			UserVo userVo = null;
 			try {
-				userVo = (UserVo) session.getAttribute("data");
+				userVo = (UserVo) httpSession.getAttribute("data");
 				
 			} catch (NullPointerException e) {
 				return "redirect:/";

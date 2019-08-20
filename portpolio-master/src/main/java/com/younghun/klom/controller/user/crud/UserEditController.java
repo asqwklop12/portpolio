@@ -26,17 +26,24 @@ public class UserEditController {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
 	@RequestMapping(value = "/close", method = RequestMethod.GET)
-	public String close() {
-
+	public String close(HttpSession httpSession) {
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
+		
 		return "redirect:/";
 	}
 
 	// home으로 이동(로그인된 상태)
 	@RequestMapping(value = "/close", method = RequestMethod.POST)
-	public String edit(HttpSession session, @ModelAttribute UserVo userVo) {
+	public String edit(HttpSession httpSession, @ModelAttribute UserVo userVo) {
 
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
+		
 		userService.edit(userVo);
-		session.setAttribute("data", userVo);
+		httpSession.setAttribute("data", userVo);
 		logger.debug("{}", userVo);
 		return "redirect:/";
 	}
@@ -44,6 +51,7 @@ public class UserEditController {
 	@ResponseBody
 	@RequestMapping(value = "/password", method = RequestMethod.POST)
 	public UserVo password(@ModelAttribute UserVo userVo) {
+		
 		userService.edit2(userVo);
 		logger.debug("{}",userVo);
 		return userVo;
@@ -51,7 +59,11 @@ public class UserEditController {
 
 	// 정보 수정
 	@RequestMapping(method = RequestMethod.GET)
-	public String edit() {
+	public String edit(HttpSession httpSession) {
+		if (httpSession.getAttribute("data") == null) {
+			return "/error/400";
+		}
+		
 		return "/user/userEdit";
 	}
 
