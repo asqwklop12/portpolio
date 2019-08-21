@@ -14,7 +14,7 @@
    <div class="media container">
        <div class="media-left">
 
-           <img class="media-object"  src="/resources/img/owl.svg" alt="...">
+           <img src="/resources/img/error.png" height="50%" alt="경로 없음">
 
        </div>
        <div class="media-body">
