@@ -14,7 +14,7 @@
    <div class="media container">
        <div class="media-left">
 
-           <img class="media-object"  src="/resources/img/kakao.png" alt="...">
+           <img class="media-object"  src="${pageContext.request.contextPath}/resources/img/owl.png"  alt="...">
 
        </div>
        <div class="media-body">
