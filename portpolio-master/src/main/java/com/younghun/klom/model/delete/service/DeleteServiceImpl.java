@@ -8,7 +8,6 @@ import com.younghun.klom.model.board.vo.BoardVo;
 import com.younghun.klom.model.comment.vo.CommentVo;
 import com.younghun.klom.model.delete.dao.DeleteDao;
 import com.younghun.klom.model.heart.vo.HeartVo;
-import com.younghun.klom.model.notice.vo.NoticeVo;
 import com.younghun.klom.model.search.vo.SearchListVo;
 
 @Service
@@ -26,9 +25,9 @@ public class DeleteServiceImpl implements DeleteService {
 
 	@Override
 	public void notice(String email) {
-		NoticeVo noticeVo = new NoticeVo();
-		noticeVo.setUserEmail(email);
-		deleteDao.notice(noticeVo);
+		BoardVo boardVo = new BoardVo();
+		boardVo.setUserEmail(email);
+		deleteDao.notice(boardVo);
 	}
 
 	@Override

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.younghun.klom.model.board.vo.BoardVo;
 import com.younghun.klom.model.comment.vo.CommentVo;
 import com.younghun.klom.model.heart.vo.HeartVo;
-import com.younghun.klom.model.notice.vo.NoticeVo;
 import com.younghun.klom.model.search.vo.SearchListVo;
 
 @Repository
@@ -24,8 +23,8 @@ public class DeleteDaoImpl implements DeleteDao{
 	}
 
 	@Override
-	public void notice(NoticeVo noticeVo) {
-		sqlSession.delete(NAMESPCE + "notice",noticeVo); 
+	public void notice(BoardVo boardVo) {
+		sqlSession.delete(NAMESPCE + "notice",boardVo); 
 	}
 
 	@Override

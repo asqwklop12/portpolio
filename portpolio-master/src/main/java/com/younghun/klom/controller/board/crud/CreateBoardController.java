@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.younghun.klom.model.board.service.BoardService;
 import com.younghun.klom.model.board.vo.BoardVo;
-import com.younghun.klom.model.notice.service.NoticeSecvice;
 import com.younghun.klom.model.user.vo.UserVo;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,8 +22,6 @@ public class CreateBoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	@Autowired
-	private NoticeSecvice noticeSecvice;
 
 	// 게시글 작성
 	@RequestMapping(method = RequestMethod.POST)
@@ -54,9 +51,6 @@ public class CreateBoardController {
 			boardService.insert(boardVo);
 		}
 		
-		if (userVo.getGrade().equals("admin")) {
-			noticeSecvice.create(boardVo.getBoardId(),email,boardVo.getBoardTitle());
-		}
 
 		return "redirect:/board";
 	}

@@ -8,7 +8,7 @@
   WHERE       UserEmail = #{userEmail}  
 </delete>
 
-<delete id="notice"  parameterType="notice">
+<delete id="notice"  parameterType="board">
    DELETE              						FROM   noticeInfo
    WHERE       UserEmail = #{userEmail}
 </delete>

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.younghun.klom.model.board.service.BoardService;
-import com.younghun.klom.model.notice.service.NoticeSecvice;
 import com.younghun.klom.model.user.vo.UserVo;
 
 @Controller
@@ -18,8 +17,6 @@ public class DeleteBoardController {
 	@Autowired
 	private BoardService boardService;
 	
-	@Autowired
-	private NoticeSecvice noticeSecvice;
 	@RequestMapping(method = RequestMethod.GET)
 	public String delete(@PathVariable int id, HttpSession httpSession) {
 		if (httpSession.getAttribute("data") == null) {
@@ -34,9 +31,7 @@ public class DeleteBoardController {
 		}
 		String email = userVo.getEmail();
 		
-		if (userVo.getGrade().equals("admin")) {
-			noticeSecvice.delete(email, id);
-		}
+		
 		boardService.delete(email, id);
 		
 		
