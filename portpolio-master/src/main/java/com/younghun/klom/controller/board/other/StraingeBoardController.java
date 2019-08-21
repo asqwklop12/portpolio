@@ -13,7 +13,7 @@ import com.younghun.klom.model.user.vo.UserVo;
 @Controller
 @RequestMapping(value = "/board/into/login")
 public class StraingeBoardController {
-	// 로그아웃??? 이게 뭔지
+	// 로그아웃
 		@GetMapping(value = "/logout")
 		public String logout(HttpSession httpSession) {
 			if (httpSession.getAttribute("data") == null) {
@@ -24,7 +24,7 @@ public class StraingeBoardController {
 			return "redirect:/";
 		}
 
-		// 정보 수정??? 흠
+		// 정보 수정
 		@RequestMapping(value = "/edit", method = RequestMethod.GET)
 		public String edit(HttpSession httpSession) {
 			if (httpSession.getAttribute("data") == null) {
