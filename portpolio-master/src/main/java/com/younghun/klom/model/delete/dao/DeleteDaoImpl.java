@@ -45,25 +45,14 @@ public class DeleteDaoImpl implements DeleteDao{
 		sqlSession.delete(NAMESPCE + "board",boardVo); 
 	}
 
-	@Override
-	public void boardNumber(int boardId) {
-		sqlSession.update(NAMESPCE + "boardNumber",boardId);
-	}
 
-	@Override
-	public int boardMax() {
-		return sqlSession.selectOne(NAMESPCE + "boardCount") ;
-	}
 
 	@Override
 	public void search(SearchListVo searchListVo) {
 		sqlSession.delete(NAMESPCE + "search",searchListVo); 
 	}
 
-	@Override
-	public void searchNumber(SearchListVo searchListVo) {
-		sqlSession.update(NAMESPCE + "searchNumber",searchListVo); 
-	}
+	
 
 
 	

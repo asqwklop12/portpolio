@@ -40,20 +40,10 @@ public class DeleteServiceImpl implements DeleteService {
 	}
 
 	@Override
-	@Transactional
 	public void board(String email) {
 		BoardVo boardVo = new BoardVo();
 		boardVo.setUserEmail(email);
 		deleteDao.board(boardVo);
-
-		try {
-
-			for (int i = 1; i <= deleteDao.boardMax(); i++) {
-				deleteDao.boardNumber(i);
-			}
-		} catch (NullPointerException e) {
-			e.printStackTrace();
-		}
 	}
 
 	@Override
@@ -62,7 +52,6 @@ public class DeleteServiceImpl implements DeleteService {
 		SearchListVo searchListVo = new SearchListVo();
 		searchListVo.setUserEmail(email);
 		deleteDao.search(searchListVo);
-		deleteDao.searchNumber(searchListVo);
 	}
 
 }

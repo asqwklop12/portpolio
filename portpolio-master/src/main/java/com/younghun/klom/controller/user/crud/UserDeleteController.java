@@ -21,9 +21,6 @@ public class UserDeleteController {
 	// home으로 이동  // 유저 삭제 
 	@RequestMapping(method = RequestMethod.POST)
 	public String kill(HttpSession httpSession, @ModelAttribute UserVo userVo) {
-		if (httpSession.getAttribute("data") == null) {
-			return "/error/400";
-		}
 		
 		userService.delete(userVo);
 		httpSession.invalidate();

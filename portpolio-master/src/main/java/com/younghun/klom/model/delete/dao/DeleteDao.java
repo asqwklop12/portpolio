@@ -17,12 +17,8 @@ public interface DeleteDao {
 	
 	
 	void board(BoardVo boardVo);
-	void boardNumber(int boardId);
-	int  boardMax();
-
 
 	void search(SearchListVo searchListVo);
-	void searchNumber(SearchListVo searchListVo);
 
 
 }
