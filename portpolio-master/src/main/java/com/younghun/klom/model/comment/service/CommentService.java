@@ -11,6 +11,6 @@ public interface CommentService {
 	
 	List<CommentVo> list(int boardId);
 	
-	void delete(String email);
+	void delete(int commentId);
 
 }

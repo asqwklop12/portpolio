@@ -11,5 +11,5 @@ public interface CommentDao {
 	
 	List<CommentVo> list(int boardId);
 	
-	void delete(CommentVo commentVo);
+	void delete(int commentId);
 }

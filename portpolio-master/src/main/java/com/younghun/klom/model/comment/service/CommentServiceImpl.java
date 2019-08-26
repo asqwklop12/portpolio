@@ -32,11 +32,9 @@ public class CommentServiceImpl implements CommentService{
 	}
 
 	@Override
-	public void delete(String email) {
+	public void delete(int commentId) {
 		
-		CommentVo commentVo = new CommentVo();
-		commentVo.setUserEmail(email);
-		commentDao.delete(commentVo);
+		commentDao.delete(commentId);
 	}
 
 	

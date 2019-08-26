@@ -112,7 +112,6 @@
 				success : function(data) {
 					tab(data[data.length - 1].userEmail);
 					commentContext(data[data.length - 1]);
-					remove(data[data.length - 1]);
 
 				},
 
@@ -132,8 +131,8 @@
 
 					for (var i = 0; i < data.length; i++) {
 						tab(data[i].userEmail);
+						remove(data[i],i);
 						commentContext(data[i]);
-						remove(data[i]);
 					}
 				},      
 
@@ -180,28 +179,31 @@
 
 				let item = document.createElement('li');
 				item.setAttribute('role', 'presentation');
-				item.setAttribute('id', 'remove');
+				item.setAttribute('class', 'remove');
 				items.appendChild(item);
 
 				let aTag = document.createElement('a');
-				aTag.setAttribute('href', '#');
 				aTag.innerHTML = '삭제';
 				item.appendChild(aTag);
 
 			}
 		}
 
-		function remove(data) {
-			const removeItem = document.getElementById('remove');
-			removeItem.addEventListener('click', removeAction);
+		function remove(data,num) {
+			const removeItem = document.getElementsByClassName('remove')[num];
+			removeItem.addEventListener('click', function() {
+				removeAction(data);
+			});
+			
 		}
 
-		function removeAction() {
+		function removeAction(data) {
 			$.ajax({
 				url : '/comment/remove',
-				data : "email=" + data.userEmail,
+				data : "commentId=" + data.commentId,
 				method : 'post',
 				success : function() {
+					alert(data.commentId + "삭제되었습니다.");
 					window.location.reload();
 				},
 				error : function() {

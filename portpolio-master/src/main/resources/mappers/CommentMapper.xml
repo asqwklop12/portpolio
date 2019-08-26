@@ -53,7 +53,7 @@ VALUES  (
 
 	DELETE                    FROM  commentInfo
 	
-	WHERE	   userEmail = #{userEmail}
+	WHERE	   commentId = #{commentId}
 
 </delete>
 

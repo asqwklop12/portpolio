@@ -28,8 +28,8 @@ public class CommentDaoImpl implements CommentDao{
 	}
 
 	@Override
-	public void delete(CommentVo commentVo) {
-		sqlSession.delete(NAMESPACE + "remove",commentVo);
+	public void delete(int commentId) {
+		sqlSession.delete(NAMESPACE + "remove",commentId);
 	}
 
 

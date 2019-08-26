@@ -46,8 +46,8 @@ public class CommentController {
 	
 	@RequestMapping(value = "/remove", method = RequestMethod.POST)
 	@ResponseBody
-	public void remove(@RequestParam String email) {
+	public void remove(@RequestParam int commentId) {
 		
-		commentService.delete(email);
+		commentService.delete(commentId);
 	}
 }
